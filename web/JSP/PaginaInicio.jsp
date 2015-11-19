@@ -34,3 +34,20 @@
         </div>
     </body>
 </html>
+
+
+<header class="header" role="banner">
+    <nav>
+        <ul>
+            <li><a href="#">Acceder</a>
+            </li>
+            <li><a href="#">Registrarse</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="container" role="main">
+    <h1>Sticky Header</h1>
+    <h2>Hides on scroll down, reveals on scroll up</h2>
+    <h2>Header will Reveal on Page Bottom</h2>
+</div>
