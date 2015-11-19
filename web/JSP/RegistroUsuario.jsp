@@ -3,19 +3,23 @@
     Created on : 19-nov-2015, 11:42:42
     Author     : BEEP
 --%>
+<link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
 
-<!-- multistep form -->
-<link href="../CSS/RegistroUsuario.css"
-      rel="stylesheet" type="text/css"
- <h1 class="register-title">Welcome</h1>
-  <form class="register">
-    <div class="register-switch">
-      <input type="radio" name="sex" value="F" id="sex_f" class="register-switch-input" checked>
-      <label for="sex_f" class="register-switch-label">Female</label>
-      <input type="radio" name="sex" value="M" id="sex_m" class="register-switch-input">
-      <label for="sex_m" class="register-switch-label">Male</label>
-    </div>
-    <input type="email" class="register-input" placeholder="Email address">
-    <input type="password" class="register-input" placeholder="Password">
-    <input type="submit" value="Create Account" class="register-button">
+<div class="testbox">
+  <h1>Registro</h1>
+
+  <form action="/">
+    
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input type="email" name="name" id="name" placeholder="Correo" required/>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="name" id="name" placeholder="Nombre" required/>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="name" id="name" placeholder="Apellidos" required/>
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="password" name="name" id="name" placeholder="Contraseña" required/>
+
+   
+   <a href="#" class="button">Registrarse</a>
   </form>
+</div>
