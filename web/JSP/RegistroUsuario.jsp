@@ -4,6 +4,7 @@
     Author     : BEEP
 --%>
 <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 
 <div class="testbox">
   <h1>Registro</h1>
@@ -20,6 +21,6 @@
   <input type="password" name="name" id="name" placeholder="Contraseña" required/>
 
    
-   <a href="#" class="button">Registrarse</a>
+  <a href="#" class="button" type="submit">Registrarse</a>
   </form>
 </div>

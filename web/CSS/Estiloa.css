@@ -8,10 +8,7 @@ and open the template in the editor.
     Author     : Iñaki
 */
 
-<<<<<<< HEAD
-T{
-    color: darkmagenta
-=======
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
 /* Important part, as the javascript will check for this class */
@@ -108,5 +105,5 @@ p {
     font-size: 1em;
     color: #fff;
     margin: 2em 0;
->>>>>>> refs/remotes/origin/master
+
 }
