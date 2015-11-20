@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
         <meta charset="utf-8">
         <title>EuskalRent</title>
         <link rel="stylesheet" href="../CSS/Estiloa.css">
@@ -46,3 +47,41 @@
         </section>
     </body>
 </html>
+=======
+        <link rel="stylesheet" type="text/css" href="../CSS/Estiloa.css">
+        <script src="../JavaScript/ValidacionBusqueda.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Euskal Rent</title>
+    </head>
+    <body>
+        <div>
+            <form action="" id="formBusqueda">
+                Introduce el barrio:
+                <input type="text" name="campoBarrio" id="barrio"><br>
+                Introduce una fecha de inicio del alojamiento:
+                <input type="date" name="calendarioInicio">
+                <input type="date" name="calendarioFin"><br>
+                <input type="button" value="Buscar" id="btnBuscar">
+            </form>
+        </div>
+    </body>
+</html>
+
+
+<header class="header" role="banner">
+    <nav>
+        <ul>
+            <h3>Euskal Rent</h3>
+            <li><b href="#">Acceder</b>
+            </li>
+            <li><b href="#">Registrarse</b>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="container" role="main">
+    <h1>Sticky Header</h1>
+    <h2>Hides on scroll down, reveals on scroll up</h2>
+    <h2>Header will Reveal on Page Bottom</h2>
+</div>
+>>>>>>> master
