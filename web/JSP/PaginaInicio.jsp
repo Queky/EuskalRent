@@ -11,17 +11,9 @@
         <link rel="stylesheet" type="text/css" href="../CSS/Estiloa.css">
         <script src="../JavaScript/ValidacionBusqueda.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Euskal Rent</title>
     </head>
     <body>
-        <div>
-            <form action="">
-                <input type="submit" value="Acceder">
-            </form>
-            <form action="">
-                <input type="submit" value="Registrarse">
-            </form>
-        </div>
         <div>
             <form action="" id="formBusqueda">
                 Introduce el barrio:
@@ -39,9 +31,10 @@
 <header class="header" role="banner">
     <nav>
         <ul>
-            <li><a href="#">Acceder</a>
+            <h3>Euskal Rent</h3>
+            <li><b href="#">Acceder</b>
             </li>
-            <li><a href="#">Registrarse</a>
+            <li><b href="#">Registrarse</b>
             </li>
         </ul>
     </nav>
