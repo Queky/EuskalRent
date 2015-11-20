@@ -40,7 +40,7 @@ h1 {
 }
 
 html{
-  background-color: darkgrey;
+    background-color: #ccccff;
 }
 
 .testbox {
@@ -107,8 +107,8 @@ input[type=password]{
   margin-top: 20px;
 }
 
-a.button {
-  font-size: 14px;
+.button{
+  font-size: 18px;
   font-weight: 600;
   color: white;
   padding: 6px 25px 0px 20px;
@@ -116,7 +116,7 @@ a.button {
   display: inline-block;
   float: right;
   text-decoration: none;
-  width: auto; height: 27px; 
+  width: auto; height: 35px; 
   -webkit-border-radius: 5px; 
   -moz-border-radius: 5px; 
   border-radius: 5px; 
@@ -129,7 +129,7 @@ a.button {
   position: relative;
 }
 
-a.button:hover {
+.button:hover {
   top: 3px;
   background-color:#2e458b;
   -webkit-box-shadow: none; 

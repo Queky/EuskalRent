@@ -8,9 +8,7 @@
 
 <div class="testbox">
   <h1>Registro</h1>
-
-  <form action="/">
-    
+  <form action="https://www.google.es" method="post">
   <label id="icon" for="name"><i class="icon-envelope "></i></label>
   <input type="email" name="name" id="name" placeholder="Correo" required/>
   <label id="icon" for="name"><i class="icon-user"></i></label>
@@ -18,9 +16,7 @@
   <label id="icon" for="name"><i class="icon-user"></i></label>
   <input type="text" name="name" id="name" placeholder="Apellidos" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="password" name="name" id="name" placeholder="Contraseña" required/>
-
-   
-  <a href="#" class="button" type="submit">Registrarse</a>
-  </form>
+  <input type="password" name="name" id="name" placeholder="Contraseña" required />
+  <input type="submit" value="Registrarse" class="button"/>
+  <form/>
 </div>
