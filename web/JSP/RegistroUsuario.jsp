@@ -24,7 +24,8 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   
   <label id="icon" for="password"> <i class="icon-shield"></i></label>
-  <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="form-input" onblur="revisar(this)" required />
+  <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="form-input"
+         onkeyup="revisar(this)" required />
   
   <input type="submit" value="Registrarse" class="button"/>
   <form/>
