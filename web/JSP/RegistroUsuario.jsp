@@ -10,16 +10,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>EuskalRent</title>
-        <link rel="stylesheet" href="../CSS/Estiloa.css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component.css" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
+        <title>Pagina Registro</title>
+         </head>
+         <body>
         <header>
             <a href="PaginaInicio.jsp" class="logo">
                 <em>Euskal</em><strong>Rent</strong>
@@ -31,7 +24,7 @@
                 </ul>      
             </nav>
         </header>
-    <body>
+         <section>
 <div class="testbox">
   <h1>Registro</h1>
   <form action="https://www.google.es" method="post">
@@ -55,5 +48,6 @@
   <input type="submit" value="Registrarse" class="button"/>
   <form/>
 </div>
-        <body/>
+             <section/>
+             <body/>
 <html/>
