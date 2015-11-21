@@ -3,6 +3,7 @@
     Created on : 19-nov-2015, 11:42:42
     Author     : BEEP
 --%>
+<html>
 <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
@@ -29,3 +30,4 @@
   <input type="submit" value="Registrarse" class="button"/>
   <form/>
 </div>
+<html/>
