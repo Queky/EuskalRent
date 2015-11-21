@@ -61,7 +61,7 @@ form{
   margin: 0 30px;
 }
 
-input[type=text],input[type=email],input[type=password]{
+.form-input, .error{
   width: 200px; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -76,7 +76,9 @@ input[type=text],input[type=email],input[type=password]{
   margin-top: 13px; 
   padding-left: 10px;
 }
-
+.error{
+    border:  solid 2px darkred;
+}
 input[type=password]{
   margin-bottom: 25px;
 }
