@@ -7,6 +7,31 @@
 <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EuskalRent</title>
+        <link rel="stylesheet" href="../CSS/Estiloa.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <header>
+            <a href="PaginaInicio.jsp" class="logo">
+                <em>Euskal</em><strong>Rent</strong>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Acceder</a></li>
+                    <li><a href="#">Registrarse</a></li>
+                </ul>      
+            </nav>
+        </header>
+    <body>
 <div class="testbox">
   <h1>Registro</h1>
   <form action="https://www.google.es" method="post">
@@ -30,4 +55,5 @@
   <input type="submit" value="Registrarse" class="button"/>
   <form/>
 </div>
+        <body/>
 <html/>
