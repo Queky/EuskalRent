@@ -3,135 +3,42 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function(){
-			
-		file_style();
-}); 
+function processFiles(files) {
+var file = files[0];
 
-function validate_animation(elem, is_valid){
+var reader = new FileReader();
 
-	if(is_valid != "blank"){
-		var elem_class = elem.attr("class").split("-");
-		elem.attr("class",elem_class[0] + "-to-" + is_valid);
-	}
-	else{
-		elem.attr("class", "default");
-	}
-	
+reader.onload = function (e) {
+// Cuando éste evento se dispara, los datos están ya disponibles.
+// Se trata de copiarlos a una área <div> en la página.
+var output = document.getElementById("fileOutput"); 
+fileOutput.style.backgroundImage = "url('" + e.target.result + "')";
+};
+reader.readAsDataURL(file);
 }
 
-function error_message(elem, is_valid){
-	if(is_valid == "error"){
-		var msg = elem.attr("msg");	
-		elem.next().text(msg).show();
-	}
-	else{
-		elem.next().hide();
-	}
+// ---------------------------------------
+var dropBox;
+
+window.onload = function() {
+dropBox = document.getElementById("fileOutput");
+dropBox.ondragenter = ignoreDrag;
+dropBox.ondragover = ignoreDrag;
+dropBox.ondrop = drop;
 }
 
-function file_style(){
-
-	var wrapper = $('<div/>').css({height:0,width:0,'overflow':'hidden'});
-	var fileInput = $(':file').wrap(wrapper);
-
-	fileInput.change(function(){
-		$this = $(this);
-	})
-
-	$('#file').click(function(){
-		fileInput.click();
-	}).show();
+function ignoreDrag(e) {
+e.stopPropagation();
+e.preventDefault();
 }
 
+function drop(e) {
+e.stopPropagation();
+e.preventDefault();
 
-(function () {
-	var input = document.getElementById("images"), 
-		   form = document.getElementById("image-form"),
-		   dropbox = document.getElementById("file"),
-		formdata = false;
-
-	function showUploadedItem (source) {
-  		$("#image-list").html("<li><img src='"+source+"' />");
-	}   
-	
-	function dragEnter(evt) {
-	  evt.stopPropagation();
-	  evt.preventDefault();
-	}
-
-	function dragOver(evt) {
-	  evt.stopPropagation();
-	  evt.preventDefault();
-	   $('#file').css("background-position" , "center -140px");
-	  $('#file p').text("Release to add image").css("cursor" , "alias");
-	}
-	
-	function dragExit(evt) {
-	  evt.stopPropagation();
-	  evt.preventDefault();
-	  $('#file').css("background-position" , "center 35px");
-	  $('#file p').text("Click or Drag in an image to upload").css("cursor" , "pointer");
-	}
-	
-	function handleFiles(files) {
-		var file = files[0]; 
-		if (!!file.type.match(/image.*/)) {
-			if ( window.FileReader ) {
-						reader = new FileReader();
-						reader.onloadend = function (e) { 
-							showUploadedItem(e.target.result, file.fileName);
-						};
-						reader.readAsDataURL(file);
-					}
-			}
-	}
-	
-	function drop(evt){
-		evt.stopPropagation();
-		evt.preventDefault();
-		 
-		var files = evt.dataTransfer.files;
-		var count = files.length;	
-		// Only call the handler if 1 or more files was dropped.
-		if (count > 0){
-			handleFiles(files);
-		}
-	}
-	
-	if (window.FormData) {
-  		formdata = new FormData();
-	}
-	
-	// init event handlers
-	dropbox.addEventListener("dragenter", dragEnter, false);
-	dropbox.addEventListener("dragexit", dragExit, false);
-	dropbox.addEventListener("dragover", dragOver, false);
-	dropbox.addEventListener("drop", drop, false);
-	
-	
- 	input.addEventListener("change", function (evt) {
- 		//document.getElementById("response").innerHTML = "Uploading . . ."
- 		var i = 0, len = this.files.length, img, reader, file;
-	
-		for ( ; i < len; i++ ) {
-			file = this.files[i];
-	
-			if (!!file.type.match(/image.*/)) {
-				if ( window.FileReader ) {
-					reader = new FileReader();
-					reader.onloadend = function (e) { 
-						showUploadedItem(e.target.result, file.fileName);
-					};
-					reader.readAsDataURL(file);
-				}
-				if (formdata) {
-					formdata.append("images[]", file);
-				}
-			}	
-		}
-	}, false);
-			
-}());
-
-
+var data = e.dataTransfer;
+var files = data.files;
+    
+processFiles(files);
+}
+// ----------------------------------------

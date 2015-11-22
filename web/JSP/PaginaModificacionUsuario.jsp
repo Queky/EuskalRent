@@ -5,26 +5,27 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link href="../CSS/ModificacionUsusario.css">
-<link href="../JavaScript/ValidacionModificacionUsuario.js">
+<link href='../CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
+<script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Modificación del usuario</title>
-    </head>
-    <body>
-       
-		<div class="one_col file-upload">
-			<div id="file"><ul id="image-list"><p>Click or Drag in an image to upload</p></ul></div>
-			<input type="file" class="file" name="images" id="images"/>
-			<span class="error"></span>
+    <html>
+	<head>
+		<title>Modificación del Usuario</title>	
+	</head>
+	<body>
+		<div class="uploader">
+			<h1 class="uploader-header">Tu Foto de Perfil</h1>
+                            <div class="fileOutput" id="fileOutput"></div>
+	
+			
+                        
+			<div class="uploader-controls">
+				<p><strong>Añade tu foto de perfil favorita</strong></p>
+				
+			</div>
 		</div>
-		<div class="one_col">
-			<input id="submit" type="submit" value="Submit" />
-		</div>
-		<span class="clear"></span>
-	</form>
-</div>
-    </body>
+	</body>
 </html>
+
