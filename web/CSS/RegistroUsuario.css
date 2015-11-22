@@ -45,7 +45,7 @@ html{
 section {
   padding-top: 8%;
   height: 100%;
-  text-align: center;
+  
 }
 
 section .testbox{
@@ -133,7 +133,7 @@ input[type=password]{
   box-shadow: 0 3px rgba(58,87,175,.75);
   transition: all 0.1s linear 0s; 
   top: 0px;
-  position: relative;
+  position:relative;
 }
 
 .button:hover {
