@@ -113,7 +113,7 @@ section p {
   line-height: 1.35;
 }
 
-ssubmit {
+#submit {
   height: 50px;
   width: 220px;
   background: #ffffff;
@@ -128,7 +128,7 @@ ssubmit {
 }
 
 
-submit:hover {
+#submit:hover {
     color: #ffffff;
     background: #000000;
 }
