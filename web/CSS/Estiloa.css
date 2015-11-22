@@ -8,9 +8,22 @@ and open the template in the editor.
     Author     : Iñaki
 */
 
-/*****************
-General
-******************/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 85px;
+    border: none;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0px 3px 2px 0px rgba(50, 50, 50, 0.2);
+}
+
+
+
 
 
 html, body {
@@ -29,9 +42,6 @@ a:hover {
     color: #000000;
 }
 
-/*****************
-Header 
-******************/
 
 header {
   float: left;
@@ -45,8 +55,6 @@ header {
 }
 
 
-/* Logo */
-
 .logo {
   float: left;
   text-align: left;
@@ -55,7 +63,6 @@ header {
 }
 
 
-/* Navigation */
 
 nav {
   float: right;
@@ -83,11 +90,6 @@ nav a {
   padding: 15px 10px;
 }
 
-
-
-/*****************
-Section 
-******************/
 
 section {
   background: #99ccff;
@@ -151,4 +153,3 @@ input:focus {
     margin-bottom: 0%;
     width: 30%;
 }
-
