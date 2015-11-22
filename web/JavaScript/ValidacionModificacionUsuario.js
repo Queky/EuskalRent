@@ -3,6 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+function revisar(elemento) {
+    if (elemento.value===""){
+	    
+    } else {
+	    elemento.className='LELE';
+            alert("aqui");
+    }}
 function processFiles(files) {
 var file = files[0];
 var reader = new FileReader();
