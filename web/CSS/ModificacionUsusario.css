@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-nov-2015, 12:20:03
+    Author     : BEEP
+*/
+ *{
+	 font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+	 -webkit-font-smoothing: antialiased;
+	 -moz-font-smoothing: antialiased;
+	 font-smoothing: antialiased;
+	 font-family: 'Quicksand', sans-serif;
+	 font-weight:700;
+	 font-size:12px;
+	 color:#333;
+	 padding:0px;
+	 margin:0px;
+	 border:0;
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+ 
+.three_col input, .one_col input, .three_col select, .one_col textarea, .one_col  #file {
+	position:relative;
+	padding:5px 5px;
+	margin:1% 2%;
+	float:left;
+	z-index:10;
+	border:1px solid #ccc;
+	background:url(http://www.olliehusbanddesign.co.uk/form/images/tick.jpg) 120% 0 no-repeat #fff;	
+}
+
+.three_col span.error, .one_col span.error{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 10px;
+    height: 35px;
+    left: 0;
+    padding: 10px 15px;
+    position: absolute;
+    top: -33px;
+	left:25%;
+    width: auto;
+	z-index:999999999;
+	display:none;
+}
+
+
+
+.three_col span.error:after, .one_col span.error:after{
+background: url("http://www.olliehusbanddesign.co.uk/form/images/popup_arrow.png") repeat scroll 0 0 transparent;
+    bottom: -7px;
+    content: "";
+    height: 7px;
+    left: 47%;
+    position: absolute;
+    width: 17px;
+}	
+
+.one_col input, .one_col textarea, .one_col  #file {
+	width:96%;
+}
+
+.one_col  #file {
+    border: 1px dotted #CCCCCC;
+    cursor: pointer;
+    display: none;
+    float: right;
+    position: relative;
+    text-align: center;
+    width: 96%;	
+}
+
+.one_col  #file p{
+padding: 95px 0 0;
+line-height: 40px;
+}
+
+.one_col #image-list li{
+	list-style:none;	
+	border:1px solid #ccc;	
+	margin: 2%;
+	background:#fff;
+}
+
+.one_col #image-list li img{
+	width:98%;
+	height:98%;
+	margin: 1% !important;
+}
+
+.one_col #submit{
+	border-top-color: #4d4d4d;
+   background: #4d4d4d;
+   color: #d6d6d6;
+   cursor:pointer;
+}
+
+.one_col #submit:hover{
+	background: #333;
+   color: #d6d6d6;
+}	

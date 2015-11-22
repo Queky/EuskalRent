@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link href="../CSS/ModificacionUsusario.css">
+<link href="../JavaScript/ValidacionModificacionUsuario.js">
 <!DOCTYPE html>
 <html>
     <head>
