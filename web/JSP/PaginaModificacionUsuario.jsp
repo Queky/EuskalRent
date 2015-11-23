@@ -4,23 +4,25 @@
     Author     : BEEP
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <link href='../CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
-<script src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>
 	<head>
-		<title>Modificaci√≥n del Usuario</title>	
+           
+
 	</head>
 	<body>
 		<div class="uploader">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div id="address" class="map"></div>
                         <div class="uploader-controls">
-				<p>A√±ade tu foto de perfil favorita</p>
+				<p>AÒade tu foto de perfil favorita</p>
                       </div>
                         <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
                             
@@ -34,14 +36,17 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
-  <input type="number" name="telefono" id="contrase√±a" placeholder="Numero de movil" class="form-input"
+  <input type="number" name="telefono" id="contraseÒa" placeholder="Numero de movil" class="form-input"
          onkeyup="revisar(this)" required />
+  <input type="text" id="buscadorDireccion" class="form-input" onkeyup="buscarDireccion(this.id.value)" oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" title="DirecciÛn a Geocode" value="" id="busDir" onchange=""/>
+       
+        <div id="map" class="map" style="width:300px; height:200px;"></div></div>
   
   <input type="submit" value="Registrarse" class="button"/>
-
-                            </form> </div>
-  
-		</div>
+                         
+       
+         </form>
+                            
 	</body>
 </html>
 

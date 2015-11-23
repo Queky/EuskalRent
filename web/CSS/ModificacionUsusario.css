@@ -75,7 +75,7 @@ form{
   margin: 0 30px;
 }
 
-.form-input, .error{
+.form-input, .error,.Direccion{
   width: 200px; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -127,6 +127,7 @@ form{
   
 }
 .map {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
 }
