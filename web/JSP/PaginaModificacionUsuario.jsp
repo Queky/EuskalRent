@@ -17,11 +17,12 @@
 	<body>
 		<div class="uploader">
 			<h1 class="uploader-header">Tus datos:</h1>
+                        <div class="uploader-controls">
+				<p>Añade tu foto de perfil favorita</p>
+                      </div>
                         <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
                             
-			<div class="uploader-controls">
-				<p><strong>Añade tu foto de perfil favorita</strong></p>
-                      </div>
+			
                         
                         <div>    <form>
 

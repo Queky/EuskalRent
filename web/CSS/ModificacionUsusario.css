@@ -15,12 +15,14 @@ and open the template in the editor.
 
 h1 {
 	margin: 0 0 25px 0;
+        text-align: center;
+       
         
 }
 
-p{
+.uploader-controls{
 	font-size: 1em;
-        text-align: right;
+        text-align: left;
 }
 
 a{
@@ -59,7 +61,7 @@ a:hover{
 	height: 100px;
 	overflow: hidden;
 	position: relative;
-        margin-top: 45px;
+        margin-top: 13px;
         background-size: 100%;
         background-repeat: no-repeat;
         text-align: center;
