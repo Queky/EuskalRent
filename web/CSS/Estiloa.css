@@ -16,21 +16,18 @@ and open the template in the editor.
     z-index: 1000;
     top: 0;
     left: 0;
-    height: 85px;
+    height: 100%;
     border: none;
     background-color: rgba(255,255,255,1);
     box-shadow: 0px 3px 2px 0px rgba(50, 50, 50, 0.2);
 }
 
-
-
-
-
 html, body {
   height: 100%;
   margin: -20px 0 0 0;
-}
+  background: #99ccff;
 
+}
 
 a {
   text-decoration: none;
@@ -47,13 +44,12 @@ header {
   float: left;
   background: #0066ff;
   border-bottom: 2px solid #ffffff;
-  padding: 25px 0;
+  padding: 20px 0;
   width: 100%;
   font-family: 'Lato', sans-serif;
   color: #ffffff;
   font-size: 100%;
 }
-
 
 .logo {
   float: left;
@@ -92,27 +88,31 @@ nav a {
 
 
 section {
-  background: #99ccff;
   height: 100%;
   text-align: center;
 }
 
-
 section h1 {
   padding-top: 9%;
-  padding-bottom: 0%;
-  margin-bottom: 0%;
   font-family: 'Vollkorn', serif;
   font-size: 48px;
 }
 
 section p { 
-  padding-top: -10%;
-  padding-bottom: 1%;
-  margin-top: 1%;
   font-family: 'Muli', sans-serif;
   font-size: 18px;
   line-height: 1.35;
+}
+
+.paginaInicioP {
+  padding-top: -10%;
+  padding-bottom: 1%;
+  margin-top: 1%;
+}
+
+.paginaInicioP {
+  padding: 10px;
+  margin: 10px;
 }
 
 #submit {
