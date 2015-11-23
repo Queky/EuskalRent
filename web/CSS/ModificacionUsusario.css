@@ -126,3 +126,7 @@ form{
   box-shadow: none;
   
 }
+.map {
+  width: 100px;
+  height: 100px;
+}

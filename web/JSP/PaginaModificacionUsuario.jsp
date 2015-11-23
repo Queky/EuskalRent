@@ -8,6 +8,7 @@
 <link href='../CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Cabin:400,500,600' rel='stylesheet' type='text/css'>
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
+<script src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>
@@ -17,6 +18,7 @@
 	<body>
 		<div class="uploader">
 			<h1 class="uploader-header">Tus datos:</h1>
+                        <div id="address" class="map"></div>
                         <div class="uploader-controls">
 				<p>Añade tu foto de perfil favorita</p>
                       </div>
@@ -36,7 +38,9 @@
          onkeyup="revisar(this)" required />
   
   <input type="submit" value="Registrarse" class="button"/>
-  <form/>
+
+                            </form> </div>
+  
 		</div>
 	</body>
 </html>

@@ -56,4 +56,3 @@ var files = data.files;
 processFiles(files);
 
 }
-// ----------------------------------------
