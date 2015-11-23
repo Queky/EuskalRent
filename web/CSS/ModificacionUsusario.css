@@ -14,7 +14,6 @@ and open the template in the editor.
 }
 
 h1 {
-	margin: 0 0 25px 0;
         text-align: center;
        
         
@@ -25,17 +24,7 @@ h1 {
         text-align: left;
 }
 
-a{
-	color:#26a9e1;
-	font-weight: bold;
-	display: block;
-	margin: 5px 0 0 210px;
 
-
-}
-a:hover{
-	color: #197ba5;
-}
 
 .uploader{
 	border: 1px solid #cbcbcb;
@@ -75,7 +64,7 @@ form{
   margin: 0 30px;
 }
 
-.form-input, .error,.Direccion{
+.form-input, .error{
   width: 200px; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -105,17 +94,18 @@ form{
   display: inline-block;
   float: right;
   text-decoration: none;
-  width: auto; height: 35px; 
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
-  background-color: #3a57af; 
-  -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
-  -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
+  width: auto;
+  height: 35px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #3a57af;
+  -webkit-box-shadow: 0 3px rgba(58,87,175,.75);
+  -moz-box-shadow: 0 3px rgba(58,87,175,.75);
   box-shadow: 0 3px rgba(58,87,175,.75);
-  transition: all 0.1s linear 0s; 
-  top: 0px;
-  position:relative;
+  transition: all 0.1s linear 0s;
+ position: absolute;
+ top: 250px;
 }
 
 .button:hover {
@@ -124,10 +114,23 @@ form{
   -webkit-box-shadow: none; 
   -moz-box-shadow: none; 
   box-shadow: none;
-  
+   position: absolute;
+ top: 250px;
 }
 .map {
-  width: 200px;
-  height: 200px;
-  text-align: center;
+    top: 10;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0px);
+    background-color: rgb(229, 227, 223);
+    margin-left: auto;
+    margin-right: auto
+
+
+
+
+
+
 }

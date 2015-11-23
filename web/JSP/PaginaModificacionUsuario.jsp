@@ -20,9 +20,8 @@
 	<body>
 		<div class="uploader">
 			<h1 class="uploader-header">Tus datos:</h1>
-                        <div id="address" class="map"></div>
                         <div class="uploader-controls">
-				<p>Añade tu foto de perfil favorita</p>
+				<p>Añade tu foto de perfil favorita:</p>
                       </div>
                         <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
                             
@@ -38,15 +37,15 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="number" name="telefono" id="contraseña" placeholder="Numero de movil" class="form-input"
          onkeyup="revisar(this)" required />
-  <input type="text" id="buscadorDireccion" class="form-input" onkeyup="buscarDireccion(this.id.value)" oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" title="Dirección a Geocode" value="" id="busDir" onchange=""/>
+  <input type="text" id="buscadorDireccion" placeholder="Dirección" class="form-input" onkeyup="buscarDireccion(this.id.value)" oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" title="Dirección a Geocode" value="" id="busDir" onchange=""/>
        
-        <div id="map" class="map" style="width:300px; height:200px;"></div></div>
-  
+  <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
   <input type="submit" value="Registrarse" class="button"/>
                          
        
          </form>
-                            
+                        </div>
+                </div>
 	</body>
 </html>
 

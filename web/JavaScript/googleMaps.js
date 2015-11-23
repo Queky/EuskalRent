@@ -12,8 +12,8 @@ var localizacion;
 function init(){
     var mapOptions = {
         center: centro,
-        zoom: 13,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.MAP
     };
     
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -41,7 +41,7 @@ function buscarDireccion(direccion) {
         localizacion = new google.maps.LatLng(result[0].geometry.location.lat(), result[0].geometry.location.lng());
     });
     map.panTo(localizacion);
-    map.setZoom(17);
+    map.setZoom(16);
 }
 
 
