@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
 function revisar(elemento) {
     if (elemento.value===""){
 	    
     } else {
 	    elemento.className='LELE';
             alert("aqui");
-    }}
+    }}*/
 function processFiles(files) {
 var file = files[0];
 var reader = new FileReader();
@@ -19,6 +20,8 @@ reader.onload = function (e) {
 // Se trata de copiarlos a una área <div> en la página.
 var output = document.getElementById("fileOutput"); 
 fileOutput.style.backgroundImage= "url('" + e.target.result + "')";
+fileOutput.style.border="1px solid transparent";
+
 };
 
 reader.readAsDataURL(file);
