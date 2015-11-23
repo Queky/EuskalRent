@@ -33,10 +33,10 @@
                 <h1 class="cabeceraB1">Bienvenido a <em>EuskalRent</em></h1>
                 <p class="cabeceraB2">EuskalRent es tu pagina donde buscar un apartamento para dormir en Vitoria-Gasteiz.</p>
             </div>
-            <form action="">
+            <form action="PaginaBusquedas.jsp" id="formInicio">
                 <div class="cajaBusqueda">
                     <p>Elige un barrio</p>
-                    <select name="Barrio" class="cajasDatos" >
+                    <select name="Barrio" class="cajasDatos" id="barrio">
                         <option value="zabalgana">Zabalgana</option>
                         <option value="aranbizkarra">Aranbizkarra</option>
                         <option value="zalburua">Zalburua</option>
@@ -46,7 +46,7 @@
                     <p>Entrada y salida del apartamento</p>
                     <input type="date" id="fechaInicio" class="cajasDatos"/><br><br>
                     <input type="date" id="fechaFin" class="cajasDatos"/><br><br>
-                    <input type="submit" id="btnBuscar" value="Buscar" class="botonBuscar"/>
+                    <input type="button" id="btnBuscar" value="Buscar" class="botonBuscar"/>
                 </div>
             </form>
         </section>

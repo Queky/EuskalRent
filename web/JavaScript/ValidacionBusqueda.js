@@ -3,46 +3,98 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-window.onload = function() {
-    // Comprobacion numero de huespedes
+window.onload = revisar;
+
+function revisionGeneral () {
+    var correcto = true;
+    if(!revisarHuespedes()){
+        var huespedes = document.getElementById("numHuespedes");
+        huespedes.className='error';
+        correcto=false;
+    }
+    if(!revisarFechaInicio()){
+        var fechaInicio = document.getElementById("fechaInicio");
+        fechaInicio.className='error';
+        correcto=false;
+    }
+    if(!revisarFechaFin()){
+        var fechaFin = document.getElementById("fechaFin");
+        fechaFin.className='error';
+        correcto=false;
+    }
+    if(correcto)
+        document.getElementById("formInicio").submit();
+}
+
+function revisarHuespedes() {
     var huespedes = document.getElementById("numHuespedes");
     var exp = /[1-9]/;
+    if(huespedes.value>10 || !exp.test(huespedes.value) || huespedes==="")
+        return false;
+    else
+        return true;
+}
+
+function revisarFechaInicio() {
+    var fechaInicio = document.getElementById("fechaInicio");
+    var hoy = new Date();
+    hoy.getDate();
+    var fechaUsuario = new Date(fechaInicio.value);
+    if(fechaInicio.value==="")
+        return false;
+        else {
+        if(hoy>fechaUsuario){
+            if(hoy.getDate()==fechaUsuario.getDate())
+                return true;
+            else
+                return false;
+            } else
+                return true;
+        }
+}
+
+function revisarFechaFin() {
+    var fechaFin = document.getElementById("fechaFin");
+    var hoy = new Date();
+    hoy.getDate();
+    var fechaUsuario = new Date(fechaFin.value);
+    if(fechaFin.value==="")
+        return false;
+        else {
+        if(hoy>fechaUsuario){
+            if(hoy.getDate()==fechaUsuario.getDate())
+                return true;
+            else
+                return false;
+            } else
+                return true;
+        }
+}
+     
+
+function revisar() {
+    document.getElementById("btnBuscar").addEventListener("click", revisionGeneral, false);
+
+    var huespedes = document.getElementById("numHuespedes");
     huespedes.oninput = function() {
-        if(this.value>10 || !exp.test(this.value)){
+        if(!revisarHuespedes()){
             huespedes.className='error';
         } else {
             huespedes.className='cajasDatos';
         }
     }
-    
     var fechaInicio = document.getElementById("fechaInicio");
     fechaInicio.oninput = function() {
-        var hoy = new Date();
-        hoy.getDate();
-        var fechaUsuario = new Date(fechaInicio.value);
-        if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate())
-                fechaInicio.className='cajasDatos';
-            else
-                fechaInicio.className='error';
-        } else {
+        if(revisarFechaInicio())
             fechaInicio.className='cajasDatos';
-        }
+        else
+            fechaInicio.className='error';
     }
-    
     var fechaFin = document.getElementById("fechaFin");
     fechaFin.oninput = function() {
-        var hoy = new Date();
-        hoy.getDate();
-        var fechaUsuario = new Date(fechaFin.value);
-        if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate())
-                fechaFin.className='cajasDatos';
-            else
-                fechaFin.className='error';
-        } else {
+        if(revisarFechaFin())
             fechaFin.className='cajasDatos';
-        }
+        else
+            fechaFin.className='error';
     }
 }
-
