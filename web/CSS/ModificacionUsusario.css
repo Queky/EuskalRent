@@ -20,6 +20,7 @@ h1 {
 
 p{
 	font-size: 1em;
+        text-align: right;
 }
 
 a{
@@ -52,35 +53,18 @@ a:hover{
 	padding: 5px;
 	border: 1px solid #cbcbcb;
 	background: linear-gradient(#fff, #ebebeb);
-	
 	float: left;
 	margin-right: 20px;
 	width: 130px;
 	height: 100px;
 	overflow: hidden;
 	position: relative;
-        margin-top: 30px;
+        margin-top: 45px;
         background-size: 100%;
         background-repeat: no-repeat;
         text-align: center;
      
-}       
-.LELE{
-    	padding: 5px;
-	border: 10px solid red;
-	background: linear-gradient(#fff, #ebebeb);
-	box-shadow: 0px 1px 3px red;
-	float: left;
-	margin-right: 20px;
-	width: 200px;
-	height: 100px;
-	overflow: hidden;
-	position: relative;
-        margin-top: 30px;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        text-align: center;
-}
+}     
 
 .fileOutput {
 	opacity: 1;
@@ -115,9 +99,9 @@ form{
   font-weight: 600;
   color: white;
   padding: 6px 25px 0px 20px;
-  margin: 10px 8px 20px 0px;
+  margin: 10px 25px 20px 0px;
   display: inline-block;
-  float: left;
+  float: right;
   text-decoration: none;
   width: auto; height: 35px; 
   -webkit-border-radius: 5px; 

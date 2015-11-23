@@ -22,7 +22,8 @@
 			<div class="uploader-controls">
 				<p><strong>Añade tu foto de perfil favorita</strong></p>
                       </div>
-                            <form>
+                        
+                        <div>    <form>
 
   <input type="email" name="email" id="email" placeholder="Correo" class="form-input" 
          onkeyup="revisar(this); revisaremail(this)" required/>
@@ -32,6 +33,8 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="number" name="telefono" id="contraseña" placeholder="Numero de movil" class="form-input"
          onkeyup="revisar(this)" required />
+  
+  <input type="submit" value="Registrarse" class="button"/>
   <form/>
 		</div>
 	</body>
