@@ -10,13 +10,11 @@
     <head>
         <meta charset="utf-8">
         <title>EuskalRent</title>
-        <link rel="stylesheet" href="../CSS/Estiloa.css">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link rel="stylesheet" href="../CSS/Estilo.css">
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+        <script src="../JavaScript/ValidacionBusqueda.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -26,23 +24,31 @@
             <nav>
                 <ul>
                     <li><a href="#">Acceder</a></li>
-                    <li><a href="#">Registrarse</a></li>
+                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                 </ul>      
             </nav>
         </header>
         <section>
-            <div class="cajaPresentacion">
-                <h1>Bienvenido a <em>EuskalRent</em></h1>
-                <p class="parrafoTop">EuskalRent es tu pagina para buscar un apartamento donde dormir en Vitoria-Gasteiz.</p>
+            <div>
+                <h1 class="cabeceraB1">Bienvenido a <em>EuskalRent</em></h1>
+                <p class="cabeceraB2">EuskalRent es tu pagina donde buscar un apartamento para dormir en Vitoria-Gasteiz.</p>
             </div>
-            <div class="cajaBusqueda">
-                <p class="parroBusqueda">Introduce un barrio</p>
-                <input type="text" id="barrio"><br><br>
-                <p class="parroBusqueda">Llegada y salida del apartamento</p>
-                <input type="date" id="fechaInicio">
-                <input type="date" id="fechaFin" placeholder="Inicio"><br><br>
-                <input type="submit" id="submit" value="Buscar">
-            </div>
+            <form action="">
+                <div class="cajaBusqueda">
+                    <p>Elige un barrio</p>
+                    <select name="Barrio" class="cajasDatos" >
+                        <option value="zabalgana">Zabalgana</option>
+                        <option value="aranbizkarra">Aranbizkarra</option>
+                        <option value="zalburua">Zalburua</option>
+                    </select>
+                    <p>Numero de huespedes</p>
+                    <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes" min="1" max="10"/>
+                    <p>Entrada y salida del apartamento</p>
+                    <input type="date" id="fechaInicio" class="cajasDatos"/><br><br>
+                    <input type="date" id="fechaFin" class="cajasDatos"/><br><br>
+                    <input type="submit" id="btnBuscar" value="Buscar" class="botonBuscar"/>
+                </div>
+            </form>
         </section>
     </body>
 </html>
