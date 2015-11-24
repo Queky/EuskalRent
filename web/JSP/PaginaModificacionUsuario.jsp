@@ -30,8 +30,7 @@
                 </ul>      
             </nav>
         </header>
-        <section>
-	
+	<body>
 		<div class="testbox">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div class="uploader-controls">
@@ -57,10 +56,12 @@
          title="Dirección a Geocode" value="" id="busDir" onchange=""/>
        
   <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
-  <input type="submit" value="  Guardar  " class="button"/>               
-        </form>
-            </div>   
-	
-        </section>
+  <input type="submit" value="  Guardar  " class="button"/>
+                         
+       
+         </form>
+                        </div>
+                
+	</body>
 </html>
 
