@@ -5,13 +5,13 @@
  */
 window.onload=actualizar;
 function actualizar() {
-  var dto ="hola";
-    alert(dto);
-     var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
-    alert(datos);
+    var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
     var correo = datos.correo;
-    alert(correo);
-    document.getElementById("email").innerHTML=correo;
+    var nombre= datos.nombre;
+    var apellidos= datos.apellidos;
+    document.getElementById("email").value=correo;
+    document.getElementById("nombre").value=nombre;
+    document.getElementById("apellidos").value=apellidos;
     
 }
 /*
