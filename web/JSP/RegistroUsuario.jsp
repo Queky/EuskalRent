@@ -48,7 +48,7 @@
                         <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
                                 class="form-input" required />
                         <div class="botonRegistro">
-                            <input type="button" value="Registrarse" class="button" id="btnRegistro" onclick="clickGuardarJSON()"/>
+                            <input type="submit" value="Registrarse" class="button" id="btnRegistro" onclick="clickGuardarJSON()"/>
                         </div>
                     </form>
                 </div>

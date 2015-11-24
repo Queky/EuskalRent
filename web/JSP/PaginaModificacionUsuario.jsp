@@ -40,7 +40,7 @@
                             
 			
                         
-                        <div>    <form>
+                        <div>    <form action="PaginaBusquedas.jsp">
 
   <input type="email" name="email" id="email" placeholder="Correo" class="form-input" 
          onkeyup="revisar(this); revisaremail(this)" required/>
@@ -48,7 +48,7 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
-  <input type="number" name="telefono" id="contraseña" placeholder="Numero de movil" class="form-input"
+  <input type="number" name="telefono" id="telefono" placeholder="Numero de movil" class="form-input"
          onkeyup="revisar(this)" required />
   <input type="text" id="buscadorDireccion" placeholder="Dirección" 
          class="form-input" onkeyup="buscarDireccion(this.id.value)" 

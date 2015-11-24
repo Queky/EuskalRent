@@ -16,7 +16,7 @@ function clickGuardarJSON(){
     var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contrasena};
    
     var datosLS = JSON.stringify(json);
-    localStorage.setItem("RegistroApartamento",datosLS);
+    localStorage.setItem("DatosRegistro",datosLS);
    
     // alert(correos);
      

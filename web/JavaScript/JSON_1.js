@@ -5,7 +5,7 @@
  */
 window.onload=actualizar;
 function actualizar() {
-    var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
+    var datos = JSON.parse(localStorage.getItem('DatosRegistro'));
     var correo = datos.correo;
     var nombre= datos.nombre;
     var apellidos= datos.apellidos;
@@ -13,6 +13,25 @@ function actualizar() {
     document.getElementById("nombre").value=nombre;
     document.getElementById("apellidos").value=apellidos;
     
+}
+
+function clickGuardarJSON(){
+    
+    var correo = document.getElementById("email").value;
+    var nombre = document.getElementById("nombre").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var contrasena = document.getElementById("contrasena").value;
+    var telefono= document.getElementById("telefono").value;
+    var direccion= document.getElementById("buscadorDireccion").value;
+    var foto= document.getElementById("fileOutput").value;
+    
+    var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contrasena,"telefono":telefono,"direccion":direccion,"foto":foto};
+   
+    var datosLS = JSON.stringify(json);
+    localStorage.setItem("DatosUsuario",datosLS);
+   
+    // alert(correos);
+     
 }
 /*
 
