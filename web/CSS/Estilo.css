@@ -84,13 +84,13 @@ section p {
 
 .cabeceraB2 {
     padding-top: 0;
-    margin-top: ;
+    margin-top: 0;
 }
 .cajaBusqueda {
-    background-color: #6699ff;
-    border-style: dashed;
+    background-color: #ebebeb;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
     border-width: 4px;
-    border-radius: 30px;
+    border-radius: 8px/7px; 
     margin-right: 35%;
     margin-left: 35%;
     padding-top: 1%;
