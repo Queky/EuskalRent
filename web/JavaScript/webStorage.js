@@ -20,4 +20,8 @@ function clickGuardarMA() {
 }
 
 var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
+$.each(datos, function(key, value){
+    console.log(key + ' = ' + value);
+});
+
 
