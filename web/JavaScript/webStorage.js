@@ -21,7 +21,6 @@ function clickGuardarMA() {
     sessionStorage.setItem("ModificacionApartamento",datosSS);
 }
 
-
 var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
 
 function getDatosRegProp() {
