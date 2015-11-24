@@ -4,21 +4,20 @@
  * and open the template in the editor.
  */
 
-function guardarDatos(){
-       var correo= document.getElementById("email").value;
-       var  nombre= "eee";
-       var apellidos= document.getElementById("apellidos").value;
-       var contraseña= document.getElementById("contraseña").value;
-  var objeto ={
-        correo: correo,
-        nombre: nombre,
-        apellidos: apellidos, 
-        contraseña: contraseña
-        };
-        alert("eee");
-    // localStorage.setItem('Info',JSON.stringify(objeto));   
+function clickGuardarJSON(){
+    
+    var correo = document.getElementById("correo").value;
+    var nombre = document.getElementById("nombre").value;
+    var apellidos = document.getElementById("apellidos").value;
+    var contraseña = document.getElementById("contraseña").value;
+    
+    var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contraseña};
+    
+    var datosLS = JSON.stringify(json);
+    localStorage.setItem("RegistroApartamento",datosLS);
 }
-  
+
+
 function revisar(elemento) {
     if (elemento.value===""){
 	    elemento.className='error';

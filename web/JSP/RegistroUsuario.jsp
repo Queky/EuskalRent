@@ -51,7 +51,7 @@
                         <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" class="form-input"
                                onkeyup="revisar(this)" required />
                         <div class="botonRegistro">
-                        <input type="submit" value="Registrarse" class="button" />
+                            <input type="submit" value="Registrarse" class="button" onclick="clickGuardarJSON()"/>
                         </div>
                         <form/>
                 </div>
