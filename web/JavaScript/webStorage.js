@@ -15,6 +15,9 @@ function clickGuardarMA() {
     var politica = document.getElementById("politica").value;
     var json = {"precio":precio,"politica":politica};
 
-    var datosLS = JSON.stringify(json);
-    sessionStorage.setItem("ModificacionApartamento",datosLS);
+    var datosSS = JSON.stringify(json);
+    sessionStorage.setItem("ModificacionApartamento",datosSS);
 }
+
+var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
+
