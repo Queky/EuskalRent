@@ -39,5 +39,3 @@ function buscarDireccion(direccion) {
     map.setZoom(17);
 }
 
-
-

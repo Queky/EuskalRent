@@ -162,3 +162,7 @@ section p {
 .error{
     border:  solid 5px red;
 }
+
+.parrafoPropiedad {
+    padding-top: 20px;
+}

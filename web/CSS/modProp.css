@@ -1,0 +1,43 @@
+#grande  {
+    background-color: #6699ff;
+    border-style: dashed;
+    border-width: 4px;
+    border-radius: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    width: 60%;  
+    margin-top: 20px;
+}
+#grande2 {
+    background-color: #6699ff;
+    border-style: dashed;
+    border-width: 4px;
+    border-radius: 30px;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    margin-bottom: 0%;
+    width: 60%;  
+    margin-top: 20px;
+}
+.desp {
+    text-align: center;
+    font-size: 20px;
+    width: 200px; 
+    height: 39px;  
+    border-radius: 4px 4px 4px 4px/5px 5px 5px 5px; 
+    background-color: #fff;
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    border: solid 1px #cbc9c9;
+    margin-top: 0; 
+}
+
+#buscadorDireccion {
+    width:500px;
+}
+
+

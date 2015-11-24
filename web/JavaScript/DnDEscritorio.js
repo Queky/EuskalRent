@@ -10,7 +10,7 @@ window.addEventListener('load', inicio, false);
         ev.preventDefault();
         var arch=new FileReader();
         arch.addEventListener('load',leer,false);
-        arch.readAsDataURL(ev.dataTransfer.files[0]);        
+        arch.readAsDataURL(ev.dataTransfer.files[0]); 
     }      
     
     function permitirDrop(ev)
@@ -19,8 +19,9 @@ window.addEventListener('load', inicio, false);
     }    
     
     function leer(ev) {
-        document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";   
+        document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";
     }
+    
     
         
   

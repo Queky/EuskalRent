@@ -11,39 +11,45 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro propiedad</title>
         <link rel="stylesheet" type="text/css" href="../CSS/despRegistro.css" media="all">
+        <script type="text/javascript" src="../JavaScript/valRegApar.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/Estilo.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/modProp.css">
+        <script type="text/javascript" src="../JavaScript/webStorage.js"></script>
+
     </head>
     <body>
-        <div id="regProp">
-            <ul class="nav">
-                <li><a href="">Tipo de propiedad</a>
-                    <ul>
-                        <li><a href="">Apartamento</a></li>
-                        <li><a href="">Chalet</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="">Cantidad de huespedes</a>
-                    <ul>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">5</a></li>
-                        <li><a href="">6</a></li>
-                        <li><a href="">7</a></li>
-                        <li><a href="">8</a></li>
-                        <li><a href="">9</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="">Barrio</a>
-                    <ul>
-                        <li><a href="">Barrio1</a></li>
-                        <li><a href="">Barrio2</a></li>
-                        <li><a href="">Barrio3</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <header>
+            <a href="PaginaInicio.jsp" class="logo">
+                <em>Euskal</em><strong>Rent</strong>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Acceder</a></li>
+                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                </ul>      
+            </nav>
+        </header>
+        <h2 align="center">Rellene los siguientes campos para comenzar a registrar su propiedad</h2>
+        <div id="grande2" align="center">
+            <form action="ModificacionPropiedad.jsp" id="formProp">
+                <div id="2" class="grande">
+                    <p class="parrafoPropiedad">Elige un barrio</p><br>
+                    <select name="barrio" class="cajasDatos" id="barrio">
+                        <option value="Zabalgana">Zabalgana</option>
+                        <option value="Aranbizkarra">Aranbizkarra</option>
+                        <option value="Salburua">Salburua</option>
+                    </select>
+                    <p class="parrafoPropiedad">Elige el tipo de propiedad</p><br>
+                    <select name="TipoProp" class="cajasDatos" id="tipoProp">
+                        <option value="apartamento">Apartamento</option>
+                        <option value="chalet">Chalet</option>
+                    </select>
+                    <p class="parrafoPropiedad">Numero de huespedes</p><br>
+                    <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
+                           min="1" max="10" required/><br><br><br><br>
+                    <input type="button" id="btnValRP" value="Guardar" class="botonBuscar" onclick="clickGuardarRA()"/>
+                </div>
+            </form>
         </div>
     </body>
 </html>
