@@ -4,18 +4,6 @@
  * and open the template in the editor.
  */
 
-function clickGuardarJSON(){
-    
-    var correo = document.getElementById("correo").value;
-    var nombre = document.getElementById("nombre").value;
-    var apellidos = document.getElementById("apellidos").value;
-    var contraseña = document.getElementById("contraseña").value;
-    
-    var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contraseña};
-    
-    var datosLS = JSON.stringify(json);
-    localStorage.setItem("RegistroApartamento",datosLS);
-}
 
 
 function revisar(elemento) {

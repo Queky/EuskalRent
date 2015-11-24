@@ -10,6 +10,7 @@
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
 <script type="text/javascript" src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="../JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>
