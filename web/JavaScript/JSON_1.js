@@ -10,6 +10,7 @@ function actualizar() {
      var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
     alert(datos);
     var correo = datos.correo;
+    alert(correo);
     document.getElementById("email").innerHTML=correo;
     
 }

@@ -17,7 +17,10 @@ function clickGuardarJSON(){
    
     var datosLS = JSON.stringify(json);
     localStorage.setItem("RegistroApartamento",datosLS);
-  
+     var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
+     var correos = datos.correo;
+    // alert(correos);
+     
 }
 /*
 function clickGuardarMA() {
