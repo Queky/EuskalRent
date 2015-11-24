@@ -3,10 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-window.addEventListener('load', actualizar(), false);
+window.onload=actualizar;
 function actualizar() {
-    alert("222");
-    var correo = datosLS.correo;
+  var dto ="hola";
+    alert(dto);
+     var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
+    alert(datos);
+    var correo = datos.correo;
     document.getElementById("email").innerHTML=correo;
     
 }
