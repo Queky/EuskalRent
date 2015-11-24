@@ -30,7 +30,7 @@
                 </ul>      
             </nav>
         </header>
-	<body>
+	<body onload="actualizar()">
 		<div class="testbox">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div class="uploader-controls">
@@ -61,7 +61,7 @@
        
          </form>
                         </div>
-                </div>
+                
 	</body>
 </html>
 

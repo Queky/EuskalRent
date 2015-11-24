@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
+window.addEventListener('load', actualizar(), false);
+function actualizar() {
+    alert("222");
+    var correo = datosLS.correo;
+    document.getElementById("email").innerHTML=correo;
+    
+}
+/*
 
 function clickGuardarJSON(){
     
@@ -14,11 +20,10 @@ function clickGuardarJSON(){
     var contrasena = document.getElementById("contrasena").value;
     
     var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contrasena};
-   
+    alert("11");
     var datosLS = JSON.stringify(json);
     localStorage.setItem("RegistroApartamento",datosLS);
-  
-}
+} */
 /*
 function clickGuardarMA() {
     var precio = document.getElementById("precio").value;
