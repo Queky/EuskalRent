@@ -9,7 +9,12 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+<<<<<<< HEAD
     <script src="../JavaScript/ValidacionesRegistro.js" type="text/javascript"></script>
+=======
+    <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
+    <script src="../JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
+>>>>>>> WebStorage
     <html>
         <head>
             <meta charset="utf-8">
@@ -30,7 +35,11 @@
             <section>
                 <div class="testbox">
                     <h1>Registro</h1>
+<<<<<<< HEAD
                     <form action="" method="post" id="formRegUsuario">
+=======
+                    <form action="PaginaModificacionUsuario.jsp" method="post">
+>>>>>>> WebStorage
 
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
                         <input type="email" name="email" id="email" placeholder="Correo"
@@ -41,6 +50,7 @@
                                placeholder="Nombre" class="form-input" required/>
 
                         <label id="icon" for="apellidos"><i class="icon-user"></i></label>
+<<<<<<< HEAD
                         <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"
                                class="form-input" required/>
 
@@ -51,6 +61,19 @@
                             <input type="button" value="Registrarse" class="button" id="btnRegistro"/>
                         </div>
                         </form>
+=======
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
+                               onkeyup="revisar(this); 
+                                       revisarNombreApellidos(this)" required/>
+
+                        <label id="icon" for="password"> <i class="icon-shield"></i></label>
+                        <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña" class="form-input"
+                               onkeyup="revisar(this)" required />
+                        <div class="botonRegistro">
+                            <input type="submit" value="Registrarse" class="button" onclick="clickGuardarJSON()"/>
+                        </div>
+                    </form>>
+>>>>>>> WebStorage
                 </div>
             </section>
         </body>

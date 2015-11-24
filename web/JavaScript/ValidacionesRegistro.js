@@ -32,6 +32,7 @@ function revisionGeneral() {
         document.getElementById("formRegUsuario").submit();
 }
 
+<<<<<<< HEAD
 function revisarEmail () {
     var email = document.getElementById("email");
     //var ex = /^([a-zA-Z0-9_.-])+@(([a-zA-z0-9-])+.)+([a-zA-Z0-9-]{2,4})+$/;
@@ -50,6 +51,14 @@ function revisarNombre() {
     else
         return true;
 }
+=======
+function revisar(elemento) {
+    if (elemento.value===""){
+	    elemento.className='error';
+    } else {
+	    elemento.className='form-input';
+    }
+>>>>>>> WebStorage
 
 function revisarApellido() {
     var apellido = document.getElementById("apellidos");

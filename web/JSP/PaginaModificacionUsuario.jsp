@@ -10,6 +10,7 @@
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
 <script type="text/javascript" src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="../JavaScript/JSON_1.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>
@@ -29,7 +30,8 @@
                 </ul>      
             </nav>
         </header>
-	<body>
+        <section>
+	
 		<div class="testbox">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div class="uploader-controls">
@@ -55,12 +57,10 @@
          title="Dirección a Geocode" value="" id="busDir" onchange=""/>
        
   <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
-  <input type="submit" value="  Guardar  " class="button"/>
-                         
-       
-         </form>
-                        </div>
-                </div>
-	</body>
+  <input type="submit" value="  Guardar  " class="button"/>               
+        </form>
+            </div>   
+	
+        </section>
 </html>
 
