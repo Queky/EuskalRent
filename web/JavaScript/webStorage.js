@@ -10,6 +10,7 @@ function clickGuardarRA(){
     localStorage.setItem("RegistroApartamento",datosLS);
 }
 
+/*
 function clickGuardarMA() {
     var precio = document.getElementById("precio").value;
     var politica = document.getElementById("politica").value;
@@ -20,7 +21,7 @@ function clickGuardarMA() {
     sessionStorage.setItem("ModificacionApartamento",datosSS);
 }
 
-/*
+
 var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
 
 function getDatosRegProp() {
