@@ -10,6 +10,7 @@
     margin-bottom: 0%;
     width: 60%;
     margin-top: 20px;
+    position: fixed;
 }
 #grande2 {
     background-color: #ebebeb;
@@ -23,6 +24,8 @@
     margin-bottom: 0%;
     width: 30%;
     margin-top: 20px;
+    position: fixed;
+
 }
 .desp {
     text-align: center;
@@ -35,7 +38,6 @@
     border: solid 1px #cbc9c9;
     margin-top: 0; 
 }
-
 #buscadorDireccion {
     width:500px;
 }
