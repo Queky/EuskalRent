@@ -17,8 +17,20 @@
            
 
 	</head>
+        
+          <header>
+            <a href="PaginaInicio.jsp" class="logo">
+                <em>Euskal</em><strong>Rent</strong>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Acceder</a></li>
+                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                </ul>      
+            </nav>
+        </header>
 	<body>
-		<div class="uploader">
+		<div class="testbox">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div class="uploader-controls">
 				<p>Añade tu foto de perfil favorita:</p>
@@ -40,7 +52,7 @@
   <input type="text" id="buscadorDireccion" placeholder="Dirección" class="form-input" onkeyup="buscarDireccion(this.id.value)" oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" title="Dirección a Geocode" value="" id="busDir" onchange=""/>
        
   <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
-  <input type="submit" value="Registrarse" class="button"/>
+  <input type="submit" value="  Guardar  " class="button"/>
                          
        
          </form>
