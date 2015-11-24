@@ -32,30 +32,26 @@
                 <div class="testbox">
                     <h1>Registro</h1>
                     <form action="PaginaModificacionUsuario.jsp" method="post">
-
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
-                        <input type="email" name="email" id="email" placeholder="Correo" class="form-input" 
-                               onkeyup="revisar(this);
-                                       revisaremail(this)" required/>
+                        <input type="email" name="email" id="email" placeholder="Correo"
+                               class="form-input" required>
 
                         <label id="icon" for="name"> <i class="icon-user"></i></label>
-                        <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre" placeholder="Nombre" class="form-input" 
-                               onclick="revisar(this);
-                                       revisarNombreApellidos(this)" required/>
+                        <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre"
+                               placeholder="Nombre" class="form-input" required/>
 
                         <label id="icon" for="apellidos"><i class="icon-user"></i></label>
-                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
-                               onkeyup="revisar(this); 
-                                       revisarNombreApellidos(this)" required/>
+                        <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"
+                               class="form-input" required/>
 
                         <label id="icon" for="password"> <i class="icon-shield"></i></label>
-                        <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña" class="form-input"
-                               onkeyup="revisar(this)" required />
+                        <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
+                                class="form-input" required />
                         <div class="botonRegistro">
                             <input type="submit" value="Registrarse" class="button" onclick="clickGuardarJSON()"/>
                         </div>
                     </form>>
                 </div>
-                <section/>
-                <body/>
-                <html/>
+            </section>
+        </body>
+    </html>

@@ -82,7 +82,7 @@ form{
   padding-left: 10px;
 }
 .error{
-    border:  solid 2px darkred;
+    border:  solid 2px red;
 }
 input[type=password]{
   margin-bottom: 25px;
