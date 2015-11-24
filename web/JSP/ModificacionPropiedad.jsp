@@ -36,7 +36,7 @@
         <div id="grande" align="center">
             <form action="" id="formModProp">
                 <div>
-                    <p>Seleccione en el mapa la localizacion de la propiedad</p>
+                    <p>Seleccione en el mapa la localización de la propiedad</p>
                     <input type="text" id="buscadorDireccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
                        oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"/>
                     <div id="map" style="width:500px; height:200px;"></div>
@@ -45,8 +45,8 @@
                 <div id="caja"></div>
                 <p>Introduzca el precio de alquiler de la propiedad por noche</p>   
                 <input type="number" id="precio" class="desp" placeholder="precio/noche" min="1"/><br>         
-                <p>Calendario para ver dias ocupados de la propiedad</p>
-                <input type="date" id="calendario"><br>
+                <p>Calendario para ver días ocupados de la propiedad</p>
+                <input type="date" id="calendario" class="cajasDatos"><br>
                 <p>Seleccione el tipo de política de cancelación para su propiedad</p>
                 <select name="Política de cancelación" id="politica" class="desp">
                     <option value="Flexible">Flexible</option>

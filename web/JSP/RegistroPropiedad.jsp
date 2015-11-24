@@ -44,7 +44,7 @@
                         <option value="apartamento">Apartamento</option>
                         <option value="chalet">Chalet</option>
                     </select>
-                    <p class="parrafoPropiedad">Numero de huespedes</p><br>
+                    <p class="parrafoPropiedad">Número de huespedes</p><br>
                     <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
                            min="1" max="10" required/><br><br><br><br>
                     <input type="button" id="btnValRP" value="Guardar" class="botonBuscar" onclick="clickGuardarRA();getBarrio()"/>
