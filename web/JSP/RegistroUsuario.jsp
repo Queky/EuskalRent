@@ -9,7 +9,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    <script src="../JavaScript/ValidacionesRegistro.js" type="text/javascript"></script>
+    <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
+    <script src="../JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
     <html>
         <head>
             <meta charset="utf-8">
@@ -30,8 +31,7 @@
             <section>
                 <div class="testbox">
                     <h1>Registro</h1>
-                    <form action="" method="post" id="formRegUsuario">
-
+                    <form action="PaginaModificacionUsuario.jsp" method="post">
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
                         <input type="email" name="email" id="email" placeholder="Correo"
                                class="form-input" required>
@@ -44,13 +44,13 @@
                         <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"
                                class="form-input" required/>
 
-                        <label id="icon" for="password"><i class="icon-shield"></i></label>
-                        <input type="password" name="contraseña" id="contrasena"
-                               placeholder="Contraseña" class="form-input" required/>
+                        <label id="icon" for="password"> <i class="icon-shield"></i></label>
+                        <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
+                                class="form-input" required />
                         <div class="botonRegistro">
-                            <input type="button" value="Registrarse" class="button" id="btnRegistro"/>
+                            <input type="button" value="Registrarse" class="button" id="btnRegistro" onclick="clickGuardarJSON()"/>
                         </div>
-                        </form>
+                    </form>
                 </div>
             </section>
         </body>
