@@ -21,7 +21,9 @@ function clickGuardarMA() {
 
 var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
 
-function getBarrio() {
+function getDatosRegProp() {
     var barrioRegistrado = datos.barrio;
+    var tipoApartReg = datos.tipoProp;
+    var numHueReg = datos.numHuespedes;
 }
 
