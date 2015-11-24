@@ -23,7 +23,7 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#">Acceder</a></li>
+                    <li><a href="Acceder.jsp">Acceder</a></li>
                     <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                 </ul>      
             </nav>
@@ -39,13 +39,15 @@
                     <select name="Barrio" class="cajasDatos" id="barrio">
                         <option value="zabalgana">Zabalgana</option>
                         <option value="aranbizkarra">Aranbizkarra</option>
-                        <option value="zalburua">Zalburua</option>
+                        <option value="salburua">Salburua</option>
                     </select>
                     <p>Numero de huespedes</p>
-                    <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes" min="1" max="10"/>
-                    <p>Entrada y salida del apartamento</p>
-                    <input type="date" id="fechaInicio" class="cajasDatos"/><br><br>
-                    <input type="date" id="fechaFin" class="cajasDatos"/><br><br>
+                    <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
+                           min="1" max="10" required/>
+                    <p>Entrada al apartamento</p>
+                    <input type="date" id="fechaInicio" class="cajasDatos" required/><br>
+                    <p>Salida del apartamento</p>
+                    <input type="date" id="fechaFin" class="cajasDatos" required/><br><br>
                     <input type="button" id="btnBuscar" value="Buscar" class="botonBuscar"/>
                 </div>
             </form>
