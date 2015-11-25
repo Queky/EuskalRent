@@ -6,7 +6,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>JSP/PaginaInicio.jsp</welcome-file>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>JSP/PaginaIncio.jsp</welcome-file>
     </welcome-file-list>
-</web-app>
+    </web-app>

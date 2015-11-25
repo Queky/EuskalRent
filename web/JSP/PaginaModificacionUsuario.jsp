@@ -5,6 +5,9 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 <link href='../CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
@@ -40,7 +43,7 @@
                             
 			
                         
-                        <div>    <form>
+                        <div>    <form action="PaginaInicio.jsp">
 
   <input type="email" name="email" id="email" placeholder="Correo" class="form-input" 
          onkeyup="revisar(this); revisaremail(this)" required/>
