@@ -160,5 +160,12 @@ section p {
     border: solid 1px #cbc9c9;
 }
 .error{
-    border:  solid 2px red;
+    border:  solid 5px red;
+}
+
+.parrafoPropiedad {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
+    padding-top: 20px;
 }
