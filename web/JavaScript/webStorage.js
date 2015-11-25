@@ -14,7 +14,7 @@ function clickGuardarMA() {
     var precio = document.getElementById("precio").value;
     var politica = document.getElementById("politica").value;
     
-    var json = {"precio":precio,"politica":politica,};
+    var json = {"precio":precio,"politica":politica};
 
     var datosLS = JSON.stringify(json);
     localStorage.setItem("ModificacionApartamento",datosLS);
