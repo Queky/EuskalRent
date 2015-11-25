@@ -11,6 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro propiedad</title>
         <link rel="stylesheet" type="text/css" href="../CSS/despRegistro.css" media="all">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="../JavaScript/valRegApar.js"></script>
         <link rel="stylesheet" type="text/css" href="../CSS/Estilo.css">
         <link rel="stylesheet" type="text/css" href="../CSS/modProp.css">
@@ -24,7 +27,7 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#">Acceder</a></li>
+                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
                     <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                 </ul>      
             </nav>
@@ -47,7 +50,7 @@
                     <p class="parrafoPropiedad">Número de huespedes</p><br>
                     <input type="number" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
                            min="1" max="10" required/><br><br><br><br>
-                    <input type="button" id="btnValRP" value="Guardar" class="botonBuscar" onclick="clickGuardarRA()"/>
+                    <input type="submit" id="btnValRP" value="Guardar" class="botonBuscar" onclick="clickGuardarRA()"/>
                 </div>
             </form>
         </div>

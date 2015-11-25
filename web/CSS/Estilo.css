@@ -164,6 +164,8 @@ section p {
 }
 
 .parrafoPropiedad {
+    font-family: 'Muli', sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
     padding-top: 20px;
-    border:  solid 2px red;
 }
