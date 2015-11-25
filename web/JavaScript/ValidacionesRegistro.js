@@ -35,7 +35,6 @@ function revisionGeneral() {
     }
 function revisarEmail () {
     var email = document.getElementById("email");
-    //var ex = /^([a-zA-Z0-9_.-])+@(([a-zA-z0-9-])+.)+([a-zA-Z0-9-]{2,4})+$/;
     var ex = /\S+@\S+\.\S+/;
     if(!ex.test(email.value) || email.value==="")
         return false;
