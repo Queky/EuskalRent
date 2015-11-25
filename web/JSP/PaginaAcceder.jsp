@@ -43,7 +43,7 @@
                                    placeholder="Contraseña" class="form-input" required/>
                             
                             <div class="botonRegistro">
-                                <input type="button" value="Acceder" class="button" id="btnAcceso"/>
+                                <input type="submit" value="Acceder" class="button" id="btnAcceso"/>
                             </div>
                         </form>
                 </div>

@@ -49,7 +49,7 @@
                     <input type="date" id="fechaInicio" class="cajasDatos" required/><br>
                     <p>Salida del apartamento</p>
                     <input type="date" id="fechaFin" class="cajasDatos" required/><br><br>
-                    <input type="button" id="btnBuscar" value="Buscar" class="botonBuscar" onclick="guardarJSon()"/>
+                    <input type="submit" id="btnBuscar" value="Buscar" class="botonBuscar" onclick="guardarJSon()"/>
                 </div>
             </form>
         </section>
