@@ -10,7 +10,7 @@
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
 <script type="text/javascript" src="../JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
-<script type="text/javascript" src="../JavaScript/JSON_1.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="../JavaScript/JSON_1yDandD.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>
@@ -48,7 +48,7 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
-  <input type="number" name="telefono" id="contraseña" placeholder="Numero de movil" class="form-input"
+  <input type="number" name="telefono" id="telefono" placeholder="Numero de movil" class="form-input"
          onkeyup="revisar(this)" required />
   <input type="text" id="buscadorDireccion" placeholder="Dirección" 
          class="form-input" onkeyup="buscarDireccion(this.id.value)" 
@@ -56,12 +56,12 @@
          title="Dirección a Geocode" value="" id="busDir" onchange=""/>
        
   <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
-  <input type="submit" value="  Guardar  " class="button"/>
+                        <input type="submit" value="  Guardar  " class="button" onclick="clickGuardarJSON_1()"/>
                          
        
          </form>
                         </div>
-                
+                </div>
 	</body>
 </html>
 
