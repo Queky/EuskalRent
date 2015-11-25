@@ -25,7 +25,7 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="Acceder.jsp">Acceder</a></li>
+                        <li><a href="PaginaAcceder.jsp">Acceder</a></li>
                         <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                     </ul>      
                 </nav>
