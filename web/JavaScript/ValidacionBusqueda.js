@@ -48,12 +48,14 @@ function revisarFechaInicio() {
                 return true;
             else
                 return false;
-            } else
-                return true;
+            }
+        else
+            return true;
         }
 }
 
 function revisarFechaFin() {
+    var fechaInicio = document.getElementById("fechaInicio");
     var fechaFin = document.getElementById("fechaFin");
     var hoy = new Date();
     var fechaUsuario = new Date(fechaFin.value);
@@ -61,11 +63,15 @@ function revisarFechaFin() {
         return false;
         else {
         if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate())
+            if(hoy.getDate()==fechaUsuario.getDate()
+                    && fechaFin.value>fechaInicio.value)
                 return true;
             else
                 return false;
-            } else
+            }
+        else if(fechaFin.value<=fechaInicio.value)
+            return false;
+        else
                 return true;
         }
 }
