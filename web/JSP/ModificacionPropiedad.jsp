@@ -27,7 +27,7 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#">Acceder</a></li>
+                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
                     <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                 </ul>      
             </nav>
@@ -35,12 +35,13 @@
         <h2 align="center">Rellene los siguientes campos para terminar de registrar su propiedad</h2>
         <div id="grande" align="center">
             <form action="RegistroPropiedad.jsp" id="formModProp">
-                <div>
+                <div class="parrafoPropiedad">
                     <p>Seleccione en el mapa la localización de la propiedad</p>
                     <input type="text" id="buscadorDireccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
                        oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"/>
                     <div id="map" style="width:500px; height:200px;"></div>
                 </div>
+                <div class="parrafoPropiedad">
                 <p>Arrastre las fotos del apartamento al siguiente recuadro</p>
                 <div id="caja"></div>
                 <p>Introduzca el precio de alquiler de la propiedad por noche</p>   
@@ -54,6 +55,7 @@
                 </select>
                 <br><br>
                 <input type="button" id="btnValMP" value="Guardar" class="botonBuscar" onclick="clickGuardarMA()"/>
+                </div>
             </form> 
         </div>        
     </body>
