@@ -3,7 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-window.onload=actualizar;
+var dropBox;
+
+window.onload = function() {
+dropBox = document.getElementById("fileOutput");
+dropBox.ondragenter = ignoreDrag;
+dropBox.ondragover = ignoreDrag;
+dropBox.ondrop = drop;
+actualizar();
+}
+
+
 function actualizar() {
     var datos = JSON.parse(localStorage.getItem('DatosRegistro'));
     var correo = datos.correo;
@@ -23,16 +33,56 @@ function clickGuardarJSON(){
     var contrasena = document.getElementById("contrasena").value;
     var telefono= document.getElementById("telefono").value;
     var direccion= document.getElementById("buscadorDireccion").value;
-    var foto= document.getElementById("fileOutput").value;
+    var foto=document.getElementById("fileOutput").value;
+  
     
     var json = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"contraseña":contrasena,"telefono":telefono,"direccion":direccion,"foto":foto};
    
-    var datosLS = JSON.stringify(json);
-    localStorage.setItem("DatosUsuario",datosLS);
+    var datosLSO = JSON.stringify(json);
+    localStorage.setItem("DatosUsuario",datosLSO);
    
     // alert(correos);
      
 }
+function processFiles(files) {
+var file = files[0];
+var reader = new FileReader();
+reader.onload = function (e) {
+    
+// Cuando éste evento se dispara, los datos están ya disponibles.
+// Se trata de copiarlos a una área <div> en la página.
+var output = document.getElementById("fileOutput"); 
+fileOutput.style.backgroundImage= "url('" + e.target.result + "')";
+fileOutput.style.border="1px solid transparent";
+
+};
+
+reader.readAsDataURL(file);
+
+
+}
+
+// ---------------------------------------
+
+
+function ignoreDrag(e) {
+e.stopPropagation();
+e.preventDefault();
+    
+}
+
+function drop(e) {
+e.stopPropagation();
+e.preventDefault();
+
+var data = e.dataTransfer;
+var files = data.files;
+
+
+processFiles(files);
+
+}
+
 /*
 
 function clickGuardarJSON(){
