@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 function revisar(elemento) {
     if (elemento.value===""){
 	    elemento.className='error';
@@ -33,4 +32,62 @@ function revisarNombreApellidos(elemento) {
         elemento.className='form-input';
         }
     }
+}
+function revisarNumeroTelefono(elemento) {
+    if (elemento.value!==""){
+        var dato = elemento.value;
+        var expresion = /^[6|7]{1}([\d]{2}[-]*){3}[\d]{2}$/;
+        if(!expresion.test(dato)) {
+                elemento.className='error';
+        } else {
+            elemento.className='form-input';
+        }
+    }
+}   
+
+
+function processFiles(files) {
+var file = files[0];
+var reader = new FileReader();
+reader.onload = function (e) {
+    
+// Cuando éste evento se dispara, los datos están ya disponibles.
+// Se trata de copiarlos a una área <div> en la página.
+var output = document.getElementById("fileOutput"); 
+fileOutput.style.backgroundImage= "url('" + e.target.result + "')";
+fileOutput.style.border="1px solid transparent";
+
+};
+
+reader.readAsDataURL(file);
+
+
+}
+
+// ---------------------------------------
+var dropBox;
+
+window.onload = function() {
+dropBox = document.getElementById("fileOutput");
+dropBox.ondragenter = ignoreDrag;
+dropBox.ondragover = ignoreDrag;
+dropBox.ondrop = drop;
+}
+
+function ignoreDrag(e) {
+e.stopPropagation();
+e.preventDefault();
+    
+}
+
+function drop(e) {
+e.stopPropagation();
+e.preventDefault();
+
+var data = e.dataTransfer;
+var files = data.files;
+
+
+processFiles(files);
+
 }

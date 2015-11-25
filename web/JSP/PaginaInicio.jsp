@@ -15,6 +15,7 @@
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <script src="../JavaScript/ValidacionBusqueda.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../JavaScript/JsonPaginaInicio.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -48,7 +49,7 @@
                     <input type="date" id="fechaInicio" class="cajasDatos" required/><br>
                     <p>Salida del apartamento</p>
                     <input type="date" id="fechaFin" class="cajasDatos" required/><br><br>
-                    <input type="button" id="btnBuscar" value="Buscar" class="botonBuscar"/>
+                    <input type="button" id="btnBuscar" value="Buscar" class="botonBuscar" onclick="guardarJSon()"/>
                 </div>
             </form>
         </section>
