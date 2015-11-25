@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 window.onload = revisar;
 
 function revisionGeneral () {
@@ -38,7 +39,6 @@ function revisarHuespedes() {
 function revisarFechaInicio() {
     var fechaInicio = document.getElementById("fechaInicio");
     var hoy = new Date();
-    hoy.getDate();
     var fechaUsuario = new Date(fechaInicio.value);
     if(fechaInicio.value==="")
         return false;
@@ -48,25 +48,30 @@ function revisarFechaInicio() {
                 return true;
             else
                 return false;
-            } else
-                return true;
+            }
+        else
+            return true;
         }
 }
 
 function revisarFechaFin() {
+    var fechaInicio = document.getElementById("fechaInicio");
     var fechaFin = document.getElementById("fechaFin");
     var hoy = new Date();
-    hoy.getDate();
     var fechaUsuario = new Date(fechaFin.value);
     if(fechaFin.value==="")
         return false;
         else {
         if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate())
+            if(hoy.getDate()==fechaUsuario.getDate()
+                    && fechaFin.value>fechaInicio.value)
                 return true;
             else
                 return false;
-            } else
+            }
+        else if(fechaFin.value<=fechaInicio.value)
+            return false;
+        else
                 return true;
         }
 }
