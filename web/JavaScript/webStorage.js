@@ -1,5 +1,5 @@
 function clickGuardarRA(){
- 
+
     var barrio = document.getElementById("barrio").value;
     var tipoApartamento = document.getElementById("tipoProp").value;
     var numHuespedes = document.getElementById("numHuespedes").value;
@@ -8,8 +8,6 @@ function clickGuardarRA(){
     
     var datosLS = JSON.stringify(json);
     localStorage.setItem("RegistroApartamento",datosLS);
-    var datos = JSON.parse(localStorage.getItem('RegistroApartamento'));
-
 }
 
 function clickGuardarMA() {
