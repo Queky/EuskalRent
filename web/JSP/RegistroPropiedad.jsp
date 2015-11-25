@@ -28,7 +28,7 @@
                     <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
                 </ul>      
             </nav>
-        </header>
+        </header><br>
         <h2 align="center">Rellene los siguientes campos para comenzar a registrar su propiedad</h2>
         <div id="grande2" align="center">
             <form action="ModificacionPropiedad.jsp" id="formProp">

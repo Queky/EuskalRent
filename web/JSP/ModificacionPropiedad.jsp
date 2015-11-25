@@ -32,9 +32,9 @@
                 </ul>      
             </nav>
         </header>
-        <h2 align="center">Rellene los siguientes campos para comenzar a registrar su propiedad</h2>
+        <h2 align="center">Rellene los siguientes campos para terminar de registrar su propiedad</h2>
         <div id="grande" align="center">
-            <form action="" id="formModProp">
+            <form action="RegistroPropiedad.jsp" id="formModProp">
                 <div>
                     <p>Seleccione en el mapa la localización de la propiedad</p>
                     <input type="text" id="buscadorDireccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
