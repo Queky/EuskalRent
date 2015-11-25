@@ -3,9 +3,8 @@
     Created on : 21-nov-2015, 13:47:41
     Author     : BEEP
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
 <link href='../CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
 <script src="../JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
@@ -35,7 +34,7 @@
 		<div class="testbox">
 			<h1 class="uploader-header">Tus datos:</h1>
                         <div class="uploader-controls">
-				<p>Añade tu foto de perfil favorita:</p>
+				<p>AÃ±ade tu foto de perfil favorita:</p>
                       </div>
                         <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
                             
@@ -49,15 +48,15 @@
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
   <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-input" 
          onkeyup="revisar(this); revisarNombreApellidos(this)" required/>
-  <input type="number" name="telefono" id="contraseña" placeholder="Numero de movil" class="form-input"
-         onkeyup="revisar(this)" required />
-  <input type="text" id="buscadorDireccion" placeholder="Dirección" 
+  <input type="number" name="telefono" id="contraseÃ±a" placeholder="Numero de movil" class="form-input"
+         onkeyup="revisar(this); revisarNumeroTelefono(this)" required />
+  <input type="text" id="buscadorDireccion" placeholder="DirecciÃ³n" 
          class="form-input" onkeyup="buscarDireccion(this.id.value)" 
          oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"
-         title="Dirección a Geocode" value="" id="busDir" onchange=""/>
+         title="DirecciÃ³n a Geocode" value="" id="busDir" onchange=""/>
        
   <div id="map" style="width: 300px; height: 200px"class="map"></div></div>
-  <input type="submit" value="  Guardar  " class="button"/>               
+                        <input type="submit" value="  Guardar  " class="button" id="btnModificacionUsuario"/>               
         </form>
             </div>   
 	

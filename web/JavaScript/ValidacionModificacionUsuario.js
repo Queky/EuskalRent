@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 function revisar(elemento) {
     if (elemento.value===""){
 	    elemento.className='error';
@@ -34,6 +33,19 @@ function revisarNombreApellidos(elemento) {
         }
     }
 }
+function revisarNumeroTelefono(elemento) {
+    if (elemento.value!==""){
+        var dato = elemento.value;
+        var expresion = /^[6|7]{1}([\d]{2}[-]*){3}[\d]{2}$/;
+        if(!expresion.test(dato)) {
+                elemento.className='error';
+        } else {
+            elemento.className='form-input';
+        }
+    }
+}   
+
+
 function processFiles(files) {
 var file = files[0];
 var reader = new FileReader();
