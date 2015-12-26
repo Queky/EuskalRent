@@ -3,6 +3,7 @@
     Created on : 19-nov-2015, 11:42:42
     Author     : BEEP
 --%>
+<%@page import="packEuskalRent.Usuario"%>
 <html>
     <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
@@ -17,6 +18,7 @@
             <title>Pagina Registro</title>
         </head>
         <body>
+             
             <header>
                 <a href="PaginaInicio.jsp" class="logo">
                     <em>Euskal</em><strong>Rent</strong>
@@ -47,6 +49,13 @@
                         <label id="icon" for="password"> <i class="icon-shield"></i></label>
                         <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
                                 class="form-input" required />
+                       <jsp:useBean id="usuario1" class="packEuskalRent.Usuario" scope="session">
+                            <jsp:setProperty name="usuario1" property="nombre" value='<%= request.getParameter("nombre") %>' />
+                            <jsp:setProperty name="usuario1" property="apellido" value='<%= request.getParameter("apellidos") %>' />
+                            <jsp:setProperty name="usuario1" property="contraseña" value='<%= request.getParameter("contraseña") %>' />
+                            <jsp:setProperty name="usuario1" property="correo" value='<%= request.getParameter("email") %>' />
+                        </jsp:useBean>
+                      
                         <div class="botonRegistro">
                             <input type="submit" value="Registrarse" id="btnRegistro" class="button" onclick="clickGuardarJSON()"/>
                         </div>
