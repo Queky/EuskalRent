@@ -27,7 +27,7 @@ public class ConexionBD{
 		}catch (ClassNotFoundException e1){};
 		//Establecemos Conexion
 		try{
-			String sURL = "jdbc:mysql://localhost/euscalrent03";
+			String sURL = "jdbc:mysql://localhost/euskalrent03";
                         String userName = "root";
                         String password = "root"; 
                         con = DriverManager.getConnection(sURL, userName, password);
@@ -41,18 +41,30 @@ public class ConexionBD{
 			e.printStackTrace();
 		}
 }
-	public void anyadirDatosUsuario(String nombre , String apellido, String correo){
+	public void anyadirDatosUsuario(String nombre , String apellido, String correo, String contraseña,Integer numTelefono){
 		crearConexion();
 		Statement st;
 		try {
 			st = con.createStatement();
-			st.executeUpdate("INSERT INTO `euskalrent03`.`usuario` (`Nombre`,`Apellido`,`idEmail`)"
-                                + " VALUES ('"+nombre+"','"+apellido+"','"+correo+"');");
+			st.executeUpdate("INSERT INTO `euskalrent03`.`usuario` (`Nombre`,`Apellido`,`idEmail`,`Contraseña`,`NumeroTelefono`)"
+                                + " VALUES ('"+nombre+"','"+apellido+"','"+correo+"','"+contraseña+"','"+numTelefono+"');");
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		cerrarConexion();	
 	}
-
+        public void anyadirDatosUsuario(String nombre , String apellido, String correo, String contraseña,Integer numTelefono,String direccion){
+		crearConexion();
+		Statement st;
+		try {
+			st = con.createStatement();
+			st.executeUpdate("INSERT INTO `euskalrent03`.`usuario` (`Nombre`,`Apellido`,`idEmail`,`Contraseña`,`NumeroTelefono`,`Direccion`)"
+                                + " VALUES ('"+nombre+"','"+apellido+"','"+correo+"','"+contraseña+"','"+numTelefono+"','"+direccion+"');");
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		cerrarConexion();	
+	}
 }

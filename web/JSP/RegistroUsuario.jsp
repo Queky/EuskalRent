@@ -33,7 +33,7 @@
             <section>
                 <div class="testbox">
                     <h1>Registro</h1>
-                    <form action="PaginaModificacionUsuario.jsp" method="post">
+                    <form action="../rUsuario" method="POST">
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
                         <input type="email" name="email" id="email" placeholder="Correo"
                                class="form-input" required>
@@ -49,13 +49,6 @@
                         <label id="icon" for="password"> <i class="icon-shield"></i></label>
                         <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
                                 class="form-input" required />
-                       <jsp:useBean id="usuario1" class="packEuskalRent.Usuario" scope="session">
-                            <jsp:setProperty name="usuario1" property="nombre" value='<%= request.getParameter("nombre") %>' />
-                            <jsp:setProperty name="usuario1" property="apellido" value='<%= request.getParameter("apellidos") %>' />
-                            <jsp:setProperty name="usuario1" property="contraseña" value='<%= request.getParameter("contraseña") %>' />
-                            <jsp:setProperty name="usuario1" property="correo" value='<%= request.getParameter("email") %>' />
-                        </jsp:useBean>
-                      
                         <div class="botonRegistro">
                             <input type="submit" value="Registrarse" id="btnRegistro" class="button" onclick="clickGuardarJSON()"/>
                         </div>

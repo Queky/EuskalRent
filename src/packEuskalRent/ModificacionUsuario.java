@@ -3,17 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package packEuskalRent;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import packEuskalRent.ConexionBD;
 
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.sql.*;
+/**
+ *
+ * @author BEEP
+ */
+@WebServlet(urlPatterns = {"/ModificacionUsuario"})
+public class ModificacionUsuario extends HttpServlet {
 
-
-public class RegistroUsuario extends HttpServlet {
-  
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -31,17 +38,27 @@ public class RegistroUsuario extends HttpServlet {
         
         String correo = (String) request.getParameter("email");
         s.setAttribute("correoUsuario", correo);
+        String contraseña = (String) request.getSession().getAttribute("nombreUsuario");
         String nombre = (String) request.getParameter("nombre");
         s.setAttribute("nombreUsuario", nombre);
         String apellido = (String) request.getParameter("apellidos");
         s.setAttribute("apellidosUsuario", apellido);
-        String contraseña = (String) request.getParameter("contraseña");
-        s.setAttribute("apellidosUsuario", apellido);
+        Integer numTelefono =Integer.parseInt(request.getParameter("telefono"));
+        s.setAttribute("telefonoUsuario", numTelefono);
+        String direccion =(String) request.getParameter("direccion");
+        ConexionBD BD = ConexionBD.getConexionConBBDD();
+        if (direccion==null){
+            BD.anyadirDatosUsuario(nombre, apellido, correo, contraseña, numTelefono);
+        }else{
+            BD.anyadirDatosUsuario(nombre, apellido, correo, contraseña, numTelefono, direccion);
+        }
+        
+        
    /*
         ConexionBD CB = ConexionBD.getConexionConBBDD();
         CB.anyadirDatosUsuario(nombre, apellido, correo);
      */   
-     response.sendRedirect("./JSP/PaginaModificacionUsuario.jsp");
+     response.sendRedirect("./JSP/PaginaInicio.jsp");
     }
 
     /**
