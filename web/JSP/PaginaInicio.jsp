@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <title>EuskalRent</title>
-        <link rel="stylesheet" href="../CSS/Estilo.css">
+        <link href="CSS/Estilo.css" rel="stylesheet" type="text/css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
@@ -19,13 +19,13 @@
     </head>
     <body>
         <header>
-            <a href="PaginaInicio.jsp" class="logo">
+            <a href="Inicio" class="logo">
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>
                 <ul>
-                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
-                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                    <li><a href="Acceso">Acceder</a></li>
+                    <li><a href="Registro">Registrarse</a></li>
                 </ul>      
             </nav>
         </header>
