@@ -1,10 +1,7 @@
 
 package packEuskalRent;
 import java.sql.*;
-import java.io.*;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import java.sql.*;
+
 //Diseño responsive para la conexion con la base de datos
 public class ConexionBD{
 	private static ConexionBD mConexionBD;
