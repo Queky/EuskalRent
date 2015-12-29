@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>ModificacionUsuario</servlet-name>
-        <servlet-class>ModificacionUsuario</servlet-class>
+        <servlet-class>packEuskalRent.ModificacionUsuario</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
