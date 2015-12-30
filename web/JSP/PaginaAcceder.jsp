@@ -33,11 +33,7 @@
             <section>
                 <div class="loginBox">
                     <h1>Accede a tu cuenta</h1>
-<<<<<<< HEAD
                     <form action="../aAcceder" method="post" id="formLogin">
-=======
-                    <form action="Login" method="post" id="formLogin">
->>>>>>> master
                             <label id="icon" for="email"><i class="icon-envelope "></i></label>
                             <input type="email" name="email" id="email" placeholder="Correo"
                                    class="form-input" required/>
