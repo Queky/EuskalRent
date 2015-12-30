@@ -9,7 +9,6 @@ package packEuskalRent;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.sql.*;
 
 
 public class RegistroUsuario extends HttpServlet {
@@ -27,16 +26,22 @@ public class RegistroUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession s = request.getSession(true);
         
+        Usuario usuario = Usuario.getUsuario();
         String correo = (String) request.getParameter("email");
-        s.setAttribute("correoUsuario", correo);
+       // s.setAttribute("correoUsuario", correo);
         String nombre = (String) request.getParameter("nombre");
-        s.setAttribute("nombreUsuario", nombre);
+       // s.setAttribute("nombreUsuario", nombre);
         String apellido = (String) request.getParameter("apellidos");
-        s.setAttribute("apellidosUsuario", apellido);
+       // s.setAttribute("apellidosUsuario", apellido);
         String contraseña = (String) request.getParameter("contraseña");
-        s.setAttribute("apellidosUsuario", apellido);
+            System.out.println(contraseña);
+      //  s.setAttribute("apellidosUsuario", apellido);
+        usuario.setNombre(nombre);
+        usuario.setApellido(apellido);
+        usuario.setCorreo(correo);
+        usuario.setContraseña(contraseña);
+       
    /*
         ConexionBD CB = ConexionBD.getConexionConBBDD();
         CB.anyadirDatosUsuario(nombre, apellido, correo);

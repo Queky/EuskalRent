@@ -6,7 +6,11 @@
     </servlet>
     <servlet>
         <servlet-name>ModificacionUsuario</servlet-name>
-        <servlet-class>ModificacionUsuario</servlet-class>
+        <servlet-class>packEuskalRent.ModificacionUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Accedermp</servlet-name>
+        <servlet-class>packEuskalRent.Acceder</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ModificacionUsuario</servlet-name>
         <url-pattern>/mUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Accedermp</servlet-name>
+        <url-pattern>/aAcceder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

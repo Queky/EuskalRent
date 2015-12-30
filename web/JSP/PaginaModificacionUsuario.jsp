@@ -3,6 +3,7 @@
     Created on : 21-nov-2015, 13:47:41
     Author     : BEEP
 --%>
+<%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -42,17 +43,15 @@
                 <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
 
                 <div>    <form action="../mUsuario" method="post">
-                        <%String nombre = (String) session.getAttribute("nombreUsuario");%>
-                        <%String correo = (String) session.getAttribute("correoUsuario");%>
-                        <%String apellidos = (String) session.getAttribute("apellidosUsuario");%>
+                        <%  Usuario usuario =  Usuario.getUsuario();%>
 
-                        <input type="email" name="email" id="email" value="<%=correo%>" placeholder="Correo" class="form-input" 
+                        <input type="email" name="email" id="email" value="<%=usuario.getCorreo()%>" placeholder="Correo" class="form-input" 
                                onkeyup="revisar(this);
                  revisaremail(this)" required/>
-                        <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre" value="<%=nombre%>"placeholder="Nombre" class="form-input" 
+                        <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre" value="<%=usuario.getNombre()%>"placeholder="Nombre" class="form-input" 
                                onkeyup="revisar(this);
                  revisarNombreApellidos(this)" required/>
-                        <input type="text" name="apellidos" value="<%=apellidos%>" id="apellidos" placeholder="Apellidos" class="form-input" 
+                        <input type="text" name="apellidos" value="<%=usuario.getApellido()%>" id="apellidos" placeholder="Apellidos" class="form-input" 
                                onkeyup="revisar(this);
                  revisarNombreApellidos(this)" required/>
                         <input type="number" name="telefono" id="numtelefono" placeholder="Numero de movil" class="form-input"
