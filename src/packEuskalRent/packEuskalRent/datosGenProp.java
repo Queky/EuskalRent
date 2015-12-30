@@ -43,9 +43,6 @@ public class datosGenProp extends HttpServlet {
             out.println("<title>Servlet guardarDatos</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>El barrio ingresado es:" + barrio + "</h1>");
-            out.println("<h1>El tipo de propiedad ingresado es:" + tipoProp + "</h1>");
-            out.println("<h1>El numero de huespedes ingresado es:" + numHuespedes + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
