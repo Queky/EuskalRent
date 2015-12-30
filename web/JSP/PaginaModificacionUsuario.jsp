@@ -10,6 +10,7 @@
 <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 <link href='CSS/ModificacionUsusario.css' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
 <script src="JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
 <script type="text/javascript" src="JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
@@ -24,6 +25,7 @@
 
         <header>
             <a href="Inicio" class="logo">
+                <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>

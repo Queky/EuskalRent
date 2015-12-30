@@ -16,12 +16,14 @@
         <script type="text/javascript" src="JavaScript/DnDEscritorio.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/modProp.css">
         <link rel="stylesheet" type="text/css" href="CSS/Estilo.css">
+        <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
         <script type="text/javascript" src="JavaScript/valModApar.js"></script>
         <script type="text/javascript" src="JavaScript/webStorage.js"></script>
     </head>
     <body>
         <header>
             <a href="Inicio" class="logo">
+                <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>

@@ -12,6 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
     <script src="JavaScript/ValidacionLogin.js" type="text/javascript"></script>
     <html>
         <head>
@@ -21,6 +22,7 @@
         <body>
             <header>
                 <a href="Inicio" class="logo">
+                    <em><img src="Img/logoEuskalRent.gif"/></em>
                     <em>Euskal</em><strong>Rent</strong>
                 </a>
                 <nav>
