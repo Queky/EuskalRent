@@ -5,13 +5,13 @@
 --%>
 <%@page import="packEuskalRent.Usuario"%>
 <html>
-    <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link href='CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
-    <script src="../JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
+    <script src="JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
+    <script src="JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
     <html>
         <head>
             <meta charset="utf-8">
@@ -20,13 +20,13 @@
         <body>
              
             <header>
-                <a href="PaginaInicio.jsp" class="logo">
+                <a href="Inicio" class="logo">
                     <em>Euskal</em><strong>Rent</strong>
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="PaginaAcceder.jsp">Acceder</a></li>
-                        <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                        <li><a href="Acceso">Acceder</a></li>
+                        <li><a href="Registro">Registrarse</a></li>
                     </ul>      
                 </nav>
             </header>
@@ -48,7 +48,7 @@
 
                         <label id="icon" for="password"> <i class="icon-shield"></i></label>
                         <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
-                                class="form-input" required />
+                               class="form-input" required />
                         <div class="botonRegistro">
                             <input type="submit" value="Registrarse" id="btnRegistro" class="button" />
                         </div>

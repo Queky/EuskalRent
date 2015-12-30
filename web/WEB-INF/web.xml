@@ -8,6 +8,54 @@
         <servlet-name>ModificacionUsuario</servlet-name>
         <servlet-class>packEuskalRent.ModificacionUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaAcceder</servlet-name>
+        <jsp-file>/JSP/PaginaAcceder.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <jsp-file>/JSP/RegistroUsuario.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaInicio</servlet-name>
+        <jsp-file>/JSP/PaginaInicio.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaInicial</servlet-name>
+        <servlet-class>packEuskalRent.PaginaInicio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>packEuskalRent.Login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datosGenProp</servlet-name>
+        <servlet-class>packEuskalRent.datosGenProp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datosModProp</servlet-name>
+        <servlet-class>packEuskalRent.datosModProp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaginaAcceder</servlet-name>
+        <url-pattern>/Acceso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <url-pattern>/Registro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaInicio</servlet-name>
+        <url-pattern>/Inicio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaInicial</servlet-name>
+        <url-pattern>/InicioLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
         <url-pattern>/rUsuario</url-pattern>
@@ -15,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>ModificacionUsuario</servlet-name>
         <url-pattern>/mUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datosGenProp</servlet-name>
+        <url-pattern>/datosGenProp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datosModProp</servlet-name>
+        <url-pattern>/datosModProp</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
