@@ -20,9 +20,20 @@ function init(){
         draggable: true
     });
     
-    infoMarcador = new google.maps.InfoWindow({ content:"direccion"
+  
+    
+    infoMarcador = new google.maps.InfoWindow({ content:""
     });
     function mostrarInfo(){
+        
+        var markerLatLng = marcador.getPosition();
+        infoMarcador.setContent([
+        'La posicion del marcador es:',
+        markerLatLng.lat(),
+        ', ',
+        markerLatLng.lng(),
+        
+    ].join(''));
         infoMarcador.open(map, marcador);
     }
     google.maps.event.addListener(marcador, 'click', mostrarInfo);
@@ -38,4 +49,3 @@ function buscarDireccion(direccion) {
     map.panTo(localizacion);
     map.setZoom(17);
 }
-
