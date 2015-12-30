@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro propiedad</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/despRegistro.css" media="all">
+        <link rel="stylesheet" type="text/css" href="CSS/despRegistro.css" media="all">
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
@@ -22,19 +22,19 @@
     </head>
     <body>
         <header>
-            <a href="PaginaInicio.jsp" class="logo">
+            <a href="Inicio" class="logo">
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>
                 <ul>
-                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
-                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                    <li><a href="Acceso">Acceder</a></li>
+                    <li><a href="Registro">Registrarse</a></li>
                 </ul>      
             </nav>
         </header><br>
         <h2 align="center">Rellene los siguientes campos para comenzar a registrar su propiedad</h2>
         <div id="grande2" align="center">
-            <form action="../datosGenProp" id="formProp">
+            <form action="datosGenProp" id="formProp">
                 <div id="2" class="grande">
                     <p class="parrafoPropiedad">Elige un barrio</p><br>
                     <select name="barrio" class="cajasDatos" id="barrio">

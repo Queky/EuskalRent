@@ -30,7 +30,7 @@
                     if(session.getAttribute("logueado")=="logueado"){
                         %>
                         <li><a href="correoUsuario"><%=session.getAttribute("correoUsuario")%></a></li>
-                        <li><a href="salir">Salir<%session.invalidate();response.sendRedirect("PaginaInicio");%></a></li>
+                        <li><a href="salir">Salir<%session.invalidate();response.sendRedirect("Inicio");%></a></li>
                         <%
                     }else{
                         %>
@@ -47,7 +47,7 @@
                 <h1 class="cabeceraB1">Bienvenido a <em>EuskalRent</em></h1>
                 <p class="cabeceraB2">EuskalRent es tu pagina donde buscar un apartamento para dormir en Vitoria-Gasteiz.</p>
             </div>
-            <form action="PaginaBusquedas.jsp" id="formInicio">
+            <form action="Busqueda" id="formInicio">
                 <div class="cajaBusqueda">
                     <p>Elige un barrio</p>
                     <select name="barrio" class="cajasDatos" id="barrio">

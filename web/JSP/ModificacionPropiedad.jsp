@@ -21,19 +21,19 @@
     </head>
     <body>
         <header>
-            <a href="PaginaInicio.jsp" class="logo">
+            <a href="Inicio" class="logo">
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>
                 <ul>
-                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
-                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                    <li><a href="Acceso">Acceder</a></li>
+                    <li><a href="Registro">Registrarse</a></li>
                 </ul>      
             </nav>
         </header>
         <h2 align="center">Rellene los siguientes campos para terminar de registrar su propiedad</h2>
         <div id="grande" align="center">
-            <form action="../datosModProp" id="formModProp">
+            <form action="datosModProp" id="formModProp">
                 <div class="parrafoPropiedad">
                     <p>Seleccione en el mapa la localización de la propiedad</p>
                     <input type="text" id="buscadorDireccion" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 

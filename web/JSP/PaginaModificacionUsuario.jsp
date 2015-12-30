@@ -23,13 +23,13 @@
         </head>
 
         <header>
-            <a href="PaginaInicio.jsp" class="logo">
+            <a href="Inicio" class="logo">
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>
                 <ul>
-                    <li><a href="PaginaAcceder.jsp">Acceder</a></li>
-                    <li><a href="RegistroUsuario.jsp">Registrarse</a></li>
+                    <li><a href="Acceso">Acceder</a></li>
+                    <li><a href="Registro">Registrarse</a></li>
                 </ul>      
             </nav>
         </header>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
 
-                <div>    <form action="../mUsuario" method="post">
+                <div>    <form action="mUsuario" method="post">
                         <%  Usuario usuario =  Usuario.getUsuario();%>
 
                         <input type="email" name="email" id="email" value="<%=usuario.getCorreo()%>" placeholder="Correo" class="form-input" 

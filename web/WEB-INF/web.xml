@@ -22,11 +22,7 @@
     </servlet>
     <servlet>
         <servlet-name>PaginaInicial</servlet-name>
-        <servlet-class>packEuskalRent.PaginaInicio</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>packEuskalRent.Login</servlet-class>
+        <servlet-class>packEuskalRent.BusquedaUsuario</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>datosGenProp</servlet-name>
@@ -35,6 +31,10 @@
     <servlet>
         <servlet-name>datosModProp</servlet-name>
         <servlet-class>packEuskalRent.datosModProp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaBusquedas</servlet-name>
+        <jsp-file>/JSP/PaginaBusquedas.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
@@ -47,14 +47,6 @@
     <servlet-mapping>
         <servlet-name>PaginaInicio</servlet-name>
         <url-pattern>/Inicio</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PaginaInicial</servlet-name>
-        <url-pattern>/InicioLogin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
@@ -71,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>datosModProp</servlet-name>
         <url-pattern>/datosModProp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaBusquedas</servlet-name>
+        <url-pattern>/Busqueda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaInicial</servlet-name>
+        <url-pattern>/BusquedaUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

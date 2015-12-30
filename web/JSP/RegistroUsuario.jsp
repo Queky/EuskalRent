@@ -33,7 +33,7 @@
             <section>
                 <div class="testbox">
                     <h1>Registro</h1>
-                    <form action="../rUsuario" method="POST">
+                    <form action="rUsuario" method="POST">
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
                         <input type="email" name="email" id="email" placeholder="Correo"
                                class="form-input" required>

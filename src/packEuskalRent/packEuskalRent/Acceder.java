@@ -33,7 +33,8 @@ public class Acceder extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     
+        
+        HttpSession s = request.getSession(true);
         String correo = (String)request.getParameter("email");
         String contraseña = (String)request.getParameter("contraseña");
         System.out.println(correo);
@@ -45,14 +46,15 @@ public class Acceder extends HttpServlet {
             System.out.println("el email existe");
             if (coincideContraseñaEmail) {
                 System.out.println("coinciden");
-                response.sendRedirect("PaginaBusquedas");
+                s.setAttribute("logueado", "logueado");
+                response.sendRedirect("Inicio");
             } else {
                 System.out.println("no la contraseña");
-                response.sendRedirect("PaginaAcceder");
+                response.sendRedirect("Acceso");
             }
         } else {
             System.out.println("no pilla na");
-            response.sendRedirect("PaginaAcceder");
+            response.sendRedirect("Acceso");
         }
 
     }

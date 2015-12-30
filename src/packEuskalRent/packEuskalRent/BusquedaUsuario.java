@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author inakisanchez
  */
-public class PaginaInicio extends HttpServlet {
+public class BusquedaUsuario extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -56,7 +56,7 @@ public class PaginaInicio extends HttpServlet {
         String fechaSalida = (String) request.getParameter("fechaFin");
         s.setAttribute("fechaFin", fechaSalida);
         
-        response.sendRedirect("");
+        response.sendRedirect("Busqueda");
     }
 
     /**
