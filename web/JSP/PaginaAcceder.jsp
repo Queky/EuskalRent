@@ -12,11 +12,11 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    <script src="../JavaScript/ValidacionLogin.js" type="text/javascript"></script>
+    <script src="JavaScript/ValidacionLogin.js" type="text/javascript"></script>
     <html>
         <head>
             <meta charset="utf-8">
-            <title>Pagina Registro</title>
+            <title>Accede a tu cuenta</title>
         </head>
         <body>
             <header>
@@ -43,7 +43,7 @@
                                    placeholder="Contraseña" class="form-input" required/>
                             
                             <div class="botonRegistro">
-                                <input type="submit" value="Acceder" class="button" id="btnAcceso"/>
+                                <input type="button" value="Acceder" class="button" id="btnAcceso"/>
                             </div>
                         </form>
                 </div>

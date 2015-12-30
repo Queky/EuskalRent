@@ -14,10 +14,10 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="../JavaScript/valRegApar.js"></script>
-        <link rel="stylesheet" type="text/css" href="../CSS/Estilo.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/modProp.css">
-        <script type="text/javascript" src="../JavaScript/webStorage.js"></script>
+        <script type="text/javascript" src="JavaScript/valRegApar.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/Estilo.css">
+        <link rel="stylesheet" type="text/css" href="CSS/modProp.css">
+        <script type="text/javascript" src="JavaScript/webStorage.js"></script>
 
     </head>
     <body>

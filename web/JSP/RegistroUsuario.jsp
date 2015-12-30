@@ -9,8 +9,8 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
-    <script src="../JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
-    <script src="../JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
+    <script src="JavaScript/ValidacionesRegistro.js" language="javascript" type="text/javascript"></script>
+    <script src="JavaScript/JSON.js" language="javascript" type="text/javascript"></script>
     <html>
         <head>
             <meta charset="utf-8">
