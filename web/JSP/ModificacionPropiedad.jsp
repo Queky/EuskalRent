@@ -11,13 +11,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Completar datos propiedad</title>
         <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="../JavaScript/mapa.js"></script>
-        <link rel="stylesheet" type="text/css" href="../CSS/contFotos.css">
-        <script type="text/javascript" src="../JavaScript/DnDEscritorio.js"></script>
-        <link rel="stylesheet" type="text/css" href="../CSS/modProp.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/Estilo.css">
-        <script type="text/javascript" src="../JavaScript/valModApar.js"></script>
-        <script type="text/javascript" src="../JavaScript/webStorage.js"></script>
+        <script type="text/javascript" src="JavaScript/mapa.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/contFotos.css">
+        <script type="text/javascript" src="JavaScript/DnDEscritorio.js"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/modProp.css">
+        <link rel="stylesheet" type="text/css" href="CSS/Estilo.css">
+        <script type="text/javascript" src="JavaScript/valModApar.js"></script>
+        <script type="text/javascript" src="JavaScript/webStorage.js"></script>
 
     </head>
     <body>

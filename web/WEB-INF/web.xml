@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+<<<<<<< HEAD
+        <servlet-name>PaginaAcceder</servlet-name>
+        <jsp-file>/JSP/PaginaAcceder.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <jsp-file>/JSP/RegistroUsuario.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaInicio</servlet-name>
+        <jsp-file>/JSP/PaginaInicio.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaInicial</servlet-name>
+        <servlet-class>packEuskalRent.PaginaInicio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>packEuskalRent.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaginaAcceder</servlet-name>
+        <url-pattern>/Acceso</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroUsuario</servlet-name>
+        <url-pattern>/Registro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaInicio</servlet-name>
+        <url-pattern>/Inicio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaInicial</servlet-name>
+        <url-pattern>/InicioLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+=======
         <servlet-name>RegistroUsuariosw</servlet-name>
         <servlet-class>packEuskalRent.RegistroUsuario</servlet-class>
     </servlet>
@@ -15,6 +55,7 @@
     <servlet-mapping>
         <servlet-name>ModificacionUsuario</servlet-name>
         <url-pattern>/mUsuario</url-pattern>
+>>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>

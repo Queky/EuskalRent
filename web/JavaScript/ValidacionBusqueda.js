@@ -38,13 +38,18 @@ function revisarHuespedes() {
 
 function revisarFechaInicio() {
     var fechaInicio = document.getElementById("fechaInicio");
+    var fechaFin = document.getElementById("fechaFin");
     var hoy = new Date();
     var fechaUsuario = new Date(fechaInicio.value);
     if(fechaInicio.value==="")
         return false;
-        else {
+    else if(fechaInicio.value>fechaFin.value && fechaFin.value!=""
+            || fechaInicio.value===fechaFin.value){
+        return false;
+    }
+    else {
         if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate())
+            if(hoy.getDate()===fechaUsuario.getDate())
                 return true;
             else
                 return false;
@@ -63,16 +68,16 @@ function revisarFechaFin() {
         return false;
         else {
         if(hoy>fechaUsuario){
-            if(hoy.getDate()==fechaUsuario.getDate()
+            if(hoy.getDate()===fechaUsuario.getDate()
                     && fechaFin.value>fechaInicio.value)
                 return true;
             else
                 return false;
-            }
-        else if(fechaFin.value<=fechaInicio.value)
-            return false;
-        else
-                return true;
+        }
+    else if(fechaFin.value<=fechaInicio.value)
+        return false;
+    else
+        return true;
         }
 }
      
