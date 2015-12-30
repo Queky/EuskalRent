@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-<<<<<<< HEAD
         <servlet-name>PaginaAcceder</servlet-name>
         <jsp-file>/JSP/PaginaAcceder.jsp</jsp-file>
     </servlet>
@@ -40,22 +39,6 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
-=======
-        <servlet-name>RegistroUsuariosw</servlet-name>
-        <servlet-class>packEuskalRent.RegistroUsuario</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ModificacionUsuario</servlet-name>
-        <servlet-class>packEuskalRent.ModificacionUsuario</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RegistroUsuariosw</servlet-name>
-        <url-pattern>/rUsuario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ModificacionUsuario</servlet-name>
-        <url-pattern>/mUsuario</url-pattern>
->>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>
