@@ -48,6 +48,7 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
         <url-pattern>/rUsuario</url-pattern>
@@ -55,6 +56,23 @@
     <servlet-mapping>
         <servlet-name>ModificacionUsuario</servlet-name>
         <url-pattern>/mUsuario</url-pattern>
+=======
+        <servlet>
+        <servlet-name>datosGenProp</servlet-name>
+        <servlet-class>datosGenProp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datosModProp</servlet-name>
+        <servlet-class>datosModProp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>datosGenProp</servlet-name>
+        <url-pattern>/datosGenProp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datosModProp</servlet-name>
+        <url-pattern>/datosModProp</url-pattern>
+>>>>>>> cc3067fe35244885f88b511cbe50f28c40c950fa
     </servlet-mapping>
     <session-config>
         <session-timeout>
