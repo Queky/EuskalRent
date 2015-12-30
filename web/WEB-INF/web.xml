@@ -40,6 +40,22 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>datosGenProp</servlet-name>
+        <servlet-class>datosGenProp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datosModProp</servlet-name>
+        <servlet-class>datosModProp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>datosGenProp</servlet-name>
+        <url-pattern>/datosGenProp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datosModProp</servlet-name>
+        <url-pattern>/datosModProp</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
