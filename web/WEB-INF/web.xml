@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-      <servlet>
+    <servlet>
         <servlet-name>RegistroUsuariosw</servlet-name>
         <servlet-class>packEuskalRent.RegistroUsuario</servlet-class>
     </servlet>
@@ -28,6 +28,14 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>packEuskalRent.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>datosGenProp</servlet-name>
+        <servlet-class>packEuskalRent.datosGenProp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datosModProp</servlet-name>
+        <servlet-class>packEuskalRent.datosModProp</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -48,7 +56,6 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
-<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>RegistroUsuariosw</servlet-name>
         <url-pattern>/rUsuario</url-pattern>
@@ -56,15 +63,7 @@
     <servlet-mapping>
         <servlet-name>ModificacionUsuario</servlet-name>
         <url-pattern>/mUsuario</url-pattern>
-=======
-        <servlet>
-        <servlet-name>datosGenProp</servlet-name>
-        <servlet-class>datosGenProp</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>datosModProp</servlet-name>
-        <servlet-class>datosModProp</servlet-class>
-    </servlet>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>datosGenProp</servlet-name>
         <url-pattern>/datosGenProp</url-pattern>
@@ -72,7 +71,6 @@
     <servlet-mapping>
         <servlet-name>datosModProp</servlet-name>
         <url-pattern>/datosModProp</url-pattern>
->>>>>>> cc3067fe35244885f88b511cbe50f28c40c950fa
     </servlet-mapping>
     <session-config>
         <session-timeout>
