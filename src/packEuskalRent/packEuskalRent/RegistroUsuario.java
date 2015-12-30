@@ -46,7 +46,7 @@ public class RegistroUsuario extends HttpServlet {
         ConexionBD CB = ConexionBD.getConexionConBBDD();
         CB.anyadirDatosUsuario(nombre, apellido, correo);
      */   
-     response.sendRedirect("./JSP/PaginaModificacionUsuario.jsp");
+     response.sendRedirect("PaginaModificacionUsuario");
     }
 
     /**

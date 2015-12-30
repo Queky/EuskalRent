@@ -60,7 +60,7 @@ public class ModificacionUsuario extends HttpServlet {
         }
         
         
-     response.sendRedirect("./JSP/PaginaInicio.jsp");
+     response.sendRedirect("PaginaInicio");
     }
 
     /**

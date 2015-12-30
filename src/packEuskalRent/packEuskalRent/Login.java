@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
         super.init(cfg);
         try {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            baseDeDatos = "jdbc:odbc:gasteizcar";
+            baseDeDatos = "jdbc:odbc:euskalrent03";
             conexion = DriverManager.getConnection(baseDeDatos);
             set = conexion.createStatement();
         } catch (Exception e) {

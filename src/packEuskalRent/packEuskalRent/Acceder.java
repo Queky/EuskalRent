@@ -45,14 +45,14 @@ public class Acceder extends HttpServlet {
             System.out.println("el email existe");
             if (coincideContraseñaEmail) {
                 System.out.println("coinciden");
-                response.sendRedirect("./JSP/PaginaBusquedas.jsp");
+                response.sendRedirect("PaginaBusquedas");
             } else {
                 System.out.println("no la contraseña");
-                response.sendRedirect("./JSP/PaginaAcceder.jsp");
+                response.sendRedirect("PaginaAcceder");
             }
         } else {
             System.out.println("no pilla na");
-            response.sendRedirect("./JSP/PaginaAcceder.jsp");
+            response.sendRedirect("PaginaAcceder");
         }
 
     }
