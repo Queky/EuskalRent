@@ -3,6 +3,7 @@
     Created on : 19-nov-2015, 11:42:42
     Author     : BEEP
 --%>
+<%@page import="packEuskalRent.Usuario"%>
 <html>
     <link href='../CSS/RegistroUsuario.css' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
@@ -17,6 +18,7 @@
             <title>Pagina Registro</title>
         </head>
         <body>
+             
             <header>
                 <a href="PaginaInicio.jsp" class="logo">
                     <em>Euskal</em><strong>Rent</strong>
@@ -31,7 +33,7 @@
             <section>
                 <div class="testbox">
                     <h1>Registro</h1>
-                    <form action="PaginaModificacionUsuario.jsp" method="post">
+                    <form action="../rUsuario" method="POST">
                         <label id="icon" for="email"><i class="icon-envelope "></i></label>
                         <input type="email" name="email" id="email" placeholder="Correo"
                                class="form-input" required>
