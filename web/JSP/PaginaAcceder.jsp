@@ -33,14 +33,14 @@
             <section>
                 <div class="loginBox">
                     <h1>Accede a tu cuenta</h1>
-                    <form action="Login" method="post" id="formLogin">
+                    <form action="../aAcceder" method="post" id="formLogin">
                             <label id="icon" for="email"><i class="icon-envelope "></i></label>
                             <input type="email" name="email" id="email" placeholder="Correo"
                                    class="form-input" required/>
                             
                             <label id="icon" for="password"> <i class="icon-shield"></i></label>
-                            <input type="password" name="contraseña" id="contraseña"
-                                   placeholder="Contraseña" class="form-input" required/>
+                            <input type="password" name="contraseña" id="contrasena" placeholder="Contraseña"
+                                class="form-input" required />
                             
                             <div class="botonRegistro">
                                 <input type="button" value="Acceder" class="button" id="btnAcceso"/>
