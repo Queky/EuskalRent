@@ -36,6 +36,10 @@
         <servlet-name>PaginaBusquedas</servlet-name>
         <jsp-file>/JSP/PaginaBusquedas.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaModificacionUsuario</servlet-name>
+        <jsp-file>/JSP/PaginaModificacionUsuario.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>PaginaInicial</servlet-name>
         <url-pattern>/BusquedaUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaModificacionUsuario</servlet-name>
+        <url-pattern>/ModificacionUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
