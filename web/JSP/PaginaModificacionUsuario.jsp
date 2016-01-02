@@ -13,8 +13,8 @@
 <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
 <script src="JavaScript/ValidacionModificacionUsuario.js" language="javascript" type="text/javascript"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" language="javascript" type="text/javascript"></script>
-<script type="text/javascript" src="JavaScript/googleMaps.js" language="javascript" type="text/javascript"></script>
-<script type="text/javascript" src="JavaScript/JSON_1.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="JavaScript/mapa.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="JavaScript/JSON_1yDandD.js" language="javascript" type="text/javascript"></script>
 <!DOCTYPE html>
 <html>
     <html>

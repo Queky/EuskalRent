@@ -8,7 +8,7 @@ function init(){
     var mapOptions = {
         center: centro,
         zoom: 13,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
+        mapTypeId: google.maps.MapTypeId.MAP
     };
     
     map = new google.maps.Map(document.getElementById('map'), mapOptions);

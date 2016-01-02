@@ -40,6 +40,14 @@
         <servlet-name>PaginaModificacionUsuario</servlet-name>
         <jsp-file>/JSP/PaginaModificacionUsuario.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>cAcceder</servlet-name>
+        <servlet-class>packEuskalRent.Acceder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaRegistroPropiedad</servlet-name>
+        <jsp-file>/JSP/RegistroPropiedad.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -80,8 +88,18 @@
         <servlet-name>PaginaModificacionUsuario</servlet-name>
         <url-pattern>/PaginaModificacionUsuario</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cAcceder</servlet-name>
+        <url-pattern>/PaginaAccederjava</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaRegistroPropiedad</servlet-name>
+        <url-pattern>/PaginaRP</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>30</session-timeout>
+        <session-timeout>
+            30
+        </session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>JSP/PaginaInicio.jsp</welcome-file>

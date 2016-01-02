@@ -120,4 +120,30 @@ public class ConexionBD {
          cerrarConexion();
         return coinciden;
     }
+    public Usuario recibirDartosUsuario(String correo){
+    Usuario usuario = Usuario.getUsuario();
+     crearConexion();
+        Statement st;
+      
+     try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from usuario where idEmail='" + correo + "';");
+            while (rs.next()) {
+                
+               usuario.setCorreo(rs.getString("idEmail"));
+               usuario.setContraseña(rs.getString("contraseña"));
+               usuario.setNombre(rs.getString("Nombre"));
+               usuario.setApellido(rs.getString("Apellido"));
+               usuario.setNumTelefono(rs.getInt("NumeroTelefono"));
+               usuario.setDireccion(rs.getString("Direccion"));
+            
+            }   
+     } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+         cerrarConexion();
+        return usuario;
+    
+    }
 }

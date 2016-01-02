@@ -4,6 +4,7 @@
     Author     : Iñaki
 --%>
 
+<%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,10 +28,12 @@
             <nav>
                 <ul>
                     <%
-                    if(session.getAttribute("logueado")=="logueado"){
+                        Usuario usuario = Usuario.getUsuario();
+                    if(usuario.estaLogueado()){
                         %>
-                        <li><a href="correoUsuario"><%=session.getAttribute("correoUsuario")%></a></li>
-                        <li><a href="salir">Salir<%session.invalidate();response.sendRedirect("Inicio");%></a></li>
+                        <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                        <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                        <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
                         <%
                     }else{
                         %>

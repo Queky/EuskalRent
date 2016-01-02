@@ -9,8 +9,9 @@ public class Usuario {
     private String correo;
     private Integer numTelefono;
     private String direccion;
-
+    private boolean estaLogueado;
     private Usuario() {
+        estaLogueado=false;
 
     }
 
@@ -70,5 +71,15 @@ public class Usuario {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    
+    public void loguearse(){
+        this.estaLogueado =true;
+    }
+    public void cerrarSesion(){
+        this.estaLogueado =false;
+    }
+    
+    public boolean estaLogueado(){
+        return this.estaLogueado;
+    }
 }
