@@ -28,10 +28,11 @@
                 <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
-            <nav>
+            <nav><% Usuario usuario = Usuario.getUsuario();%>
                 <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
+                    <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                    <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                    <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
                 </ul>      
             </nav>
         </header>
@@ -45,29 +46,42 @@
                 <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
 
                 <div>    <form action="mUsuario" method="post">
-                        <%  Usuario usuario =  Usuario.getUsuario();%>
+
 
                         <input type="email" name="email" id="email" value="<%=usuario.getCorreo()%>" placeholder="Correo" class="form-input" 
                                onkeyup="revisar(this);
-                 revisaremail(this)" required/>
+                                       revisaremail(this)" required/>
                         <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre" value="<%=usuario.getNombre()%>"placeholder="Nombre" class="form-input" 
                                onkeyup="revisar(this);
-                 revisarNombreApellidos(this)" required/>
+                                       revisarNombreApellidos(this)" required/>
                         <input type="text" name="apellidos" value="<%=usuario.getApellido()%>" id="apellidos" placeholder="Apellidos" class="form-input" 
                                onkeyup="revisar(this);
-                 revisarNombreApellidos(this)" required/>
-                        <input type="number" name="telefono" id="numtelefono" placeholder="Numero de movil" class="form-input"
+                                       revisarNombreApellidos(this)" required/>
+                        <%if (usuario.getNumTelefono() != null) {%>
+                        <input type="number" name="telefono" id="numtelefono" value="<%=usuario.getNumTelefono()%>" placeholder="Numero de movil" class="form-input"
                                onkeyup="revisar(this);
-                 revisarNumeroTelefono(this)" required />
+                                       revisarNumeroTelefono(this)" required />
+                        <%} else {%>
+                        <input type="number" name="telefono" id="numtelefono"  placeholder="Numero de movil" class="form-input"
+                               onkeyup="revisar(this);
+                                       revisarNumeroTelefono(this)" required />
+                        <%}%>
+                        <%if (usuario.getDireccion() != null) {%>
+                        <input type="text" id="buscadorDireccion" placeholder="Dirección" name="direccion"
+                               class="form-input" onkeyup="buscarDireccion(this.id.value)" value="<%=usuario.getDireccion()%>"
+                               title="Dirección a Geocode" value="" id="busDir"
+                               oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" 
+                               onload="buscarDireccion(document.getElementById('buscadorDireccion').value)"/>
+                        <%} else {%> 
                         <input type="text" id="buscadorDireccion" placeholder="Dirección" name="direccion"
                                class="form-input" onkeyup="buscarDireccion(this.id.value)" 
                                oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"
                                title="Dirección a Geocode" value="" id="busDir" onchange=""/>
-
+                        <%}%>
                         <div id="map" style="width: 300px; height: 200px"class="map"></div>
-                    <input type="submit" value="  Guardar  " class="button" id="btnModificacionUsuario"/> </form>
+                        <input type="submit" value="  Guardar  " class="button" id="btnModificacionUsuario"/> </form>
                 </div>
-                              
+
             </div>   
 
         </section>

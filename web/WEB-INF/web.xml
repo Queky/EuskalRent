@@ -48,6 +48,10 @@
         <servlet-name>PaginaRegistroPropiedad</servlet-name>
         <jsp-file>/JSP/RegistroPropiedad.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaModificacionPropiedad</servlet-name>
+        <jsp-file>/JSP/ModificacionPropiedad.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>PaginaRegistroPropiedad</servlet-name>
         <url-pattern>/PaginaRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaModificacionPropiedad</servlet-name>
+        <url-pattern>/PaginaMP</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

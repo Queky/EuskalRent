@@ -146,4 +146,17 @@ public class ConexionBD {
         return usuario;
     
     }
+    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion) {
+        crearConexion();
+        Statement st;
+        try {
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`)"
+                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "');");
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+        cerrarConexion();
+    }
 }

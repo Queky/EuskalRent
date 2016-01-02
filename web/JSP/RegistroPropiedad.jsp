@@ -3,7 +3,7 @@
     Created on : 19-nov-2015, 15:49:18
     Author     : Zigor
 --%>
-
+<%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,10 +27,11 @@
                 <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
-            <nav>
+            <nav><% Usuario usuario= Usuario.getUsuario();%>
                 <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
+                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                     <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                    <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
                 </ul>      
             </nav>
         </header><br>

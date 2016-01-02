@@ -3,6 +3,7 @@ package packEuskalRent;
 public class Usuario {
 
     private static Usuario mUsuario;
+    private Propiedad propiedad;
     private String nombre;
     private String apellido;
     private String contraseña;
@@ -22,6 +23,14 @@ public class Usuario {
 
         return mUsuario;
 
+    }
+    
+    public void asignarPropiedad(Propiedad propiedad){
+        this.propiedad = propiedad;
+    }
+    
+    public Propiedad getPropiedad(){
+    return this.propiedad;
     }
 
     public String getNombre() {
