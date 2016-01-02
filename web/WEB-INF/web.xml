@@ -78,12 +78,10 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PaginaModificacionUsuario</servlet-name>
-        <url-pattern>/ModificacionUsuario</url-pattern>
+        <url-pattern>/PaginaModificacionUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>JSP/PaginaInicio.jsp</welcome-file>
