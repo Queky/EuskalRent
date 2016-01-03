@@ -43,6 +43,7 @@ public class datosModProp extends HttpServlet {
             out.println("<title>Servlet guardarDatos</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("Precio" + precio);
             out.println("</body>");
             out.println("</html>");
         }

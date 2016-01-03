@@ -21,6 +21,7 @@ window.addEventListener('load', inicio, false);
     function leer(ev) {
         document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";
     }
+
     
     
         
