@@ -41,10 +41,10 @@
         <jsp-file>/JSP/PaginaModificacionUsuario.jsp</jsp-file>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>BusquedaUsuario</servlet-name>
         <servlet-class>packEuskalRent.BusquedaUsuario</servlet-class>
-=======
+    </servlet>
+    <servlet>
         <servlet-name>cAcceder</servlet-name>
         <servlet-class>packEuskalRent.Acceder</servlet-class>
     </servlet>
@@ -59,7 +59,6 @@
     <servlet>
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
->>>>>>> master
     </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
@@ -102,10 +101,10 @@
         <url-pattern>/PaginaModificacionUsuario</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>BusquedaUsuario</servlet-name>
         <url-pattern>/Buscar</url-pattern>
-=======
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>cAcceder</servlet-name>
         <url-pattern>/PaginaAccederjava</url-pattern>
     </servlet-mapping>
@@ -120,7 +119,6 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/PaginaCS</url-pattern>
->>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>
