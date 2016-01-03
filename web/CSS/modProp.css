@@ -38,5 +38,20 @@
 #buscadorDireccion {
     width:500px;
 }
-
+#politicasCancelacion {
+    border-radius: 7px;
+    border: solid 2px #fb9e25;
+    background-color: #fff;
+    width: 60%;
+}
+#botonAyuda {
+    border: solid 1px #fb9e25;
+    font-size: 12px;
+}
+#precio {
+    margin-left: 2%;
+}
+#politica {
+    margin-left: 7%;
+}
 

@@ -47,7 +47,7 @@
                 <p>Arrastre la foto del apartamento al siguiente recuadro</p>
                 <div name="Caja" id="caja"></div>
                 <p>Introduzca el precio por noche</p>   
-                <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
+                <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1" required/> &euro;<br>         
                 <p>Calendario para ver días ocupados de la propiedad</p>
                 <input type="date" id="calendario" class="cajasDatos" required><br>
                 <p>Seleccione el tipo de política de cancelación para su propiedad</p>
