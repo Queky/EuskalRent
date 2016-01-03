@@ -21,6 +21,15 @@
         <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                //window.location.href="ApartamentoElegido";
+                $(location).attr('href', 'ApartamentoElegido');
+            });
+        });
+        </script>
     </head>
     <body>
         <header>
@@ -47,21 +56,32 @@
             %>
             <table>
                 <tr>
-                    <th>Localizador de apartamento</th>
-                    <th>Tipo de propiedad</TH>
-                    <th>Numero maximo de huespedes</th>
-                    <th>Barrio</th>
-                    <th>Tarifa</th>
+                    <th><p>Localizador de apartamento</th>
+                    <th><p>Tipo de propiedad</p></TH>
+                    <th><p>Numero maximo de huespedes</p></th>
+                    <th><p>Barrio</p></th>
+                    <th><p>Tarifa/Noche</p></th>
                 </tr>
-                <% while(resultset.next()){ %>
-                <tr class="subrayados">
-                    <td> <%= resultset.getObject("idapartamento") %></td>
-                    <td> <%= resultset.getObject("tipopropiedad") %></td>
-                    <td> <%= resultset.getObject("numerohuespedes") %></td>
-                    <td> <%= resultset.getObject("barrio") %></td>
-                    <td> <%= resultset.getObject("tarifa") %> €</td>
+                    <%
+                    int cont=1;
+                    while(resultset.next()){
+                        cont++;
+                    }
+                    resultset.beforeFirst();
+                    if(cont>1){
+                        while(resultset.next()){
+                    %>
+                        <tr class="subrayados">
+                            <td><p> <%= resultset.getObject("idapartamento") %></p></td>
+                            <td><p> <%= resultset.getObject("tipopropiedad") %></p></td>
+                            <td><p> <%= resultset.getObject("numerohuespedes") %></p></td>
+                            <td><p> <%= resultset.getObject("barrio") %></p></td>
+                            <td><p> <%= resultset.getObject("tarifa") %> €</p></td>
                 </tr>
-                <% } %>
+                        <% }
+                    }else{
+                        response.sendRedirect("SinApartamentos");
+                    }%>
             </table>
         </div>
     </body>

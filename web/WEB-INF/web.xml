@@ -60,6 +60,14 @@
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApartamentoNoDisponible</servlet-name>
+        <jsp-file>/JSP/ApartamentosNoDisponibles.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaPropiaApartamentos</servlet-name>
+        <jsp-file>/JSP/PaginaApartamentos.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -119,6 +127,14 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/PaginaCS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApartamentoNoDisponible</servlet-name>
+        <url-pattern>/SinApartamentos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaPropiaApartamentos</servlet-name>
+        <url-pattern>/ApartamentoElegido</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
