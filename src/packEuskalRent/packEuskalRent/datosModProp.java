@@ -43,9 +43,6 @@ public class datosModProp extends HttpServlet {
             out.println("<title>Servlet guardarDatos</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>La imagen seleccionada es:" + direccion + "</h1>");
-            out.println("<h1>El precio seleccionado es:" + precio + "</h1>");
-            out.println("<h1>La pólitica seleccionada es:" + politica + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
