@@ -41,6 +41,10 @@
         <jsp-file>/JSP/PaginaModificacionUsuario.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>BusquedaUsuario</servlet-name>
+        <servlet-class>packEuskalRent.BusquedaUsuario</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>cAcceder</servlet-name>
         <servlet-class>packEuskalRent.Acceder</servlet-class>
     </servlet>
@@ -97,6 +101,10 @@
         <url-pattern>/PaginaModificacionUsuario</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>BusquedaUsuario</servlet-name>
+        <url-pattern>/Buscar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>cAcceder</servlet-name>
         <url-pattern>/PaginaAccederjava</url-pattern>
     </servlet-mapping>
@@ -120,4 +128,8 @@
     <welcome-file-list>
         <welcome-file>JSP/PaginaInicio.jsp</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/JSP/Error.jsp</location>
+    </error-page>
 </web-app>

@@ -6,6 +6,7 @@
 package packEuskalRent;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,17 @@ import javax.servlet.http.HttpSession;
  *
  * @author inakisanchez
  */
-public class BusquedaUsuario extends HttpServlet {
+public class BusquedaApartamento extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -45,20 +56,9 @@ public class BusquedaUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        HttpSession s = request.getSession(true);
-        //response.setContentType("text/html");
-
-        String barrio = (String) request.getParameter("barrio");
-        s.setAttribute("barrioElegido", barrio);
-        int numHuespedes = Integer.parseInt(request.getParameter("numHuespedes"));
-        s.setAttribute("numHuespedes", numHuespedes);
-        String fechaEntrada = request.getParameter("fechaInicio");
-        s.setAttribute("fechaInicio", fechaEntrada);
-        String fechaSalida = request.getParameter("fechaFin");
-        s.setAttribute("fechaFin", fechaSalida);
-
-        
-        //request.getRequestDispatcher("Busqueda").forward(request, response);
+        HttpSession s = request.getSession(false);
+        s.getAttribute("fechaInicio");
+        request.getRequestDispatcher("Busqueda").forward(request, response);
         response.sendRedirect("Busqueda");
     }
 
