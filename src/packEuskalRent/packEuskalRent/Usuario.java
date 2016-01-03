@@ -12,7 +12,7 @@ public class Usuario {
     private String direccion;
     private boolean estaLogueado;
     private Usuario() {
-        estaLogueado=false;
+        
 
     }
 
@@ -90,5 +90,21 @@ public class Usuario {
     
     public boolean estaLogueado(){
         return this.estaLogueado;
+    }
+    public void borrarDatosSesion(){
+    this.propiedad = null;
+    this.apellido = null;
+    this.contraseña = null;
+    this.correo = null;
+    this.direccion = null;
+    this.nombre = null;
+    this.numTelefono = null;
+            }
+    public boolean tienePropiedad(){
+    boolean tienePropiedad = false;
+    if(this.propiedad != null){
+        tienePropiedad =true;
+                }
+    return tienePropiedad;
     }
 }

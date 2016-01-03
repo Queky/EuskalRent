@@ -28,8 +28,9 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
+                   <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                     <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul>      
             </nav>
         </header>

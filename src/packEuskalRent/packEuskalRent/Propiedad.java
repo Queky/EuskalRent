@@ -22,7 +22,7 @@ public class Propiedad {
     private Propiedad() {
     }
 
-    public static Propiedad getUsuario() {
+    public static Propiedad getPropiedad() {
         if (mPropiedad == null) {
             mPropiedad = new Propiedad();
         }

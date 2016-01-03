@@ -32,11 +32,13 @@
                     if(usuario.estaLogueado()){
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                        <% if(!usuario.tienePropiedad()){%>
                         <li><a href="PaginaRP">Registrar Propiedad</a></li>
-                        <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
-                        <%
-                    }else{
-                        %>
+                        <%}else{%>
+                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                        <%}%>
+                        <li><a href="PaginaCS">Cerrar Sesion</a></li>
+                    <%}else{%>
                         <li><a href="Acceso">Acceder</a></li>
                         <li><a href="Registro">Registrarse</a></li>
                         <%

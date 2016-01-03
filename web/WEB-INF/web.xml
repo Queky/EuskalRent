@@ -52,6 +52,10 @@
         <servlet-name>PaginaModificacionPropiedad</servlet-name>
         <jsp-file>/JSP/ModificacionPropiedad.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>PaginaModificacionPropiedad</servlet-name>
         <url-pattern>/PaginaMP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/PaginaCS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

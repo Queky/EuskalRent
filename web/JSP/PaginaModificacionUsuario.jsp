@@ -29,11 +29,11 @@
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav><% Usuario usuario = Usuario.getUsuario();%>
-                <ul>
+                <ul><% if(usuario.estaLogueado()){%>
                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                     <li><a href="PaginaRP">Registrar Propiedad</a></li>
-                    <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
-                </ul>      
+                    <li><a href="PaginaCS">Cerrar Sesion</a></li>
+                </ul> <%}%>     
             </nav>
         </header>
         <section>

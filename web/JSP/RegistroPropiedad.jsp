@@ -31,7 +31,7 @@
                 <ul>
                      <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                      <li><a href="PaginaRP">Registrar Propiedad</a></li>
-                    <li><a href="Inicio">Cerrar Sesion<%usuario.cerrarSesion();%></a></li>
+                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul>      
             </nav>
         </header><br>
