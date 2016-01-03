@@ -52,6 +52,7 @@ public class ModificacionUsuario extends HttpServlet {
         usuario.setNumTelefono(numTelefono);
         usuario.setCorreo(correo);
         usuario.setDireccion(direccion);
+        usuario.loguearse();
         ConexionBD BD = ConexionBD.getConexionConBBDD();
         if (direccion==null){
             BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono);
@@ -60,7 +61,7 @@ public class ModificacionUsuario extends HttpServlet {
         }
         
         
-     response.sendRedirect("PaginaInicio");
+     response.sendRedirect("Inicio");
     }
 
     /**

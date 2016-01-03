@@ -34,9 +34,10 @@ public class Acceder extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        HttpSession s = request.getSession(true);
+       
+       // String contraseña =  (String)request.getParameter("contraseñas");
         String correo = (String)request.getParameter("email");
-        String contraseña = (String)request.getParameter("contraseña");
+        String contraseña =  (String)request.getParameter("prueba");
         System.out.println(correo);
         System.out.println(contraseña);
         ConexionBD CB = ConexionBD.getConexionConBBDD();
@@ -46,7 +47,9 @@ public class Acceder extends HttpServlet {
             System.out.println("el email existe");
             if (coincideContraseñaEmail) {
                 System.out.println("coinciden");
-                s.setAttribute("logueado", "logueado");
+                Usuario usuario = CB.recibirDartosUsuario(correo);
+                usuario.loguearse();
+               // s.setAttribute("logueado", "logueado");
                 response.sendRedirect("Inicio");
             } else {
                 System.out.println("no la contraseña");

@@ -12,69 +12,43 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Zigor
+ * @author Eneko
  */
 public class datosModProp extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+ @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-
-            String precio = request.getParameter("Precio");
-            String politica = request.getParameter("Politica");
-            String direccion = request.getParameter("Direccion");
-                    
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet guardarDatos</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("</body>");
-            out.println("</html>");
+        try {
+            doPost(request, response);
+        } catch (Exception e) {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+ 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        Propiedad propiedad = Propiedad.getPropiedad();
+        
+        String direccion = (String) request.getParameter("Direccion");
+        float precioNoche = Float.parseFloat(request.getParameter("Precio"));
+        String tipoCancelacion= (String) request.getParameter("Politica");
+        
+        propiedad.setDireccion(direccion);
+        propiedad.setPrecioNoche(precioNoche);
+        propiedad.setPoliticaDeCancelacion(tipoCancelacion);
+        Usuario usuario = Usuario.getUsuario();
+        usuario.asignarPropiedad(propiedad);
+        propiedad.setCorreoUsuario(usuario.getCorreo());
+        ConexionBD BD = ConexionBD.getConexionConBBDD();
+        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion);
+        BD.actualizarIdApartamentoUsuarioBD(usuario.getCorreo());
+        
+     response.sendRedirect("Inicio");
     }
 
     /**

@@ -28,8 +28,9 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
+                   <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                     <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul>      
             </nav>
         </header>
@@ -39,23 +40,23 @@
                 <div class="parrafoPropiedad">
                     <p>Seleccione en el mapa la localización de la propiedad</p>
                     <input type="text" id="buscadorDireccion" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
-                       oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"/>
+                           oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
                     <div id="map" style="width:500px; height:200px;"></div>
                 </div>
                 <div class="parrafoPropiedad">
                 <p>Arrastre la foto del apartamento al siguiente recuadro</p>
                 <div name="Caja" id="caja"></div>
                 <p>Introduzca el precio por noche</p>   
-                <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1"/><br>         
+                <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
                 <p>Calendario para ver días ocupados de la propiedad</p>
-                <input type="date" id="calendario" class="cajasDatos"><br>
+                <input type="date" id="calendario" class="cajasDatos" required><br>
                 <p>Seleccione el tipo de política de cancelación para su propiedad</p>
-                <select name="Politica" id="politica" class="desp">
+                <select name="Politica" id="politica" class="desp" required>
                     <option value="Flexible">Flexible</option>
                     <option value="Premium">Premium</option>
                 </select>
                 <br><br>
-                <input type="button" id="btnValMP" value="Guardar" class="botonBuscar" onclick=""/>
+                <input type="submit" id="btnValMP" value="Guardar" class="botonBuscar" onclick=""/>
                 </div>
             </form> 
         </div>

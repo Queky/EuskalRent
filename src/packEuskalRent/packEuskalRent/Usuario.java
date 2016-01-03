@@ -3,14 +3,16 @@ package packEuskalRent;
 public class Usuario {
 
     private static Usuario mUsuario;
+    private Propiedad propiedad;
     private String nombre;
     private String apellido;
     private String contraseña;
     private String correo;
     private Integer numTelefono;
     private String direccion;
-
+    private boolean estaLogueado;
     private Usuario() {
+        
 
     }
 
@@ -21,6 +23,14 @@ public class Usuario {
 
         return mUsuario;
 
+    }
+    
+    public void asignarPropiedad(Propiedad propiedad){
+        this.propiedad = propiedad;
+    }
+    
+    public Propiedad getPropiedad(){
+    return this.propiedad;
     }
 
     public String getNombre() {
@@ -70,5 +80,31 @@ public class Usuario {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
+    
+    public void loguearse(){
+        this.estaLogueado =true;
+    }
+    public void cerrarSesion(){
+        this.estaLogueado =false;
+    }
+    
+    public boolean estaLogueado(){
+        return this.estaLogueado;
+    }
+    public void borrarDatosSesion(){
+    this.propiedad = null;
+    this.apellido = null;
+    this.contraseña = null;
+    this.correo = null;
+    this.direccion = null;
+    this.nombre = null;
+    this.numTelefono = null;
+            }
+    public boolean tienePropiedad(){
+    boolean tienePropiedad = false;
+    if(this.propiedad != null){
+        tienePropiedad =true;
+                }
+    return tienePropiedad;
+    }
 }
