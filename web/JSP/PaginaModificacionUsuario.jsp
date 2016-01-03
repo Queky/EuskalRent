@@ -31,7 +31,11 @@
             <nav><% Usuario usuario = Usuario.getUsuario();%>
                 <ul><% if(usuario.estaLogueado()){%>
                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
-                    <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                     <% if(!usuario.tienePropiedad()){%>
+                        <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                        <%}else{%>
+                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                        <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul> <%}%>     
             </nav>
