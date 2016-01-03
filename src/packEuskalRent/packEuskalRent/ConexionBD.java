@@ -99,22 +99,22 @@ public class ConexionBD {
             e.printStackTrace();
 
         }
-         cerrarConexion();
+        cerrarConexion();
         return encontrado;
     }
 
     public boolean coincideContraseñaEmail(String correo, String contraseña) {
         crearConexion();
         Statement st;
-        
+
         boolean coinciden = false;
         try {
             st = con.createStatement();
             ResultSet rs = st.executeQuery("select idEmail, contraseña from usuario where idEmail='" + correo + "' and contraseña='" + contraseña + "';");
             while (rs.next()) {
-               String contr = rs.getString("contraseña");
-               String ema = rs.getString("idEmail");
-                
+                String contr = rs.getString("contraseña");
+                String ema = rs.getString("idEmail");
+
                 if (contr.equalsIgnoreCase(contraseña) && ema.equalsIgnoreCase(correo)) {
                     coinciden = true;
                 }
@@ -123,7 +123,112 @@ public class ConexionBD {
             e.printStackTrace();
 
         }
-         cerrarConexion();
+        cerrarConexion();
         return coinciden;
+    }
+
+    public Usuario recibirDartosUsuario(String correo) {
+        Usuario usuario = Usuario.getUsuario();
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from usuario where idEmail='" + correo + "';");
+            while (rs.next()) {
+
+                usuario.setCorreo(rs.getString("idEmail"));
+                usuario.setContraseña(rs.getString("contraseña"));
+                usuario.setNombre(rs.getString("Nombre"));
+                usuario.setApellido(rs.getString("Apellido"));
+                usuario.setNumTelefono(rs.getInt("NumeroTelefono"));
+                usuario.setDireccion(rs.getString("Direccion"));
+                usuario.asignarPropiedad(mConexionBD.recibirDartosPropiedad(correo));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return usuario;
+
+    }
+
+    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion) {
+        crearConexion();
+        Statement st;
+        try {
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`)"
+                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "');");
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+        cerrarConexion();
+    }
+
+    public Propiedad recibirDartosPropiedad(String correo) {
+        Propiedad propiedad = Propiedad.getPropiedad();
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from apartamento where idEmail='" + correo + "';");
+            while (rs.next()) {
+                propiedad.setBarrio(rs.getString("Barrio"));
+                propiedad.setCorreoUsuario(rs.getString("idEmail"));
+                propiedad.setDireccion(rs.getString("Direccion"));
+                propiedad.setNumHuespedes(rs.getInt("NumeroHuespedes"));
+                propiedad.setPoliticaDeCancelacion(rs.getString("TipoCancelacion"));
+                propiedad.setPrecioNoche(rs.getFloat("Tarifa"));
+                propiedad.setTipoPropieedad(rs.getString("TipoPropiedad"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return propiedad;
+
+    }
+    public int getIdApartamentoBD(String correo){
+        int idApartamento = 0;
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select idApartamento from apartamento where idEmail='" + correo + "';");
+            while (rs.next()) {
+             idApartamento = rs.getInt("idApartamento");
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return idApartamento;
+   
+    }
+    public void actualizarIdApartamentoUsuarioBD(String correo){
+        int idApartamento = mConexionBD.getIdApartamentoBD(correo);
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `IdApartamento`='" + idApartamento + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        
     }
 }

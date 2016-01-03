@@ -41,8 +41,25 @@
         <jsp-file>/JSP/PaginaModificacionUsuario.jsp</jsp-file>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>BusquedaUsuario</servlet-name>
         <servlet-class>packEuskalRent.BusquedaUsuario</servlet-class>
+=======
+        <servlet-name>cAcceder</servlet-name>
+        <servlet-class>packEuskalRent.Acceder</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaRegistroPropiedad</servlet-name>
+        <jsp-file>/JSP/RegistroPropiedad.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaModificacionPropiedad</servlet-name>
+        <jsp-file>/JSP/ModificacionPropiedad.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
+>>>>>>> master
     </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
@@ -85,11 +102,30 @@
         <url-pattern>/PaginaModificacionUsuario</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>BusquedaUsuario</servlet-name>
         <url-pattern>/Buscar</url-pattern>
+=======
+        <servlet-name>cAcceder</servlet-name>
+        <url-pattern>/PaginaAccederjava</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaRegistroPropiedad</servlet-name>
+        <url-pattern>/PaginaRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaModificacionPropiedad</servlet-name>
+        <url-pattern>/PaginaMP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/PaginaCS</url-pattern>
+>>>>>>> master
     </servlet-mapping>
     <session-config>
-        <session-timeout>30</session-timeout>
+        <session-timeout>
+            30
+        </session-timeout>
     </session-config>
     <welcome-file-list>
         <welcome-file>JSP/PaginaInicio.jsp</welcome-file>

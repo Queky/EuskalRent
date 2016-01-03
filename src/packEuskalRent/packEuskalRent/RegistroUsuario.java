@@ -41,6 +41,7 @@ public class RegistroUsuario extends HttpServlet {
         usuario.setApellido(apellido);
         usuario.setCorreo(correo);
         usuario.setContraseña(contraseña);
+        
        
    /*
         ConexionBD CB = ConexionBD.getConexionConBBDD();

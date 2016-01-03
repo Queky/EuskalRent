@@ -10,46 +10,11 @@ dropBox = document.getElementById("fileOutput");
 dropBox.ondragenter = ignoreDrag;
 dropBox.ondragover = ignoreDrag;
 dropBox.ondrop = drop;
-actualizar();
 }
 
 
-function actualizar() {
-    var datos = JSON.parse(localStorage.getItem('DatosRegistro'));
-    var datos1 = JSON.parse(localStorage.getItem('DatosUsuario'));
-    var foto = datos1.foto;
-    var numTelefono = datos1.telefono;
-    var direccion= datos1.direccion;
-    var correo = datos.correo;
-    var nombre= datos.nombre;
-    var apellidos= datos.apellidos;
-    document.getElementById("email").value=correo;
-    document.getElementById("nombre").value=nombre;
-    document.getElementById("apellidos").value=apellidos;
-    document.getElementById("telefono").value=numTelefono;
-    document.getElementById("buscadorDireccion").value=direccion;
-    document.getElementById("fileOutput").value=foto;
-}
 
-function clickGuardarJSON_1(){
-     
-    var correo = document.getElementById("email").value;
-    var nombre = document.getElementById("nombre").value;
-    var apellidos = document.getElementById("apellidos").value;
-    var telefono= document.getElementById("telefono").value;
-    var direccion= document.getElementById("buscadorDireccion").value;
-    var foto=document.getElementById("fileOutput").value;
-  
-    
-    var jsona = {"correo":correo,"nombre":nombre,"apellidos":apellidos,"telefono":telefono,"direccion":direccion,"foto":foto};
-   
-    var datosLSO = JSON.stringify(jsona);
-    localStorage.setItem("DatosUsuario",datosLSO);
-   
-   
-    // alert(correos);
-     
-}
+
 function processFiles(files) {
 var file = files[0];
 var reader = new FileReader();
