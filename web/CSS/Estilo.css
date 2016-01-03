@@ -71,6 +71,23 @@ section h1 {
     font-size: 48px;
 }
 
+div.centrado {
+    margin-top: 2%;
+    text-align: center;
+}
+
+div.centrado table, td, th {
+    padding: 10px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+tr.subrayados:hover {
+    background-color:#ffffff; 
+}
+
 section p {
     font-family: 'Muli', sans-serif;
     font-size: 18px;
@@ -160,7 +177,7 @@ section p {
     border: solid 1px #cbc9c9;
 }
 .error{
-    border:  solid 5px red;
+    border:  solid 2px red;
 }
 
 .parrafoPropiedad {

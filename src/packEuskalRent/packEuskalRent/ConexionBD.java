@@ -1,6 +1,12 @@
 package packEuskalRent;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //Diseño responsive para la conexion con la base de datos
 public class ConexionBD {
@@ -8,7 +14,7 @@ public class ConexionBD {
     private static ConexionBD mConexionBD;
     private Connection con;
 
-    private ConexionBD() {
+    ConexionBD() {
     }
 
     public static ConexionBD getConexionConBBDD() {
