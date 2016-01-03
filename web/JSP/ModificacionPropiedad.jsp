@@ -19,6 +19,7 @@
         <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
         <script type="text/javascript" src="JavaScript/valModApar.js"></script>
         <script type="text/javascript" src="JavaScript/webStorage.js"></script>
+        <script type="text/javascript" src="JavaScript/mostrarAyuda.js"></script>
     </head>
     <body>
         <header>
@@ -43,7 +44,7 @@
                            oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
                     <div id="map" style="width:500px; height:200px;"></div>
                 </div>
-                <div class="parrafoPropiedad">
+                <div class="parrafoPropiedad"></div>
                 <p>Arrastre la foto del apartamento al siguiente recuadro</p>
                 <div name="Caja" id="caja"></div>
                 <p>Introduzca el precio por noche</p>   
@@ -55,9 +56,16 @@
                     <option value="Flexible">Flexible</option>
                     <option value="Premium">Premium</option>
                 </select>
+                <input type="button" id="botonAyuda" value="Ayuda" onclick="mostrarAyuda()"/><br><br>
+                <div id="politicasCancelacion" style="display: none">
+                    <p>POLÍTICA FLEXIBLE</p>
+                    savfsavava
+                    <p>POLÍTICA PREMIUM</p>
+                    savfsavava
+                    <br><br><input type="button" id="botonCerrarAyuda" value="Cerrar" onclick="cerrarAyuda()"/><br><br>
+                </div>
                 <br><br>
                 <input type="submit" id="btnValMP" value="Guardar" class="botonBuscar" onclick=""/>
-                </div>
             </form> 
         </div>
     </body>
