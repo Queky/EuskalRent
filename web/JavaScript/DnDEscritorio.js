@@ -22,6 +22,21 @@ window.addEventListener('load', inicio, false);
         document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";
     }
     
+var imagen = new Image();
+var imagenCodificada;
+
+    function codificar(ev) {
+        imagen = ev.target.result;
+        imagenCodificada = btoa(imagen);
+        alert(imagenCodificada);
+    }
+    
+    function decodificar() {
+        var imagenDecodificada = atob(imagenCodificada);
+        alert(imagenDecodificada);
+        document.getElementById('imagen').src = imagenDecodificada;
+    }
+    
     
         
   
