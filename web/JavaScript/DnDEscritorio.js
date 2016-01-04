@@ -10,6 +10,8 @@ window.addEventListener('load', inicio, false);
         ev.preventDefault();
         var arch=new FileReader();
         arch.addEventListener('load',leer,false);
+        arch.addEventListener('load',codificar,false);
+        arch.addEventListener('load',decodificar,false);
         arch.readAsDataURL(ev.dataTransfer.files[0]); 
     }      
     
@@ -21,7 +23,7 @@ window.addEventListener('load', inicio, false);
     function leer(ev) {
         document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";
     }
-    
+
 var imagen = new Image();
 var imagenCodificada;
 
@@ -36,7 +38,3 @@ var imagenCodificada;
         alert(imagenDecodificada);
         document.getElementById('imagen').src = imagenDecodificada;
     }
-    
-    
-        
-  
