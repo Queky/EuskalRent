@@ -50,8 +50,8 @@
                         <option value="Apartamento">Apartamento</option>
                         <option value="Chalet">Chalet</option>
                     </select>
-                    <p class="parrafoPropiedad">Número de huespedes</p><br>
-                    <input type="number" name="numHuespedes" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
+                    <p class="parrafoPropiedad">Número de huéspedes</p><br>
+                    <input type="number" name="numHuespedes" id="numHuespedes" class="cajasDatos" placeholder="Huéspedes"
                            min="1" max="10" required/><br><br><br><br>
                     <input type="submit" id="btnValRP" value="Guardar" class="botonBuscar" onclick=""/>
                 </div>

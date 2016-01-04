@@ -11,7 +11,6 @@ window.addEventListener('load', inicio, false);
         var arch=new FileReader();
         arch.addEventListener('load',leer,false);
         arch.addEventListener('load',codificar,false);
-        arch.addEventListener('load',decodificar,false);
         arch.readAsDataURL(ev.dataTransfer.files[0]); 
     }      
     
@@ -30,8 +29,4 @@ var imagenCodificada;
     function codificar(ev) {
         imagen = ev.target.result;
         imagenCodificada = btoa(imagen);
-    }
-    
-    function decodificar() {
-        var imagenDecodificada = atob(imagenCodificada);
     }
