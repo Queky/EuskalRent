@@ -49,7 +49,7 @@
                 <div name="Caja" id="caja"></div>
                 <p>Introduzca el precio por noche</p>   
                 <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1" required/> &euro;<br>         
-                <p>Calendario para ver días ocupados de la propiedad</p>
+                <p>Seleccione el día a partir del cual estará disponible la propiedad</p>
                 <input type="date" id="calendario" class="cajasDatos" required><br>
                 <p>Seleccione el tipo de política de cancelación para su propiedad</p>
                 <select name="Politica" id="politica" class="desp" required>
