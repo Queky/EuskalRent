@@ -48,10 +48,15 @@
     border: solid 1px #fb9e25;
     font-size: 12px;
 }
-#precio {
-    margin-left: 2%;
+#euro {
+    font-size: 25px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 8px;
 }
-#politica {
-    margin-left: 7%;
+#botonAyuda {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 8px;
 }
 
