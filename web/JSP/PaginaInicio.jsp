@@ -6,8 +6,10 @@
 
 <%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="utf-8">
         <title>EuskalRent</title>
@@ -27,8 +29,13 @@
             </a>
             <nav>
                 <ul>
-                    <%
-                        Usuario usuario = Usuario.getUsuario();
+                  
+                    <%  
+                        
+                        if(session.getAttribute("Usuario")!=null){
+                        Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
+                        session.setAttribute("Usuario", usuario);
+                        
                     if(usuario.estaLogueado()){
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
@@ -38,7 +45,7 @@
                         <li><a href="PaginaMP">Modificar Propiedad</a></li>
                         <%}%>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
-                    <%}else{%>
+                    <%}}else{%>
                         <li><a href="Acceso">Acceder</a></li>
                         <li><a href="Registro">Registrarse</a></li>
                         <%

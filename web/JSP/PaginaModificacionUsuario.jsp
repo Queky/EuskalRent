@@ -28,7 +28,8 @@
                 <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
-            <nav><% Usuario usuario = Usuario.getUsuario();%>
+            <nav><%
+                        Usuario usuario = (Usuario) session.getAttribute("Usuario");%>
                 <ul><% if(usuario.estaLogueado()){%>
                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                      <% if(!usuario.tienePropiedad()){%>
@@ -54,7 +55,7 @@
 
                         <input type="email" name="email" id="email" value="<%=usuario.getCorreo()%>" placeholder="Correo" class="form-input" 
                                onkeyup="revisar(this);
-                                       revisaremail(this)" required/>
+                                   revisaremail(this)" readonly required/>
                         <input type="text" name="nombre" pattern="[A-Za-z]{3,}"  id="nombre" value="<%=usuario.getNombre()%>"placeholder="Nombre" class="form-input" 
                                onkeyup="revisar(this);
                                        revisarNombreApellidos(this)" required/>

@@ -27,7 +27,7 @@
                 <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
-            <nav><% Usuario usuario= Usuario.getUsuario();%>
+            <nav><% Usuario usuario= new Usuario();%>
                 <ul>
                      <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                      <li><a href="PaginaRP">Registrar Propiedad</a></li>

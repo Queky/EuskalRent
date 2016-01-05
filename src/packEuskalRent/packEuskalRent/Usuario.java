@@ -2,7 +2,7 @@ package packEuskalRent;
 
 public class Usuario {
 
-    private static Usuario mUsuario;
+
     private Propiedad propiedad;
     private String nombre;
     private String apellido;
@@ -11,20 +11,11 @@ public class Usuario {
     private Integer numTelefono;
     private String direccion;
     private boolean estaLogueado;
-    private Usuario() {
+    private String numSesion;
+    public Usuario() {
         
-
     }
 
-    public static Usuario getUsuario() {
-        if (mUsuario == null) {
-            mUsuario = new Usuario();
-        }
-
-        return mUsuario;
-
-    }
-    
     public void asignarPropiedad(Propiedad propiedad){
         this.propiedad = propiedad;
     }
@@ -80,6 +71,13 @@ public class Usuario {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    public void setNumSesion(String numSesion){
+        this.numSesion = numSesion;
+    }
+    
+    public String getNumSesion(){
+        return this.numSesion;
+    }
     
     public void loguearse(){
         this.estaLogueado =true;
@@ -91,18 +89,11 @@ public class Usuario {
     public boolean estaLogueado(){
         return this.estaLogueado;
     }
-    public void borrarDatosSesion(){
-    this.propiedad = null;
-    this.apellido = null;
-    this.contraseña = null;
-    this.correo = null;
-    this.direccion = null;
-    this.nombre = null;
-    this.numTelefono = null;
-            }
+   
     public boolean tienePropiedad(){
     boolean tienePropiedad = false;
-    if(this.propiedad != null){
+    ConexionBD CB = ConexionBD.getConexionConBBDD();
+    if(CB.tienePropiedad(correo)){
         tienePropiedad =true;
                 }
     return tienePropiedad;
