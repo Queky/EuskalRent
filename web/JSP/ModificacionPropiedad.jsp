@@ -4,12 +4,9 @@
     Author     : Zigor
 --%>
 
-<<<<<<< HEAD
 <%@page import="packEuskalRent.Usuario"%>
 <%@page import="packEuskalRent.Propiedad"%>
-=======
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
->>>>>>> master
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

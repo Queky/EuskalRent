@@ -176,22 +176,14 @@ public class ConexionBD {
 
     }
 
-<<<<<<< HEAD
-    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion, String fechaDisponible) {
-=======
-    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion, String ap) {
->>>>>>> master
+    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion, String fechaDisponible, String ap) {
+
         crearConexion();
         Statement st;
         try {
             st = con.createStatement();
-<<<<<<< HEAD
-            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`,`fechaDisponibilidad`)"
-                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "','" + fechaDisponible + "');");
-=======
-            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`,`imgApartamento`)"
-                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "','" + ap + "');");
->>>>>>> master
+            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`,`fechaDisponibilidad`,`imgApartamento`)"
+                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "','" + fechaDisponible + "','" + ap + ");");
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -262,7 +254,6 @@ public class ConexionBD {
         cerrarConexion();
         
     }
-<<<<<<< HEAD
     public void actualizarNombreUsuario(String correo, String nombre){
      crearConexion();
         Statement st;
@@ -417,19 +408,4 @@ public class ConexionBD {
         }
         cerrarConexion();
     }
-=======
-    
-    public void guardarImagenPropiedad(String ap) {
-        crearConexion();
-        Statement st;
-        
-        try {
-            st = con.createStatement();
-            st.executeUpdate("update euskalrent03.apartamento set imgApartamento="+ap+"");
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
->>>>>>> master
 }

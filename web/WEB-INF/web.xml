@@ -61,17 +61,16 @@
         <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>PaginaComprobacionSession</servlet-name>
         <servlet-class>packEuskalRent.comprobacionSession</servlet-class>
-=======
+    </servlet>
+    <servlet>
         <servlet-name>ApartamentoNoDisponible</servlet-name>
         <jsp-file>/JSP/ApartamentosNoDisponibles.jsp</jsp-file>
     </servlet>
     <servlet>
         <servlet-name>PaginaPropiaApartamentos</servlet-name>
         <jsp-file>/JSP/PaginaApartamentos.jsp</jsp-file>
->>>>>>> master
     </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
@@ -134,17 +133,16 @@
         <url-pattern>/PaginaCS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>PaginaComprobacionSession</servlet-name>
         <url-pattern>/PaginaCSe</url-pattern>
-=======
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ApartamentoNoDisponible</servlet-name>
         <url-pattern>/SinApartamentos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PaginaPropiaApartamentos</servlet-name>
         <url-pattern>/ApartamentoElegido</url-pattern>
->>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>
