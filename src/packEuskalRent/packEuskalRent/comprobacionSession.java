@@ -41,11 +41,10 @@ public class comprobacionSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet comprobacionSession</title>");            
+            out.println("<title> comprobacionSession</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet comprobacionSession at " + request.getContextPath() + "</h1>");
-            out.println("<h2> El usuario "+ usuario.getCorreo() +" ya a iniciado sesion, que dese hacer:</h2>");
+            out.println("<h1> El usuario "+ usuario.getCorreo() +" ya a iniciado sesion, que dese hacer:</h1>");
             out.println("<li><a href='Inicio'>Continuar con la ultima sesion</a></li>");
             out.println("<li><a href='PaginaCS'>Cerrar Sesion</a></li>");
             out.println("</body>");
