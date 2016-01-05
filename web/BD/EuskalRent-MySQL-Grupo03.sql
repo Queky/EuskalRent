@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.23, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
 -- Host: localhost    Database: euskalrent03
 -- ------------------------------------------------------
--- Server version	5.6.24-log
+-- Server version	5.7.10
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -32,6 +32,7 @@ CREATE TABLE `apartamento` (
   `Tarifa` float NOT NULL,
   `TipoCancelacion` varchar(255) DEFAULT NULL,
   `fechaDisponibilidad` datetime DEFAULT NULL,
+  `imgApartamento` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`IdApartamento`,`IdEmail`),
   KEY `FKApartament529612` (`IdEmail`),
   CONSTRAINT `FKApartament529612` FOREIGN KEY (`IdEmail`) REFERENCES `usuario` (`IdEmail`)
@@ -44,7 +45,7 @@ CREATE TABLE `apartamento` (
 
 LOCK TABLES `apartamento` WRITE;
 /*!40000 ALTER TABLE `apartamento` DISABLE KEYS */;
-INSERT INTO `apartamento` VALUES (1,'laprimaera@hotmail.com','Apartamento',8,'Zabalgana','vcb',45,NULL,NULL),(3,'elPrimero@hotmail.com','Chalet',6,'Salburua',' calle Nieves Cano',80.5,NULL,NULL),(4,'elSegundo@hotmail.com','Apartamento',4,'Aranbizkarra',' Viena Kalea Vitoria ',100,'Flexible',NULL),(5,'laSegunda@hotmail.com','Chalet',10,'Aranbizkarra',' Zalburu Kalea Aranbizkarra',120,'Premium',NULL),(6,'aaaa@aaa.aa','Chalet',6,'Aranbizkarra','qqqq',8.2,'Premium',NULL);
+INSERT INTO `apartamento` VALUES (1,'laprimaera@hotmail.com','Apartamento',8,'Zabalgana','vcb',45,NULL,'2016-01-01 20:47:23',NULL),(3,'elPrimero@hotmail.com','Chalet',6,'Zabalgana',' calle Nieves Cano',80.5,NULL,'2016-01-01 21:12:50',NULL),(4,'elSegundo@hotmail.com','Apartamento',4,'Zabalgana',' Viena Kalea Vitoria ',100,'Flexible','2016-01-01 21:12:53',NULL),(5,'laSegunda@hotmail.com','Chalet',10,'Aranbizkarra',' Zalburu Kalea Aranbizkarra',120,'Premium',NULL,NULL),(6,'aaaa@aaa.aa','Chalet',6,'Aranbizkarra','qqqq',8.2,'Premium',NULL,NULL);
 /*!40000 ALTER TABLE `apartamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-03 17:02:12
+-- Dump completed on 2016-01-05 18:05:33
