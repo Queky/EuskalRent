@@ -41,7 +41,7 @@
         </header>
         <h2 align="center">Rellene los siguientes campos para terminar de registrar su propiedad</h2>
         <div id="grande" align="center">
-            <form action="datosModProp" id="formModProp">
+            <form action="datosModProp" id="formModProp" method="post">
                 <% 
                     Propiedad propiedad = usuario.getPropiedad();
                 %>
