@@ -22,14 +22,7 @@
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script>
-        $(document).ready(function(){
-            $("p").click(function(){
-                //window.location.href="ApartamentoElegido";
-                $(location).attr('href', 'ApartamentoElegido');
-            });
-        });
-        </script>
+        <script src="JavaScript/PaginaBusqueda.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -52,15 +45,17 @@
             HttpSession s=request.getSession();
             Statement statement = connection.createStatement();
             //"+s.getAttribute("fechaInicio").toString()+"
-            ResultSet resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes<="+s.getAttribute("numHuespedes")+";");
+            ResultSet resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"';");
             %>
-            <table>
+            <form action="ApartamentoElegido" id="formApart" method="POST">
+                <table id="idA">
                 <tr>
-                    <th><p>Localizador de apartamento</th>
-                    <th><p>Tipo de propiedad</p></TH>
-                    <th><p>Numero maximo de huespedes</p></th>
-                    <th><p>Barrio</p></th>
-                    <th><p>Tarifa/Noche</p></th>
+                    <th></th>
+                    <th>Localizador de apartamento</th>
+                    <th>Tipo de propiedad</th>
+                    <th>Numero maximo de huespedes</p></th>
+                    <th>Barrio</th>
+                    <th>Tarifa/Noche</th>
                 </tr>
                     <%
                     int cont=1;
@@ -71,18 +66,23 @@
                     if(cont>1){
                         while(resultset.next()){
                     %>
-                        <tr class="subrayados">
-                            <td><p> <%= resultset.getObject("idapartamento") %></p></td>
-                            <td><p> <%= resultset.getObject("tipopropiedad") %></p></td>
-                            <td><p> <%= resultset.getObject("numerohuespedes") %></p></td>
-                            <td><p> <%= resultset.getObject("barrio") %></p></td>
-                            <td><p> <%= resultset.getObject("tarifa") %> €</p></td>
-                </tr>
+                    <tr class="subrayados" id="fila">
+                        <td class="marcable"> <input type="radio" id="idApartamento" name="idApartamento" value="<%= resultset.getObject("idapartamento")%>" /></td>
+                            <td> <%= resultset.getObject("idapartamento")%></td>
+                            <td> <%= resultset.getObject("tipopropiedad") %></td>
+                            <td> <%= resultset.getObject("numerohuespedes") %></td>
+                            <td> <%= resultset.getObject("barrio") %></td>
+                            <td> <%= resultset.getObject("tarifa") %> €</td>
+                        </tr>
                         <% }
                     }else{
                         response.sendRedirect("SinApartamentos");
-                    }%>
+                    }
+                    %>
             </table>
+            <br>
+            <input type="button" name="btnApart" id="btnApart" value="Elegir" class="botonBuscar"/>
+            </form>
         </div>
     </body>
 </html>

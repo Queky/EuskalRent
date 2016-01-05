@@ -4,6 +4,7 @@
     Author     : Zigor
 --%>
 
+<%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

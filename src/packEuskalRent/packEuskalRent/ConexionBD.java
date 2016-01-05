@@ -155,13 +155,13 @@ public class ConexionBD {
 
     }
 
-    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion) {
+    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion, String ap) {
         crearConexion();
         Statement st;
         try {
             st = con.createStatement();
-            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`)"
-                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "');");
+            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`,`imgApartamento`)"
+                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "','" + ap + "');");
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -231,4 +231,17 @@ public class ConexionBD {
         cerrarConexion();
         
     }
+    
+    public void guardarImagenPropiedad(String ap) {
+        crearConexion();
+        Statement st;
+        
+        try {
+            st = con.createStatement();
+            st.executeUpdate("update euskalrent03.apartamento set imgApartamento="+ap+"");
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
