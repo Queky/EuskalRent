@@ -88,6 +88,10 @@ tr.subrayados:hover {
     background-color:#ffffff; 
 }
 
+.subrayarFila {
+    background-color:#ffffff; 
+}
+
 section p {
     font-family: 'Muli', sans-serif;
     font-size: 18px;

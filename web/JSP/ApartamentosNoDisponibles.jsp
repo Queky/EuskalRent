@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Error
-    Created on : 02-ene-2016, 18:16:38
+    Document   : ApartamentosNoDisponibles
+    Created on : 03-ene-2016, 17:37:13
     Author     : inakisanchez
 --%>
 
@@ -16,7 +16,6 @@
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
         <meta http-equiv="Refresh" content="5;Inicio">
-
     </head>
     <body>
         <header>
@@ -32,11 +31,9 @@
             </nav>
         </header>
         <div class="centrado">
-            <h1>¡Vaya! Parece que hubo un error inesperado...</h1>
-            <h3>En breves instantes te redirigiremos a la pagina principal.</h3>
-            <img src="Img/saLiao.png"/>
-            <h3><b>Exception:</b><br></h3> 
-            <p><i>${pageContext.exception.message}</i><p>
+            <h1>¡Vaya! Parece que ahora mismo no tenemos apartamentos disponibles</h1>
+            <h1>para ti en la fecha solicitada.</h1> 
+            <h3><b>Redirigiendote a la pagina principal...</b><br></h3> 
         </div>
     </body>
 </html>
