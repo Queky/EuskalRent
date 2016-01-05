@@ -32,7 +32,7 @@ public class datosModProp extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Propiedad propiedad = Propiedad.getPropiedad();
+        Propiedad propiedad = new Propiedad();
         
         String direccion = (String) request.getParameter("Direccion");
         float precioNoche = Float.parseFloat(request.getParameter("Precio"));
@@ -41,7 +41,7 @@ public class datosModProp extends HttpServlet {
         propiedad.setDireccion(direccion);
         propiedad.setPrecioNoche(precioNoche);
         propiedad.setPoliticaDeCancelacion(tipoCancelacion);
-        Usuario usuario = Usuario.getUsuario();
+        Usuario usuario =new Usuario();
         usuario.asignarPropiedad(propiedad);
         propiedad.setCorreoUsuario(usuario.getCorreo());
         ConexionBD BD = ConexionBD.getConexionConBBDD();

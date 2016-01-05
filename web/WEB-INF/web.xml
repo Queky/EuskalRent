@@ -60,6 +60,10 @@
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>packEuskalRent.cerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaComprobacionSession</servlet-name>
+        <servlet-class>packEuskalRent.comprobacionSession</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -119,6 +123,10 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/PaginaCS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaComprobacionSession</servlet-name>
+        <url-pattern>/PaginaCSe</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,7 +5,6 @@ package packEuskalRent;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,21 +31,17 @@ public class ModificacionUsuario extends HttpServlet {
         }
     }
 
- 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession s = request.getSession(true);
-        Usuario usuario = Usuario.getUsuario();
+        Usuario usuario = (Usuario) s.getAttribute("Usuario");
         String correo = (String) request.getParameter("email");
-       // s.setAttribute("correoUsuario", correo);
         String nombre = (String) request.getParameter("nombre");
-        //s.setAttribute("nombreUsuario", nombre);
         String apellido = (String) request.getParameter("apellidos");
-        //s.setAttribute("apellidosUsuario", apellido);
-        Integer numTelefono =Integer.parseInt(request.getParameter("telefono"));
-        //s.setAttribute("telefonoUsuario", numTelefono);
-        String direccion =(String) request.getParameter("direccion");
+        Integer numTelefono = Integer.parseInt(request.getParameter("telefono"));
+        String direccion = (String) request.getParameter("direccion");
+
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
         usuario.setNumTelefono(numTelefono);
@@ -54,14 +49,39 @@ public class ModificacionUsuario extends HttpServlet {
         usuario.setDireccion(direccion);
         usuario.loguearse();
         ConexionBD BD = ConexionBD.getConexionConBBDD();
-        if (direccion==null){
-            BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono);
-        }else{
-            BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion);
+        Usuario usuarioBD = BD.recibirDartosUsuario(correo);
+
+        if (BD.estaRegistrado(correo)) {
+            if (!usuario.getNombre().equals(usuarioBD.getNombre())) {
+                BD.actualizarNombreUsuario(correo, nombre);
+            }
+            if (!usuario.getApellido().equals(usuarioBD.getApellido())) {
+                BD.actualizarApellidosUsuario(correo, apellido);
+            }
+            if (!usuario.getNumTelefono().equals(usuarioBD.getNumTelefono())) {
+                BD.actualizarNumTelefonoUsuario(correo, numTelefono);
+            }
+            if (usuario.getDireccion() != null) {
+                if (usuarioBD.getDireccion() != null) {
+                    if (!usuario.getDireccion().equals(usuarioBD.getDireccion())) {
+                        BD.actualizarDireccionUsuario(correo, direccion);
+                    }
+
+                } else {
+                    BD.actualizarDireccionUsuario(correo, direccion);
+                }
+            }
+
+        } else {
+            if (direccion == null) {
+                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono);
+            } else {
+                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion);
+            }
         }
-        
-        
-     response.sendRedirect("Inicio");
+        s.setAttribute("Usuario", usuario);
+
+        response.sendRedirect("Inicio");
     }
 
     /**

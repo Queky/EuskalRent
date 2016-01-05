@@ -128,7 +128,7 @@ public class ConexionBD {
     }
 
     public Usuario recibirDartosUsuario(String correo) {
-        Usuario usuario = Usuario.getUsuario();
+        Usuario usuario = new Usuario();
         crearConexion();
         Statement st;
 
@@ -170,7 +170,7 @@ public class ConexionBD {
     }
 
     public Propiedad recibirDartosPropiedad(String correo) {
-        Propiedad propiedad = Propiedad.getPropiedad();
+        Propiedad propiedad = new Propiedad();
         crearConexion();
         Statement st;
 
@@ -230,5 +230,61 @@ public class ConexionBD {
         }
         cerrarConexion();
         
+    }
+    public void actualizarNombreUsuario(String correo, String nombre){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `Nombre`='" + nombre + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+    public void actualizarApellidosUsuario(String correo, String apellido){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `Apellido`='" + apellido + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+     public void actualizarNumTelefonoUsuario(String correo, Integer numTelefono){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `NumeroTelefono`='" + numTelefono + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+       public void actualizarDireccionUsuario(String correo, String direccion){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `Direccion`='" + direccion + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
     }
 }

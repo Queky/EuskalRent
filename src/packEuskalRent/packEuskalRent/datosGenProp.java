@@ -34,7 +34,7 @@ public class datosGenProp extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        Propiedad propiedad = Propiedad.getPropiedad();
+        Propiedad propiedad = new Propiedad();
         String barrio = (String) request.getParameter("barrio");
         String tipoPropiedad = (String) request.getParameter("tipoProp");
         Integer numHuespedes = Integer.parseInt(request.getParameter("numHuespedes"));

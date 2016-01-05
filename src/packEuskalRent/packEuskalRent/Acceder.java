@@ -33,13 +33,14 @@ public class Acceder extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-       
-       // String contraseña =  (String)request.getParameter("contraseñas");
-        String correo = (String)request.getParameter("email");
-        String contraseña =  (String)request.getParameter("prueba");
-        System.out.println(correo);
-        System.out.println(contraseña);
+
+        HttpSession s = request.getSession(true);
+        boolean prueba = s.isNew();
+        System.out.println(prueba);
+        System.out.println(s.getId());
+        Sesion sesion = Sesion.getSesion();
+        String correo = (String) request.getParameter("email");
+        String contraseña = (String) request.getParameter("prueba");
         ConexionBD CB = ConexionBD.getConexionConBBDD();
         boolean existeEmail = CB.estaRegistrado(correo);
         boolean coincideContraseñaEmail = CB.coincideContraseñaEmail(correo, contraseña);
@@ -48,12 +49,40 @@ public class Acceder extends HttpServlet {
             if (coincideContraseñaEmail) {
                 System.out.println("coinciden");
                 Usuario usuario = CB.recibirDartosUsuario(correo);
+                usuario.setNumSesion(s.getId());
                 usuario.loguearse();
-               // s.setAttribute("logueado", "logueado");
-                response.sendRedirect("Inicio");
+                System.out.println(prueba);
+                if (!sesion.acceso()) {
+                    Usuario usuarioQueyaEsta = (Usuario) s.getAttribute("Usuario");
+                    if (usuarioQueyaEsta != null) {
+                        if (!usuario.getCorreo().equals(usuarioQueyaEsta.getCorreo())) {
+                            if (!usuario.getNumSesion().equals(usuarioQueyaEsta.getNumSesion())) {
+                                sesion.reniciarSesion();
+                                sesion.acceso();
+                                s.setAttribute("Usuario", usuario);
+                                response.sendRedirect("Inicio");
+                            } else {
+                                response.sendRedirect("PaginaCSe");
+                            }
+                        } else {
+                            s.setAttribute("Usuario", usuario);
+                            response.sendRedirect("Inicio");
+
+                        }
+                        
+                    } else {
+                        s.setAttribute("Usuario", usuario);
+                        response.sendRedirect("Inicio");
+                    }
+                } else {
+                    s.setAttribute("Usuario", usuario);
+                    response.sendRedirect("Inicio");
+                }
             } else {
                 System.out.println("no la contraseña");
+                
                 response.sendRedirect("Acceso");
+                
             }
         } else {
             System.out.println("no pilla na");

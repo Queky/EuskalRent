@@ -11,7 +11,7 @@ package packEuskalRent;
  */
 public class Propiedad {
 
-    private static Propiedad mPropiedad;
+   
     private String barrio;
     private String tipoPropiedad;
     private Integer numHuespedes;
@@ -19,17 +19,10 @@ public class Propiedad {
     private float precioNoche;
     private String politicaCancelacion;
     private String correoUsuario;
-    private Propiedad() {
+    public Propiedad() {
     }
 
-    public static Propiedad getPropiedad() {
-        if (mPropiedad == null) {
-            mPropiedad = new Propiedad();
-        }
-
-        return mPropiedad;
-
-    }
+   
 
     public String getBarrio() {
         return this.barrio;

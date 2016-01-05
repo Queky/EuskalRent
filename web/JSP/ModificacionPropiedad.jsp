@@ -37,15 +37,25 @@
         <h2 align="center">Rellene los siguientes campos para terminar de registrar su propiedad</h2>
         <div id="grande" align="center">
             <form action="datosModProp" id="formModProp">
+              
                 <div class="parrafoPropiedad">
-                    <p>Seleccione en el mapa la localización de la propiedad</p>
-                    <input type="text" id="buscadorDireccion" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
-                           oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
-                    <div id="map" style="width:500px; height:200px;"></div>
-                </div>
-                <div class="parrafoPropiedad">
-                <p>Arrastre la foto del apartamento al siguiente recuadro</p>
+                <p>Arrastre la foto su propiedad al siguiente recuadro:</p>
                 <div name="Caja" id="caja"></div>
+                <div id="2" class="grande">
+                    <p class="parrafoPropiedad">Elige un barrio</p><br>
+                    <select name="barrio" class="cajasDatos" id="barrio">
+                        <option value="Zabalgana">Zabalgana</option>
+                        <option value="Aranbizkarra">Aranbizkarra</option>
+                        <option value="Salburua">Salburua</option>
+                    </select>
+                    <p class="parrafoPropiedad">Elige el tipo de propiedad</p><br>
+                    <select name="tipoProp" class="cajasDatos" id="tipoProp">
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Chalet">Chalet</option>
+                    </select>
+                    <p class="parrafoPropiedad">Número de huespedes</p><br>
+                    <input type="number" name="numHuespedes" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
+                           min="1" max="10" required/><br><br><br><br>
                 <p>Introduzca el precio por noche</p>   
                 <input name="Precio"type="number" id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
                 <p>Calendario para ver días ocupados de la propiedad</p>
@@ -55,6 +65,12 @@
                     <option value="Flexible">Flexible</option>
                     <option value="Premium">Premium</option>
                 </select>
+                <div class="parrafoPropiedad">
+                    <p>Seleccione en el mapa la localización de la propiedad</p>
+                    <input type="text" id="buscadorDireccion" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
+                           oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
+                    <div id="map" style="width:500px; height:200px;"></div>
+                </div>
                 <br><br>
                 <input type="submit" id="btnValMP" value="Guardar" class="botonBuscar" onclick=""/>
                 </div>
