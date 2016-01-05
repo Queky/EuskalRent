@@ -12,8 +12,15 @@ public class Usuario {
     private String direccion;
     private boolean estaLogueado;
     private String numSesion;
+    private float saldo;
     public Usuario() {
         
+    }
+    public void setSaldo(float Saldo){
+    this.saldo=saldo;
+    }
+    public float getSaldo(){
+    return this.saldo;
     }
 
     public void asignarPropiedad(Propiedad propiedad){
