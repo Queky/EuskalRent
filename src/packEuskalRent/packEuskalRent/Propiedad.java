@@ -11,26 +11,25 @@ package packEuskalRent;
  */
 public class Propiedad {
 
-    private static Propiedad mPropiedad;
+   
     private String barrio;
     private String tipoPropiedad;
     private Integer numHuespedes;
     private String direccion;
-    private float precioNoche;
+    private float precioNoche =0;
     private String politicaCancelacion;
     private String correoUsuario;
-    private Propiedad() {
+    private String fechaDisponible;
+    public Propiedad() {
     }
 
-    public static Propiedad getPropiedad() {
-        if (mPropiedad == null) {
-            mPropiedad = new Propiedad();
-        }
-
-        return mPropiedad;
-
+   
+    public String getFechaDisponible(){
+    return this.fechaDisponible;
     }
-
+    public void setFechaDisponible(String fechaDisponible){
+    this.fechaDisponible=fechaDisponible;
+    }
     public String getBarrio() {
         return this.barrio;
     }

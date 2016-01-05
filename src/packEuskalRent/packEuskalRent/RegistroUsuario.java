@@ -5,14 +5,12 @@
  */
 package packEuskalRent;
 
-
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-
 public class RegistroUsuario extends HttpServlet {
-  
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -22,42 +20,60 @@ public class RegistroUsuario extends HttpServlet {
         }
     }
 
- 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        Usuario usuario = Usuario.getUsuario();
+        HttpSession s = request.getSession(true);
+        Sesion sesion = Sesion.getSesion();
+        Usuario usuario = new Usuario();
         String correo = (String) request.getParameter("email");
-       // s.setAttribute("correoUsuario", correo);
         String nombre = (String) request.getParameter("nombre");
-       // s.setAttribute("nombreUsuario", nombre);
         String apellido = (String) request.getParameter("apellidos");
-       // s.setAttribute("apellidosUsuario", apellido);
         String contraseña = (String) request.getParameter("contraseña");
-            System.out.println(contraseña);
-      //  s.setAttribute("apellidosUsuario", apellido);
+        System.out.println(contraseña);
+
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
         usuario.setCorreo(correo);
         usuario.setContraseña(contraseña);
+        usuario.setNumSesion(s.getId());
+        ConexionBD BD = ConexionBD.getConexionConBBDD();
+        if (!BD.estaRegistrado(correo)) {
+            if (!sesion.acceso()) {
+                Usuario usuarioQueyaEsta = (Usuario) s.getAttribute("Usuario");
+                if (usuarioQueyaEsta != null) {
+                    if (!usuario.getNumSesion().equals(usuarioQueyaEsta.getNumSesion())) {
+                        sesion.reniciarSesion();
+                        sesion.acceso();
+                        s.setAttribute("Usuario", usuario);
+                        response.sendRedirect("PaginaModificacionUsuario");
+                    } else {
+                        response.sendRedirect("PaginaCSe");
+                    }
+                } else {
+                    s.setAttribute("Usuario", usuario);
+                    response.sendRedirect("PaginaModificacionUsuario");
+                }
+            } else {
+                s.setAttribute("Usuario", usuario);
+
+                response.sendRedirect("PaginaModificacionUsuario");
+            }
+        }else{
+             response.sendRedirect("Registro");
+          
+        }}
+
+        /**
+         * Returns a short description of the servlet.
+         *
+         * @return a String containing servlet description
+         */
+        @Override
+        public String getServletInfo
         
-       
-   /*
-        ConexionBD CB = ConexionBD.getConexionConBBDD();
-        CB.anyadirDatosUsuario(nombre, apellido, correo);
-     */   
-     response.sendRedirect("PaginaModificacionUsuario");
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
+            () {
         return "Short description";
-    }// </editor-fold>
+        }// </editor-fold>
 
-}
+    }

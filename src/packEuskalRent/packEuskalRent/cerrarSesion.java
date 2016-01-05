@@ -24,9 +24,10 @@ public class cerrarSesion extends HttpServlet {
      @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     Usuario usuario = Usuario.getUsuario();
-     usuario.cerrarSesion();
-     usuario.borrarDatosSesion();
+     HttpSession s = request.getSession(true);
+     Sesion sesion = Sesion.getSesion();
+     sesion.reniciarSesion();
+     s.invalidate();
      response.sendRedirect("Inicio");
     }
 
