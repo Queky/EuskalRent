@@ -399,7 +399,7 @@ public class ConexionBD {
 
         try {
             st = con.createStatement();
-            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `fechaDisponible`='" + fechaDisponible + "' WHERE idEmail='" + correo + "';");
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `fechaDisponibilidad`='" + fechaDisponible + "' WHERE idEmail='" + correo + "';");
  
         } catch (SQLException e) {
             e.printStackTrace();
