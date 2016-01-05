@@ -47,7 +47,9 @@
                 %>
                 <div class="parrafoPropiedad">
                     <p>Arrastre la foto su propiedad al siguiente recuadro:</p>
-                    <div name="Caja" id="caja"></div>
+                    <div name="divCaja" id="divCaja">
+                        <input type="file" name="Caja"/>
+                    </div>
                     <div id="2" class="grande">
                         <p class="parrafoPropiedad">Elige un barrio</p><br>
                         <select name="barrio" class="cajasDatos" id="barrio" >
