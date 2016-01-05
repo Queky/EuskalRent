@@ -176,13 +176,13 @@ public class ConexionBD {
 
     }
 
-    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion) {
+    public void anyadirDatosPrpiedad(String Barrio, String tipoPropiedad, float precioNoche, Integer numHuespedes, String correo, String direccion, String tipoCancelacion, String fechaDisponible) {
         crearConexion();
         Statement st;
         try {
             st = con.createStatement();
-            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`)"
-                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "');");
+            st.executeUpdate("INSERT INTO `euskalrent03`.`apartamento` (`Barrio`,`TipoPropiedad`,`Tarifa`,`NumeroHuespedes`,`idEmail`,`Direccion`,`TipoCancelacion`,`fechaDisponibilidad`)"
+                    + " VALUES ('" + Barrio + "','" + tipoPropiedad + "','" + precioNoche + "','" + numHuespedes + "','" + correo + "','" + direccion + "','" + tipoCancelacion + "','" + fechaDisponible + "');");
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -206,6 +206,7 @@ public class ConexionBD {
                 propiedad.setPoliticaDeCancelacion(rs.getString("TipoCancelacion"));
                 propiedad.setPrecioNoche(rs.getFloat("Tarifa"));
                 propiedad.setTipoPropieedad(rs.getString("TipoPropiedad"));
+                
 
             }
         } catch (SQLException e) {
@@ -385,6 +386,20 @@ public class ConexionBD {
         try {
             st = con.createStatement();
             st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `TipoCancelacion`='" + tipoCancelacion + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+          public void actualizarFechaDisponiblePropiedad(String correo, String fechaDisponible){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `fechaDisponible`='" + fechaDisponible + "' WHERE idEmail='" + correo + "';");
  
         } catch (SQLException e) {
             e.printStackTrace();

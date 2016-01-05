@@ -52,7 +52,7 @@
                         <select name="barrio" class="cajasDatos" id="barrio" >
                             <option value="<%=propiedad.getBarrio()%>"><%=propiedad.getBarrio()%></option>
                             <% if (propiedad.getBarrio().equalsIgnoreCase("zabalgana")) {%>
-                            option value="Aranbizkarra">Aranbizkarra</option>
+                            <option value="Aranbizkarra">Aranbizkarra</option>
                             <option value="Salburua">Salburua</option>
                             <%} else if (propiedad.getBarrio().equalsIgnoreCase("Aranbizkarra")) {%>
                             <option value="Zabalgana">Zabalgana</option>
@@ -79,14 +79,16 @@
                         <input name="Precio"type="number"  value="<%=propiedad.getPrecioNoche()%>" id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
                         <%} else {%>
                         <input name="Precio"type="number"  id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
-                        <%}%>
-                        <p>Calendario para ver días ocupados de la propiedad</p>
-
-                        <input type="date" id="calendario" class="cajasDatos" required><br>
+                        <%}%>                   
+                        <p>Disponibilidad del apartamento:</p>
+                        <%if (propiedad.getFechaDisponible() != null) {%>
+                        <input type="date" id="calendario" value="<%=propiedad.getFechaDisponible()%>" name="calendario" class="cajasDatos" required><br>
+                        <%} else {%> 
+                        <input type="date" id="calendario"  name="calendario" class="cajasDatos" required><br>
+                        <%}%> 
                         <p>Seleccione el tipo de política de cancelación para su propiedad</p>
-                        
                         <select name="Politica" id="politica" class="desp" required>
-                            <% if (propiedad.getTipoPropiedad() != null) {%>
+                            <% if (propiedad.getPoliticaDeCancelacion() != null) {%>
                             <option value="<%=propiedad.getPoliticaDeCancelacion()%>"><%=propiedad.getPoliticaDeCancelacion()%></option>
                             <% if (propiedad.getPoliticaDeCancelacion().equals("Premium")) {%>
                             <option value="Flexible">Flexible</option>

@@ -19,11 +19,17 @@ public class Propiedad {
     private float precioNoche =0;
     private String politicaCancelacion;
     private String correoUsuario;
+    private String fechaDisponible;
     public Propiedad() {
     }
 
    
-
+    public String getFechaDisponible(){
+    return this.fechaDisponible;
+    }
+    public void setFechaDisponible(String fechaDisponible){
+    this.fechaDisponible=fechaDisponible;
+    }
     public String getBarrio() {
         return this.barrio;
     }

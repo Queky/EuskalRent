@@ -8,6 +8,7 @@ package packEuskalRent;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +42,7 @@ public class datosModProp extends HttpServlet {
         String direccion = (String) request.getParameter("Direccion");
         float precioNoche = Float.parseFloat(request.getParameter("Precio"));
         String tipoCancelacion= (String) request.getParameter("Politica");
+        String fechaDisponible = (String)request.getParameter("calendario");
         propiedad.setBarrio(barrio);
         propiedad.setDireccion(direccion);
         propiedad.setTipoPropieedad(tipoPropiedad);
@@ -48,6 +50,7 @@ public class datosModProp extends HttpServlet {
         propiedad.setPrecioNoche(precioNoche);
         propiedad.setPoliticaDeCancelacion(tipoCancelacion);
         propiedad.setCorreoUsuario(usuario.getCorreo());
+        propiedad.setFechaDisponible(fechaDisponible);
         usuario.asignarPropiedad(propiedad);
         ConexionBD BD = ConexionBD.getConexionConBBDD();
            Usuario usuarioBD = BD.recibirDartosUsuario(usuario.getCorreo());
@@ -67,8 +70,10 @@ public class datosModProp extends HttpServlet {
                 BD.actualizarTarifaPropiedad(usuario.getCorreo(), precioNoche);
              if(!usuario.getPropiedad().getPoliticaDeCancelacion().equals(usuarioBD.getPropiedad().getPoliticaDeCancelacion()))
                  BD.actualizarTipoCancelacionPropiedad(usuario.getCorreo(), tipoCancelacion);
+             if(!usuario.getPropiedad().getFechaDisponible().equals(usuarioBD.getPropiedad().getFechaDisponible()))
+                 BD.actualizarFechaDisponiblePropiedad(usuario.getCorreo(), fechaDisponible);
         }else{
-        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion);
+        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion,fechaDisponible);
         BD.actualizarIdApartamentoUsuarioBD(usuario.getCorreo());
         }
 
