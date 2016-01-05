@@ -92,7 +92,8 @@ public class Usuario {
    
     public boolean tienePropiedad(){
     boolean tienePropiedad = false;
-    if(this.propiedad != null){
+    ConexionBD CB = ConexionBD.getConexionConBBDD();
+    if(CB.tienePropiedad(correo)){
         tienePropiedad =true;
                 }
     return tienePropiedad;

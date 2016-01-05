@@ -33,9 +33,9 @@
                     <%  
                         
                         if(session.getAttribute("Usuario")!=null){
-                        Usuario usuario = (Usuario) session.getAttribute("Usuario");
-                        session.setAttribute("Usuario", null);
+                        Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
                         session.setAttribute("Usuario", usuario);
+                        
                     if(usuario.estaLogueado()){
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>

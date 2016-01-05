@@ -102,6 +102,27 @@ public class ConexionBD {
         cerrarConexion();
         return encontrado;
     }
+     public boolean tienePropiedad(String correo) {
+        crearConexion();
+        Statement st;
+        String resul;
+        boolean encontrado = false;
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select idEmail from apartamento where idEmail='" + correo + "';");
+            while (rs.next()) {
+                resul = rs.getString("idEmail");
+                if (resul.equalsIgnoreCase(correo)) {
+                    encontrado = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return encontrado;
+    }
 
     public boolean coincideContraseñaEmail(String correo, String contraseña) {
         crearConexion();
@@ -280,6 +301,90 @@ public class ConexionBD {
         try {
             st = con.createStatement();
             st.executeUpdate("UPDATE `euskalrent03`.`usuario` SET `Direccion`='" + direccion + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+        public void actualizarTipoPropiedad(String correo, String tipoPropiedad){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `TipoPropiedad`='" + tipoPropiedad + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+            public void actualizarNumeroHuespedesPropiedad(String correo, int numHuespedes){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `NumeroHuespedes`='" + numHuespedes + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+     public void actualizarBarrioPropiedad(String correo, String barrio){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `Barrio`='" + barrio + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+         public void actualizarDireccionPropiedad(String correo, String direccion){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `Direccion`='" + direccion + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+             public void actualizarTarifaPropiedad(String correo, float precioNoche){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `Tarifa`='" + precioNoche + "' WHERE idEmail='" + correo + "';");
+ 
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+        public void actualizarTipoCancelacionPropiedad(String correo, String tipoCancelacion){
+     crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`apartamento` SET `TipoCancelacion`='" + tipoCancelacion + "' WHERE idEmail='" + correo + "';");
  
         } catch (SQLException e) {
             e.printStackTrace();

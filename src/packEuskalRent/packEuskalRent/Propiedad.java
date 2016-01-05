@@ -16,7 +16,7 @@ public class Propiedad {
     private String tipoPropiedad;
     private Integer numHuespedes;
     private String direccion;
-    private float precioNoche;
+    private float precioNoche =0;
     private String politicaCancelacion;
     private String correoUsuario;
     public Propiedad() {
