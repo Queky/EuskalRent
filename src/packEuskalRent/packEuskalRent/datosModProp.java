@@ -6,14 +6,18 @@ package packEuskalRent;
  * and open the template in the editor.
  */
 
+import com.sun.org.apache.xml.internal.security.utils.Base64;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 /**
  *
  * @author Eneko
@@ -33,10 +37,16 @@ public class datosModProp extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Propiedad propiedad = Propiedad.getPropiedad();
-        
+
         String direccion = (String) request.getParameter("Direccion");
         float precioNoche = Float.parseFloat(request.getParameter("Precio"));
         String tipoCancelacion= (String) request.getParameter("Politica");
+
+        String ap;
+        FileInputStream iS = new FileInputStream(request.getParameter("Caja"));
+        byte[] bytes = new byte[(int)request.getParameter("Caja").length()];
+        iS.read(bytes);
+        ap = Base64.encode(bytes);
         
         propiedad.setDireccion(direccion);
         propiedad.setPrecioNoche(precioNoche);
@@ -45,7 +55,7 @@ public class datosModProp extends HttpServlet {
         usuario.asignarPropiedad(propiedad);
         propiedad.setCorreoUsuario(usuario.getCorreo());
         ConexionBD BD = ConexionBD.getConexionConBBDD();
-        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion);
+        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion, ap);
         BD.actualizarIdApartamentoUsuarioBD(usuario.getCorreo());
         
      response.sendRedirect("Inicio");

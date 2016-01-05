@@ -17,7 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="Img/iconoEuskalRent.ico">
         <script src="JavaScript/ValidacionBusqueda.js" type="text/javascript"></script>
-        <script type="text/javascript" src="JavaScript/JsonPaginaInicio.js" type="text/javascript"></script>
+        <script type="text/javascript" src="JavaScript/JsonPaginaInicio.js"></script>
     </head>
     <body>
         <header>
