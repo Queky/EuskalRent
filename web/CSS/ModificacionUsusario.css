@@ -157,7 +157,7 @@ form{
   transition: all 0.1s linear 0s;
   position: absolute;
   top: 340px;
-  left: 445px;
+  left: 445;
 }
 
 .button:hover {
