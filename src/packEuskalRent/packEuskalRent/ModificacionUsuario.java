@@ -84,7 +84,7 @@ public class ModificacionUsuario extends HttpServlet {
                  BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono);
                  BD.agregarSalgoUsuario(correo);
             } else {
-                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion, img);
+                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion);
                 BD.agregarSalgoUsuario(correo);
             }
             
