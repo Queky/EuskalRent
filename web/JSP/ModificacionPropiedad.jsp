@@ -78,12 +78,12 @@
                         </select>
                         <p class="parrafoPropiedad">Número de huespedes</p><br>
                         <input type="number" name="numHuespedes" value="<%=propiedad.getNumHuespedes()%>" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
-                               min="1" max="10" required/><br><br><br><br>
+                               min="1" max="10" required/><br><br>
                         <p>Introduzca el precio por noche</p>  
                         <% if (propiedad.getPrecioNoche() != 0) {%>
-                        <input name="Precio"type="number"  value="<%=propiedad.getPrecioNoche()%>" id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
+                        <input name="Precio"type="number" step="any" Svalue="<%=propiedad.getPrecioNoche()%>" id="precio" class="desp" placeholder="precio/noche" min="1" required/> €<br>         
                         <%} else {%>
-                        <input name="Precio"type="number"  id="precio" class="desp" placeholder="precio/noche" min="1" required/><br>         
+                        <input name="Precio"type="number" step="any" id="precio" class="desp" placeholder="precio/noche" min="1" required/> €<br>         
                         <%}%>                   
                         <p>Disponibilidad del apartamento:</p>
                         <%if (propiedad.getFechaDisponible() != null) {%>
@@ -101,7 +101,7 @@
                             <option value="Premium">Premium</option>
                             <%}}else{%>
                             <option value="Flexible">Flexible</option>
-                            <option value="Premium">Premium</option
+                            <option value="Premium">Premium</option>
                             <%}%>
                         </select>
                         <div class="parrafoPropiedad">

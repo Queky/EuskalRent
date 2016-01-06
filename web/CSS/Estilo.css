@@ -215,3 +215,8 @@ section p {
 .imagenUsuario.dragDrop {
     border:inactiveborder;
 }
+
+.imagenUsuario.dragNull {
+    border: 2px dashed red;
+    color: red;
+}

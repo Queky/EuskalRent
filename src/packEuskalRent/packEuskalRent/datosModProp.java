@@ -49,10 +49,21 @@ public class datosModProp extends HttpServlet {
         String tipoCancelacion= (String) request.getParameter("Politica");
         String fechaDisponible = (String)request.getParameter("calendario");
         propiedad.setBarrio(barrio);
+<<<<<<< Updated upstream
             
         
         
         
+=======
+           
+        String ap=null;
+        /*
+        FileInputStream iS = new FileInputStream(request.getParameter("Caja"));
+        byte[] bytes = new byte[(int)request.getParameter("Caja").length()];
+        iS.read(bytes);
+        ap = Base64.encode(bytes);
+        */
+>>>>>>> Stashed changes
         propiedad.setDireccion(direccion);
         propiedad.setTipoPropieedad(tipoPropiedad);
         propiedad.setNumHuespedes(numHuespedes);
@@ -67,6 +78,10 @@ public class datosModProp extends HttpServlet {
         String tarifausuario= String.valueOf(usuario.getPropiedad().getPrecioNoche());
         String tarifausuarioBD= String.valueOf(usuarioBD.getPropiedad().getPrecioNoche());
         request.setAttribute("Usuario", usuario);
+<<<<<<< Updated upstream
+=======
+        
+>>>>>>> Stashed changes
         if(usuario.tienePropiedad()){
             if(!usuario.getPropiedad().getTipoPropiedad().equals(usuarioBD.getPropiedad().getTipoPropiedad()))
                 BD.actualizarTipoPropiedad(usuario.getCorreo(), usuario.getPropiedad().getTipoPropiedad());

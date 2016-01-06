@@ -9,11 +9,19 @@ function revisionGeneral () {
         precio.className='error';
         correcto=false;
     }
-    if(!revisarFoto()){
-        var foto = document.getElementById("Caja");
-        foto.className='error';
+
+    if(!revisarFechaInicio()){
+        var fecha = document.getElementById("calendario");
+        fecha.className='error';
         correcto=false;
     }
+    
+    if(!revisarFoto()){
+        var foto = document.getElementById("Caja");
+        foto.className='imagenUsuario dragNull';
+        correcto = false;
+    }
+    
     if(correcto)
         document.getElementById("formModProp").submit();
         
@@ -53,6 +61,19 @@ function dragDrop(e) {
     return false;
 }
 
+function revisarFechaInicio() {
+    var fechaInicio = document.getElementById("calendario");
+    var hoy = new Date();
+    if(fechaInicio.value==="")
+        return false;
+    else {
+        if(hoy<=fechaInicio)
+            return true;
+        else
+            return false;
+    }
+}
+
 function revisar() {
     document.getElementById("btnValMP").addEventListener("click", revisionGeneral, false);
 
@@ -67,9 +88,18 @@ function revisar() {
     var foto = document.getElementById("Caja");
     foto.oninput = function() {
         if(!revisarFoto()){
-            foto.className='error';
+            foto.className='imagenUsuario dragNull';
         } else {
-            foto.className='cajasDatos';
+            foto.className='imagenUsuario';
+        }
+    };
+    
+    var fecha = document.getElementById("calendario");
+    fecha.oninput = function() {
+        if(!revisarFoto()){
+            fecha.className='error';
+        } else {
+            fecha.className='cajasDatos';
         }
     };
 

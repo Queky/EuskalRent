@@ -67,13 +67,13 @@ public class ConexionBD {
         cerrarConexion();
     }
 
-    public void anyadirDatosUsuario(String nombre, String apellido, String correo, String contraseña, Integer numTelefono, String direccion, String img) {
+    public void anyadirDatosUsuario(String nombre, String apellido, String correo, String contraseña, Integer numTelefono, String direccion) {
         crearConexion();
         Statement st;
         try {
             st = con.createStatement();
-            st.executeUpdate("INSERT INTO `euskalrent03`.`usuario` (`Nombre`,`Apellido`,`idEmail`,`Contraseña`,`NumeroTelefono`,`Direccion`,`imgUsuario`)"
-                    + " VALUES ('" + nombre + "','" + apellido + "','" + correo + "','" + contraseña + "','" + numTelefono + "','" + direccion + "','" + img + "');");
+            st.executeUpdate("INSERT INTO `euskalrent03`.`usuario` (`Nombre`,`Apellido`,`idEmail`,`Contraseña`,`NumeroTelefono`,`Direccion`)"
+                    + " VALUES ('" + nombre + "','" + apellido + "','" + correo + "','" + contraseña + "','" + numTelefono + "','" + direccion + "');");
         } catch (SQLException e) {
 
             e.printStackTrace();
