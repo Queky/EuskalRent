@@ -50,11 +50,8 @@ public class datosModProp extends HttpServlet {
         String fechaDisponible = (String)request.getParameter("calendario");
         propiedad.setBarrio(barrio);
             
-        String ap;
-        FileInputStream iS = new FileInputStream(request.getParameter("Caja"));
-        byte[] bytes = new byte[(int)request.getParameter("Caja").length()];
-        iS.read(bytes);
-        ap = Base64.encode(bytes);
+        
+        
         
         propiedad.setDireccion(direccion);
         propiedad.setTipoPropieedad(tipoPropiedad);
@@ -69,7 +66,7 @@ public class datosModProp extends HttpServlet {
         Usuario usuarioBD = BD.recibirDartosUsuario(usuario.getCorreo());
         String tarifausuario= String.valueOf(usuario.getPropiedad().getPrecioNoche());
         String tarifausuarioBD= String.valueOf(usuarioBD.getPropiedad().getPrecioNoche());
-     
+        request.setAttribute("Usuario", usuario);
         if(usuario.tienePropiedad()){
             if(!usuario.getPropiedad().getTipoPropiedad().equals(usuarioBD.getPropiedad().getTipoPropiedad()))
                 BD.actualizarTipoPropiedad(usuario.getCorreo(), usuario.getPropiedad().getTipoPropiedad());
@@ -86,7 +83,7 @@ public class datosModProp extends HttpServlet {
              if(!usuario.getPropiedad().getFechaDisponible().equals(usuarioBD.getPropiedad().getFechaDisponible()))
                  BD.actualizarFechaDisponiblePropiedad(usuario.getCorreo(), fechaDisponible);
         }else{
-        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion,fechaDisponible,ap);
+        BD.anyadirDatosPrpiedad(propiedad.getBarrio(), propiedad.getTipoPropiedad(), precioNoche, propiedad.getNumHuespedes(), usuario.getCorreo(), direccion,tipoCancelacion,fechaDisponible);
         BD.actualizarIdApartamentoUsuarioBD(usuario.getCorreo());
         }
 
