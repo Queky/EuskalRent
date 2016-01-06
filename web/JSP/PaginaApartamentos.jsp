@@ -4,6 +4,8 @@
     Author     : inakisanchez
 --%>
 
+<%@page import="packEuskalRent.ConexionBD"%>
+<%@page import="packEuskalRent.Propiedad"%>
 <%@page import="packEuskalRent.Usuario"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -31,7 +33,7 @@
             <nav>
                 <ul>
                     <%
-                        Usuario usuario = Usuario.getUsuario();
+                        Usuario usuario = (Usuario) session.getAttribute("Usuario");
                     if(usuario.estaLogueado()){
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
@@ -53,16 +55,36 @@
         <section>
             <div>
             <%
-                String idAp = request.getParameter("idApartamento");
-                Class.forName("com.mysql.jdbc.Driver").newInstance();
-                Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/euskalrent03","root","root");
-                HttpSession s=request.getSession();
-                Statement statement = connection.createStatement();
-                //"+s.getAttribute("fechaInicio").toString()+"
-                ResultSet resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.idapartamento="+idAp+";");
-                resultset.next();
+                ConexionBD CB =ConexionBD.getConexionConBBDD();
+                Propiedad propiedad =(Propiedad) session.getAttribute("Propiedad");
+                Usuario usuarioPropiedad = CB.recibirDartosUsuario(propiedad.getCorreousuario());
+                String fechaInicio= (String)session.getAttribute("fechaInicio");
+                String fechaFin = (String) session.getAttribute("fechaFin");
+                float coste = propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)* propiedad.getPrecioNoche();
             %>
+            <strong><p>Datos de la propiedad:</p></strong>
+            <p>Identificador de la propiedad: <%=propiedad.getIdApartamento()%></p>
+            <p>Direccion: <%=propiedad.getDireccion()%></p>
+            <p>Barrio: <%=propiedad.getBarrio()%></p>
+            <p>Tipo de propiedad: <%=propiedad.getTipoPropiedad()%></p>
+            <p>Numero de Huespedes: <%=propiedad.getNumHuespedes()%></p>
+            <strong><p>Datos del arrendador:</p></strong>
+            <p>Nombre: <%=usuarioPropiedad.getNombre()%></p>
+            <p>Apellidos: <%=usuarioPropiedad.getApellido()%></p>
+            <% if(usuario.getDireccion()!=null){%>
+            <p>Direccion: <%=usuarioPropiedad.getDireccion()%></p>
+            <%}%>
+            <strong><p> Contacto:</p></strong>
+            <p>Correo: <%=usuarioPropiedad.getCorreo()%></p>
+            <p>Numero de teléfono: <%=usuarioPropiedad.getNumTelefono()%></p>
+            <strong><p> Datos de la reserva:</p></strong>
+            <p>Fecha de inicio: <%=fechaInicio %></p>
+            <p>Fecha fin: <%=fechaFin%></p>
+            <p>Numero de días: <%=propiedad.calcularNumeroDeDias(fechaInicio,fechaFin)%></p>
+            <p>Precio: <%=coste%></p>
+            <p>Tipo de cancelación: <%=propiedad.getPoliticaDeCancelacion()%></p>
+            <li><a href="Inicio">Reservar Propiedad</a></li>
+            
         </div>
         </section>
     </body>

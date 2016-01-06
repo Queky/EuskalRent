@@ -72,6 +72,10 @@
         <servlet-name>PaginaPropiaApartamentos</servlet-name>
         <jsp-file>/JSP/PaginaApartamentos.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>SeleccionBusqueda</servlet-name>
+        <servlet-class>packEuskalRent.seleccionBusqueda</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -143,6 +147,10 @@
     <servlet-mapping>
         <servlet-name>PaginaPropiaApartamentos</servlet-name>
         <url-pattern>/ApartamentoElegido</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SeleccionBusqueda</servlet-name>
+        <url-pattern>/PaginaSB</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

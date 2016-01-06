@@ -218,6 +218,33 @@ public class ConexionBD {
         return propiedad;
 
     }
+     public Propiedad recibirDartosPropiedad(int idApartamento) {
+        Propiedad propiedad = new Propiedad();
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from apartamento where idApartamento='" + idApartamento + "';");
+            while (rs.next()) {
+                propiedad.setIdApartamento(rs.getInt("idApartamento"));
+                propiedad.setBarrio(rs.getString("Barrio"));
+                propiedad.setCorreoUsuario(rs.getString("idEmail"));
+                propiedad.setDireccion(rs.getString("Direccion"));
+                propiedad.setNumHuespedes(rs.getInt("NumeroHuespedes"));
+                propiedad.setPoliticaDeCancelacion(rs.getString("TipoCancelacion"));
+                propiedad.setPrecioNoche(rs.getFloat("Tarifa"));
+                propiedad.setTipoPropieedad(rs.getString("TipoPropiedad"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return propiedad;
+
+    }
 
     public int getIdApartamentoBD(String correo) {
         int idApartamento = 0;

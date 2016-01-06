@@ -4,6 +4,7 @@
     Author     : Iñaki
 --%>
 
+<%@page import="packEuskalRent.Usuario"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.ResultSet"%>
@@ -32,8 +33,27 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
+                     <%  
+                        
+                        if(session.getAttribute("Usuario")!=null){
+                        Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
+                        session.setAttribute("Usuario", usuario);
+                        
+                    if(usuario.estaLogueado()){
+                        %>
+                        <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                        <% if(!usuario.tienePropiedad()){%>
+                        <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                        <%}else{%>
+                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                        <%}%>
+                        <li><a href="PaginaCS">Cerrar Sesion</a></li>
+                    <%}}else{%>
+                        <li><a href="Acceso">Acceder</a></li>
+                        <li><a href="Registro">Registrarse</a></li>
+                        <%
+                    }
+                    %>
                 </ul>      
             </nav>
         </header>
@@ -47,7 +67,7 @@
             //"+s.getAttribute("fechaInicio").toString()+"
             ResultSet resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"';");
             %>
-            <form action="ApartamentoElegido" id="formApart" method="POST">
+            <form action="PaginaSB" id="formApart" method="POST">
                 <table id="idA">
                 <tr>
                     <th></th>
