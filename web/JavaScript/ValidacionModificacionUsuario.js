@@ -69,8 +69,8 @@ var dropBox;
 
 window.onload = function() {
 dropBox = document.getElementById("fileOutput");
-dropBox.ondragenter = ignoreDrag;
-dropBox.ondragover = ignoreDrag;
+dropBox.ondragover = dragOver;
+dropBox.ondragleave = dragLeave;
 dropBox.ondrop = drop;
 }
 
@@ -90,4 +90,23 @@ var files = data.files;
 
 processFiles(files);
 
+}
+
+function dragOver() {
+    var img = document.getElementById("fileOutput");
+    img.className='fileOutput dragOver';
+    
+    return false;
+}
+
+function dragLeave(e) {
+    var img = document.getElementById("fileOutput");
+    img.className='fileOutput dragLeave';
+    return false;
+}
+
+function dragDrop(e) {
+    var img = document.getElementById("fileOutput");
+    img.className='fileOutput dragDrop';
+    return false;
 }
