@@ -62,16 +62,13 @@ function dragDrop(e) {
 }
 
 function revisarFechaInicio() {
-    var fechaInicio = document.getElementById("calendario");
+    var fechaInicio = document.getElementById("fechaInicio");
     var hoy = new Date();
-    if(fechaInicio.value==="")
-        return false;
-    else {
-        if(hoy<=fechaInicio)
-            return true;
-        else
-            return false;
-    }
+    var fechaUsuario = new Date(fechaInicio.value);
+    if(hoy.value<=fechaUsuario.value)
+        return true;
+    else
+        return false;   
 }
 
 function revisar() {
@@ -93,10 +90,9 @@ function revisar() {
             foto.className='imagenUsuario';
         }
     };
-    
     var fecha = document.getElementById("calendario");
     fecha.oninput = function() {
-        if(!revisarFoto()){
+        if(!revisarFechaInicio()){
             fecha.className='error';
         } else {
             fecha.className='cajasDatos';
