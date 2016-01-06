@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `euskalrent03` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `euskalrent03`;
 -- MySQL dump 10.13  Distrib 5.7.9, for osx10.9 (x86_64)
 --
 -- Host: localhost    Database: euskalrent03
@@ -60,7 +62,7 @@ CREATE TABLE `cuentabancaria` (
   `IdCuenta` int(11) NOT NULL AUTO_INCREMENT,
   `IdEmail` varchar(255) NOT NULL,
   `Saldo` float NOT NULL,
-  PRIMARY KEY (`IdCuenta`),
+  PRIMARY KEY (`IdCuenta`,`IdEmail`),
   KEY `FKCuentaBanc914323` (`IdEmail`),
   CONSTRAINT `FKCuentaBanc914323` FOREIGN KEY (`IdEmail`) REFERENCES `usuario` (`IdEmail`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -83,7 +85,7 @@ DROP TABLE IF EXISTS `reserva`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reserva` (
-  `IdReserva` varchar(255) NOT NULL,
+  `IdReserva` int(11) NOT NULL AUTO_INCREMENT,
   `IdEmail` varchar(255) NOT NULL,
   `IdApartamento` int(11) NOT NULL,
   `FechaInicio` date NOT NULL,
@@ -120,6 +122,7 @@ CREATE TABLE `usuario` (
   `Contraseña` varchar(255) DEFAULT NULL,
   `NumeroTelefono` int(11) DEFAULT NULL,
   `Direccion` varchar(45) DEFAULT 'NULL',
+  `imgUsuario` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`IdEmail`),
   KEY `FKYapartamento_idx` (`IdApartamento`),
   CONSTRAINT `FKYapartamento` FOREIGN KEY (`IdApartamento`) REFERENCES `apartamento` (`IdApartamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -132,7 +135,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('aaaa@aaa.aa',6,'aaa','aaa','aaaa',699844487,''),('elPrimero@hotmail.com',NULL,'Luis','Lopez Perez','soyelprimero',636656232,''),('elSegundo@hotmail.com',NULL,'Joseba','Sedano Gallo','Platon',645478948,''),('laprimaera@hotmail.com',NULL,'Pepa','Pig','1234',679632146,'calle 9'),('laSegunda@hotmail.com',5,'Edurne','Gallo Senarriaga','tato',632478952,'');
+INSERT INTO `usuario` VALUES ('aaaa@aaa.aa',6,'aaa','aaa','aaaa',699844487,'',NULL),('elPrimero@hotmail.com',NULL,'Luis','Lopez Perez','soyelprimero',636656232,'',NULL),('elSegundo@hotmail.com',NULL,'Joseba','Sedano Gallo','Platon',645478948,'',NULL),('laprimaera@hotmail.com',NULL,'Pepa','Pig','1234',679632146,'calle 9',NULL),('laSegunda@hotmail.com',5,'Edurne','Gallo Senarriaga','tato',632478952,'',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -145,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-05 18:05:33
+-- Dump completed on 2016-01-06 19:29:27
