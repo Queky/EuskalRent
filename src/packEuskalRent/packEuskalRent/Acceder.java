@@ -62,7 +62,7 @@ public class Acceder extends HttpServlet {
                                 s.setAttribute("Usuario", usuario);
                                 response.sendRedirect("Inicio");
                             } else {
-                                response.sendRedirect("PaginaCSe");
+                                response.sendRedirect("PaginaCSesion");
                             }
                         } else {
                             s.setAttribute("Usuario", usuario);

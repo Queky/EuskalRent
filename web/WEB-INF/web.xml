@@ -80,6 +80,10 @@
         <servlet-name>GestionReservas</servlet-name>
         <servlet-class>packEuskalRent.GestionReservas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PaginaConflictosSesion</servlet-name>
+        <jsp-file>/JSP/PaginaConflictoSesion.jsp</jsp-file>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -159,6 +163,10 @@
     <servlet-mapping>
         <servlet-name>GestionReservas</servlet-name>
         <url-pattern>/PaginaGR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaConflictosSesion</servlet-name>
+        <url-pattern>/PaginaCSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
