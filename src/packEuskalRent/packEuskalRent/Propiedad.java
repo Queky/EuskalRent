@@ -11,25 +11,35 @@ package packEuskalRent;
  */
 public class Propiedad {
 
-   
     private String barrio;
     private String tipoPropiedad;
     private Integer numHuespedes;
     private String direccion;
-    private float precioNoche =0;
+    private float precioNoche = 0;
     private String politicaCancelacion;
     private String correoUsuario;
     private String fechaDisponible;
+    private int isApartamento;
+
     public Propiedad() {
     }
 
-   
-    public String getFechaDisponible(){
-    return this.fechaDisponible;
+    public int getIdApartamento() {
+        return this.isApartamento;
     }
-    public void setFechaDisponible(String fechaDisponible){
-    this.fechaDisponible=fechaDisponible;
+
+    public void setIdApartamento(int idApartamento) {
+        this.isApartamento = idApartamento;
     }
+
+    public String getFechaDisponible() {
+        return this.fechaDisponible;
+    }
+
+    public void setFechaDisponible(String fechaDisponible) {
+        this.fechaDisponible = fechaDisponible;
+    }
+
     public String getBarrio() {
         return this.barrio;
     }
@@ -77,10 +87,99 @@ public class Propiedad {
     public void setPoliticaDeCancelacion(String politicaCancelacion) {
         this.politicaCancelacion = politicaCancelacion;
     }
-    public String getCorreousuario(){
+
+    public String getCorreousuario() {
         return this.correoUsuario;
     }
-    public void setCorreoUsuario(String correoUsuario){
+
+    public void setCorreoUsuario(String correoUsuario) {
         this.correoUsuario = correoUsuario;
     }
+
+    public int calcularNumeroDeDias(String fechaInicio, String fechaFinal) {
+
+        char a = fechaInicio.charAt(fechaInicio.length() - 2);
+        char b = fechaInicio.charAt(fechaInicio.length() - 1);
+
+        String primerDia = "";
+        primerDia = primerDia + a;
+        primerDia = primerDia + b;
+
+        char c = fechaFinal.charAt(fechaFinal.length() - 2);
+        char d = fechaFinal.charAt(fechaFinal.length() - 1);
+
+        String ultimoDia = "";
+        ultimoDia = ultimoDia + c;
+        ultimoDia = ultimoDia + d;
+
+        char mes1 = fechaInicio.charAt(fechaInicio.length() - 5);
+        char mes2 = fechaInicio.charAt(fechaInicio.length() - 4);
+        String primerMes = "";
+        primerMes = primerMes + mes1;
+        primerMes = primerMes + mes2;
+
+        char mes3 = fechaFinal.charAt(fechaFinal.length() - 5);
+        char mes4 = fechaFinal.charAt(fechaFinal.length() - 4);
+        String segundoMes = "";
+        segundoMes = segundoMes + mes3;
+        segundoMes = segundoMes + mes4;
+        int dia1 = Integer.parseInt(primerDia);
+        int dia2 = Integer.parseInt(ultimoDia);
+        int elMesPrimero = Integer.parseInt(primerMes);
+        int elMesSegundo = Integer.parseInt(segundoMes);
+        int resultado = 0;
+        System.out.println(elMesPrimero);
+         System.out.println(elMesSegundo);
+        if (elMesPrimero == elMesSegundo) {
+            resultado = dia2 - dia1;
+        } else {
+            if (elMesSegundo - elMesPrimero == 1) {
+                dia1 = (dia1 - 31) * (-1);
+                resultado = dia2 - dia1;
+
+            } 
+                if( elMesPrimero==1 && elMesSegundo>2){
+                dia1 = (dia1 - 31) * (-1);
+                System.out.println(dia1);
+                if(elMesSegundo%2==0 && elMesSegundo<7){
+                    dia2 =(dia2-30)*(-1);
+                    System.out.println(dia2);
+                int numMeses = elMesSegundo - 2;
+                int totalDias = (numMeses*31)-(numMeses/2);
+                resultado=dia1+29+totalDias-dia2;
+                }
+                if(elMesSegundo%2!=0 && elMesSegundo<7){
+                     dia2 =(dia2-31)*(-1);
+                     System.out.println(dia2);
+                int numMeses = (elMesPrimero+elMesSegundo)-3;
+                System.out.println(numMeses);
+                int totaldias= (numMeses*31)-(numMeses/3);
+                System.out.println(totaldias);
+                resultado = dia1 +29+ totaldias-dia2;
+                }
+                }if( elMesPrimero==2){
+                dia1 = (dia1 - 29) * (-1);
+                
+                if(elMesSegundo%2==0 && elMesSegundo<7){
+                dia2 =(dia2-31)*(-1);
+                int numMeses = elMesSegundo - 2;
+                int totalDias = (numMeses*31)-(numMeses/2);
+                resultado=dia1+totalDias-dia2;
+                }
+                if(elMesSegundo%2!=0 && elMesSegundo<7){
+                    dia2 =(dia2-30)*(-1);
+                int numMeses = (elMesPrimero+elMesSegundo)-3;
+                int totaldias= (numMeses*31)-(numMeses/3);
+                resultado = dia1 + totaldias-dia2;
+                }
+            
+             
+                    
+                }
+            }
+        
+       
+        return resultado;
+    }
 }
+    

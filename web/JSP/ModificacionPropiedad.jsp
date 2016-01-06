@@ -34,7 +34,7 @@
             </a>
             <nav>
                 <ul>  <% Usuario usuario = (Usuario) session.getAttribute("Usuario");
-                    if(!usuario.tienePropiedad()){%>
+                    if(usuario.tienePropiedad()){%>
                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                     <li><a href="PaginaMP">Modificar Propiedad</a></li>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
