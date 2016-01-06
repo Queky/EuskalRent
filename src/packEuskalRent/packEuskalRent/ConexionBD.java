@@ -465,37 +465,68 @@ public class ConexionBD {
 
     }
 
-    public void restarSaldoUsuario(String correo, float cantidad) {
+    public boolean restarSaldoUsuario(String correo, float cantidad ,float saldoInicial) {
         crearConexion();
         Statement st;
-        float saldoFinal = ObtenerSaldoUsuario(correo) - cantidad;
+        float saldoFinal = saldoInicial- cantidad;
         try {
             st = con.createStatement();
             st.executeUpdate("UPDATE `euskalrent03`.`cuentaBancaria` SET `Saldo`='" + saldoFinal + "' WHERE idEmail='" + correo + "';");
-
+            
         } catch (SQLException e) {
             e.printStackTrace();
-
+            return false;
         }
+        
         cerrarConexion();
+        return true;
     }
 
     public float ObtenerSaldoUsuario(String correo) {
         crearConexion();
         Statement st;
-        float saldo = 0;
+        float saldo=0 ;
         try {
             st = con.createStatement();
-            ResultSet rs = st.executeQuery("select saldo from cuentabancaria where idEmail='" + correo + "';");
+            ResultSet rs = st.executeQuery("select Saldo from cuentabancaria where idEmail='" + correo + "';");
             while (rs.next()) {
                 saldo = rs.getFloat("Saldo");
+             
             }
         } catch (SQLException e) {
             e.printStackTrace();
 
         }
-        cerrarConexion();
-        return saldo;
+           cerrarConexion();
+            System.out.println(saldo);
+            return saldo;
     }
 
+    public void anyadirReserva(String correo,int idApartamento,String fechaInicio,String fechaFin) {
+
+        crearConexion();
+        Statement st;
+        try {
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO `euskalrent03`.`reserva` (`idEmail`,`idApartamento`,`FechaInicio`,`FechaFinal`)"
+                    + " VALUES ('" + correo + "','" + idApartamento + "','" + fechaInicio + "','" + fechaFin + "');");
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+        cerrarConexion();
+    }
+    public void sumarSaldoUsuario(String correo, float cantidad ,float saldoInicial) {
+        crearConexion();
+        Statement st;
+        float saldoFinal = saldoInicial+cantidad;
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`cuentaBancaria` SET `Saldo`='" + saldoFinal + "' WHERE idEmail='" + correo + "';");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
+        }
+}
 }

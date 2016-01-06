@@ -34,7 +34,7 @@
                 <ul>
                     <%
                         Usuario usuario = (Usuario) session.getAttribute("Usuario");
-                    if(usuario.estaLogueado()){
+                   
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                         <% if(!usuario.tienePropiedad()){%>
@@ -43,12 +43,7 @@
                         <li><a href="PaginaMP">Modificar Propiedad</a></li>
                         <%}%>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
-                    <%}else{%>
-                        <li><a href="Acceso">Acceder</a></li>
-                        <li><a href="Registro">Registrarse</a></li>
-                        <%
-                    }
-                    %>
+           
                 </ul>      
             </nav>
         </header>
@@ -59,8 +54,9 @@
                 Propiedad propiedad =(Propiedad) session.getAttribute("Propiedad");
                 Usuario usuarioPropiedad = CB.recibirDartosUsuario(propiedad.getCorreousuario());
                 String fechaInicio= (String)session.getAttribute("fechaInicio");
-                String fechaFin = (String) session.getAttribute("fechaFin");
-                float coste = propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)* propiedad.getPrecioNoche();
+                String fechaFin = (String) session.getAttribute("fechaFin"); 
+               float coste = propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)* propiedad.getPrecioNoche();
+                session.setAttribute("Coste", coste);
             %>
             <strong><p>Datos de la propiedad:</p></strong>
             <p>Identificador de la propiedad: <%=propiedad.getIdApartamento()%></p>
@@ -83,7 +79,7 @@
             <p>Numero de días: <%=propiedad.calcularNumeroDeDias(fechaInicio,fechaFin)%></p>
             <p>Precio: <%=coste%></p>
             <p>Tipo de cancelación: <%=propiedad.getPoliticaDeCancelacion()%></p>
-            <li><a href="Inicio">Reservar Propiedad</a></li>
+            <p><a href="PaginaGR">Reservar Propiedad</a></p>
             
         </div>
         </section>

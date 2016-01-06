@@ -24,55 +24,20 @@ public class GestionReservas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            doPost(request, response);
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         HttpSession s = request.getSession(true);
-        Sesion sesion = Sesion.getSesion();
-        Usuario usuario = new Usuario();
-        String correo = (String) request.getParameter("email");
-        String nombre = (String) request.getParameter("nombre");
-        String apellido = (String) request.getParameter("apellidos");
-        String contraseña = (String) request.getParameter("contraseña");
-        System.out.println(contraseña);
-
-        usuario.setNombre(nombre);
-        usuario.setApellido(apellido);
-        usuario.setCorreo(correo);
-        usuario.setContraseña(contraseña);
-        usuario.setNumSesion(s.getId());
+        Propiedad propiedad =(Propiedad) s.getAttribute("Propiedad");
+        Usuario usuario=(Usuario)s.getAttribute("Usuario");
+        String fechaInicio= (String)s.getAttribute("fechaInicio");
+        String fechaFin = (String) s.getAttribute("fechaFin"); 
+        float coste = (float)s.getAttribute("Coste");
+        System.out.println(coste);
         ConexionBD BD = ConexionBD.getConexionConBBDD();
-        if (!BD.estaRegistrado(correo)) {
-            if (!sesion.acceso()) {
-                Usuario usuarioQueyaEsta = (Usuario) s.getAttribute("Usuario");
-                if (usuarioQueyaEsta != null) {
-                    if (!usuario.getNumSesion().equals(usuarioQueyaEsta.getNumSesion())) {
-                        sesion.reniciarSesion();
-                        sesion.acceso();
-                        s.setAttribute("Usuario", usuario);
-                        response.sendRedirect("PaginaModificacionUsuario");
-                    } else {
-                        response.sendRedirect("PaginaCSe");
-                    }
-                } else {
-                    s.setAttribute("Usuario", usuario);
-                    response.sendRedirect("PaginaModificacionUsuario");
-                }
-            } else {
-                s.setAttribute("Usuario", usuario);
-
-                response.sendRedirect("PaginaModificacionUsuario");
-            }
-        }else{
-             response.sendRedirect("Registro");
-          
-        }}
+        float saldoUsuario =BD.ObtenerSaldoUsuario(usuario.getCorreo());
+        BD.sumarSaldoUsuario(propiedad.getCorreousuario(), coste, BD.ObtenerSaldoUsuario(BD.recibirDartosUsuario(propiedad.getCorreousuario()).getCorreo()));
+        BD.restarSaldoUsuario(usuario.getCorreo(), coste,saldoUsuario);
+        BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio,fechaFin);
+        response.sendRedirect("Inicio");
+    }
 
         /**
          * Returns a short description of the servlet.

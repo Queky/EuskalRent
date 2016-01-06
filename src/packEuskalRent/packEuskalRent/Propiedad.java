@@ -137,19 +137,24 @@ public class Propiedad {
                 dia1 = (dia1 - 31) * (-1);
                 resultado = dia2 - dia1;
 
-            } else {
+            } 
                 if( elMesPrimero==1 && elMesSegundo>2){
                 dia1 = (dia1 - 31) * (-1);
+                System.out.println(dia1);
                 if(elMesSegundo%2==0 && elMesSegundo<7){
-                    dia2 =(dia2-31)*(-1);
+                    dia2 =(dia2-30)*(-1);
+                    System.out.println(dia2);
                 int numMeses = elMesSegundo - 2;
                 int totalDias = (numMeses*31)-(numMeses/2);
                 resultado=dia1+29+totalDias-dia2;
                 }
                 if(elMesSegundo%2!=0 && elMesSegundo<7){
-                     dia2 =(dia2-30)*(-1);
-                int numMeses = (elMesPrimero+elMesSegundo)-2;
-                int totaldias= (numMeses*31)-(numMeses%3);
+                     dia2 =(dia2-31)*(-1);
+                     System.out.println(dia2);
+                int numMeses = (elMesPrimero+elMesSegundo)-3;
+                System.out.println(numMeses);
+                int totaldias= (numMeses*31)-(numMeses/3);
+                System.out.println(totaldias);
                 resultado = dia1 +29+ totaldias-dia2;
                 }
                 }if( elMesPrimero==2){
@@ -163,8 +168,8 @@ public class Propiedad {
                 }
                 if(elMesSegundo%2!=0 && elMesSegundo<7){
                     dia2 =(dia2-30)*(-1);
-                int numMeses = (elMesPrimero+elMesSegundo)-2;
-                int totaldias= (numMeses*31)-(numMeses%3);
+                int numMeses = (elMesPrimero+elMesSegundo)-3;
+                int totaldias= (numMeses*31)-(numMeses/3);
                 resultado = dia1 + totaldias-dia2;
                 }
             
@@ -172,7 +177,7 @@ public class Propiedad {
                     
                 }
             }
-        }
+        
        
         return resultado;
     }

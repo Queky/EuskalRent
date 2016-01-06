@@ -76,6 +76,10 @@
         <servlet-name>SeleccionBusqueda</servlet-name>
         <servlet-class>packEuskalRent.seleccionBusqueda</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionReservas</servlet-name>
+        <servlet-class>packEuskalRent.GestionReservas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -151,6 +155,10 @@
     <servlet-mapping>
         <servlet-name>SeleccionBusqueda</servlet-name>
         <url-pattern>/PaginaSB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionReservas</servlet-name>
+        <url-pattern>/PaginaGR</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
