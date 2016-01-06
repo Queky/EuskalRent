@@ -68,6 +68,7 @@ reader.readAsDataURL(file);
 var dropBox;
 
 window.onload = function() {
+$('fileOutput').html5imageupload();
 dropBox = document.getElementById("fileOutput");
 //dropBox.ondragover = dragOver;
 //dropBox.ondragleave = dragLeave;
@@ -84,12 +85,16 @@ function drop(e) {
 e.stopPropagation();
 e.preventDefault();
 
+//var formD = new FormData();
+//formD.append("file", e.dataTransfer.files[0]);
+
+//var xhr = new XMLHttpRequest();
+//xhr.open("POST", "mUsuario");
+//xhr.send(formD);
+
 var data = e.dataTransfer;
 var files = data.files;
-
-
 processFiles(files);
-
 }
 
 function dragOver() {
@@ -107,5 +112,29 @@ function dragLeave(e) {
 function dragDrop(e) {
     var img = document.getElementById("fileOutput");
     img.className='fileOutput dragDrop';
+    e.stopPropagation();
+    e.preventDefault();
+    
+    var files = e.dataTransfer.get;
+    var formD = new FormData();
+    formD.append("imagenUser", files);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "mUsuario", true);
+    xhr.send(formD);
     return false;
+}
+
+function dropUpload(e) {
+    var files = e.dataTransfer.get;
+    upload(files);
+}
+
+function upload(file) {
+    var formD = new FormData();
+    formD.append("imagenUser", file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "mUsuario", true);
+    xhr.send(formD);
 }

@@ -58,28 +58,28 @@
                float coste = propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)* propiedad.getPrecioNoche();
                 session.setAttribute("Coste", coste);
             %>
-            <strong><p>Datos de la propiedad:</p></strong>
-            <p>Identificador de la propiedad: <%=propiedad.getIdApartamento()%></p>
-            <p>Direccion: <%=propiedad.getDireccion()%></p>
-            <p>Barrio: <%=propiedad.getBarrio()%></p>
-            <p>Tipo de propiedad: <%=propiedad.getTipoPropiedad()%></p>
-            <p>Numero de Huespedes: <%=propiedad.getNumHuespedes()%></p>
-            <strong><p>Datos del arrendador:</p></strong>
-            <p>Nombre: <%=usuarioPropiedad.getNombre()%></p>
-            <p>Apellidos: <%=usuarioPropiedad.getApellido()%></p>
+            <strong><h3>Datos de la propiedad:</h3></strong>
+            <p><u>Identificador de la propiedad:</u> <%=propiedad.getIdApartamento()%></p>
+            <p><u>Direccion:</u> <%=propiedad.getDireccion()%></p>
+            <p><u>Barrio:</u> <%=propiedad.getBarrio()%></p>
+            <p><u>Tipo de propiedad:</u> <%=propiedad.getTipoPropiedad()%></p>
+            <p><u>Numero de Huespedes:</u> <%=propiedad.getNumHuespedes()%></p>
+            <strong><h3>Datos del arrendador:</h3></strong>
+            <p><u>Nombre:</u> <%=usuarioPropiedad.getNombre()%></p>
+            <p><u>Apellidos:</u> <%=usuarioPropiedad.getApellido()%></p>
             <% if(usuario.getDireccion()!=null){%>
-            <p>Direccion: <%=usuarioPropiedad.getDireccion()%></p>
+            <p><u>Direccion:</u> <%=usuarioPropiedad.getDireccion()%></p>
             <%}%>
-            <strong><p> Contacto:</p></strong>
-            <p>Correo: <%=usuarioPropiedad.getCorreo()%></p>
-            <p>Numero de teléfono: <%=usuarioPropiedad.getNumTelefono()%></p>
-            <strong><p> Datos de la reserva:</p></strong>
-            <p>Fecha de inicio: <%=fechaInicio %></p>
-            <p>Fecha fin: <%=fechaFin%></p>
-            <p>Numero de días: <%=propiedad.calcularNumeroDeDias(fechaInicio,fechaFin)%></p>
-            <p>Precio: <%=coste%></p>
-            <p>Tipo de cancelación: <%=propiedad.getPoliticaDeCancelacion()%></p>
-            <p><a href="PaginaGR">Reservar Propiedad</a></p>
+            <strong><h3> Contacto:</h3></strong>
+            <p><u>Correo:</u> <%=usuarioPropiedad.getCorreo()%></p>
+            <p><u>Numero de teléfono:</u> <%=usuarioPropiedad.getNumTelefono()%></p>
+            <strong><h3> Datos de la reserva:</h3></strong>
+            <p><u>Fecha de inicio:</u> <%=fechaInicio %></p>
+            <p><u>Fecha fin:</u> <%=fechaFin%></p>
+            <p><u>Numero de días:</u> <%=propiedad.calcularNumeroDeDias(fechaInicio,fechaFin)%></p>
+            <p><u>Precio:</u> <%=coste%></p>
+            <p><u>Tipo de cancelación:</u> <%=propiedad.getPoliticaDeCancelacion()%></p>
+            <h2><a href="PaginaGR">Reservar Propiedad</a></h2>
             
         </div>
         </section>

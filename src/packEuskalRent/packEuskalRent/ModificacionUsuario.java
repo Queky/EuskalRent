@@ -6,6 +6,7 @@ package packEuskalRent;
  * and open the template in the editor.
  */
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import packEuskalRent.ConexionBD;
+import java.util.Base64;
+import javax.servlet.http.Part;
+
 
 /**
  *
@@ -42,6 +46,9 @@ public class ModificacionUsuario extends HttpServlet {
         Integer numTelefono = Integer.parseInt(request.getParameter("telefono"));
         String direccion = (String) request.getParameter("direccion");
 
+        String img= request.getParameter("imagenUser");
+        System.out.println("img = "+img);
+        
         usuario.setNombre(nombre);
         usuario.setApellido(apellido);
         usuario.setNumTelefono(numTelefono);
@@ -77,7 +84,7 @@ public class ModificacionUsuario extends HttpServlet {
                  BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono);
                  BD.agregarSalgoUsuario(correo);
             } else {
-                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion);
+                BD.anyadirDatosUsuario(nombre, apellido, correo, usuario.getContraseña(), numTelefono, direccion, img);
                 BD.agregarSalgoUsuario(correo);
             }
             
