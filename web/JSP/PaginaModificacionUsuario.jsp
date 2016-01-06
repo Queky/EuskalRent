@@ -48,8 +48,9 @@
                 <div class="uploader-controls">
                     <p>Añade tu foto de perfil favorita:</p>
                 </div>
-                <div class="fileOutput" id="fileOutput"  onchange="revisar(this)" 
-                     ondragover="dragOver()" ondragleave="dragLeave()" ondrop="dragDrop(this)"></div>
+                <div class="fileOutput" id="fileOutput" name="fileOutput" onchange="revisar(this)" 
+                     ondragover="dragOver()" ondragleave="dragLeave()" ondrop="dragDrop(this)">
+                </div>
 
                 <div>    <form action="mUsuario" method="post">
 

@@ -38,9 +38,9 @@
             </nav>
         </header><%Usuario usuario = (Usuario) session.getAttribute("Usuario"); %>
         <section>
-           <strong> <p> El usuario <%=usuario.getCorreo()%> ya a iniciado sesion, que dese hacer:</p></strong>
-            <p><a href='Inicio'>Continuar con la ultima sesion</a></p>
-            <p><a href='PaginaCS'>Cerrar Sesion</a></p>
+           <strong> <p> El usuario <%=usuario.getCorreo()%> ya a iniciado sesion, que desea hacer:</p></strong>
+            <h3><a href='Inicio'>Continuar con la ultima sesion</a></h3>
+            <h3><a href='PaginaCS'>Cerrar Sesion</a></h3>
         </section>
     </body>
 </html>
