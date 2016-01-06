@@ -208,5 +208,10 @@ section p {
 }
 
 .imagenUsuario.dragLeave {
+    border: 2px dashed #000000;
+    color: #000000;
+}
+
+.imagenUsuario.dragDrop {
     border:inactiveborder;
 }

@@ -69,10 +69,10 @@ var dropBox;
 
 window.onload = function() {
 dropBox = document.getElementById("fileOutput");
-dropBox.ondragover = dragOver;
-dropBox.ondragleave = dragLeave;
+//dropBox.ondragover = dragOver;
+//dropBox.ondragleave = dragLeave;
 dropBox.ondrop = drop;
-}
+};
 
 function ignoreDrag(e) {
 e.stopPropagation();
@@ -94,8 +94,7 @@ processFiles(files);
 
 function dragOver() {
     var img = document.getElementById("fileOutput");
-    img.className='fileOutput dragOver';
-    
+    img.className='fileOutput dragover';
     return false;
 }
 

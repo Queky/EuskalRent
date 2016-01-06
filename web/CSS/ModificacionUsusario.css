@@ -157,7 +157,7 @@ form{
   transition: all 0.1s linear 0s;
   position: absolute;
   top: 340px;
-  left: 445;
+  left: 450px;
 }
 
 .button:hover {
@@ -167,7 +167,7 @@ form{
   -moz-box-shadow: none; 
   box-shadow: none;
    position: absolute;
- top: 340px;
+    top: 340px;
 }
 .map {
     top: 10;
@@ -187,5 +187,10 @@ form{
 }
 
 .fileOutput.dragLeave {
+    border: 2px dashed #000000;
+    color: #000000;
+}
+
+.fileOutput.dragDrop {
     border:inactiveborder;
 }

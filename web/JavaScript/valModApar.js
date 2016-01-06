@@ -38,7 +38,6 @@ function revisarFoto() {
 function dragOver() {
     var img = document.getElementById("Caja");
     img.className='imagenUsuario dragover';
-    
     return false;
 }
 
@@ -50,7 +49,7 @@ function dragLeave(e) {
 
 function dragDrop(e) {
     var img = document.getElementById("Caja");
-    img.className='imagenUsuario dragLeave';
+    img.className='imagenUsuario dragDrop';
     return false;
 }
 
