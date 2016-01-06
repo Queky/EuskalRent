@@ -44,9 +44,7 @@ function dragOver() {
 
 function dragLeave(e) {
     var img = document.getElementById("Caja");
-    img.
     img.className='imagenUsuario dragLeave';
-    e.preventExtensions();
     return false;
 }
 

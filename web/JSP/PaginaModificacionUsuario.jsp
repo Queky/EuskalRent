@@ -48,7 +48,8 @@
                 <div class="uploader-controls">
                     <p>Añade tu foto de perfil favorita:</p>
                 </div>
-                <div class="fileOutput" id="fileOutput"  onchange ="revisar(this)"></div>
+                <div class="fileOutput" id="fileOutput"  onchange="revisar(this)" 
+                     ondragover="dragOver()" ondragleave="dragLeave()" ondrop="dragDrop(this)"></div>
 
                 <div>    <form action="mUsuario" method="post">
 
@@ -83,8 +84,8 @@
                                oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)"
                                title="Dirección a Geocode" value="" id="busDir" onchange=""/>
                         <%}%>
-                        <div id="map" style="width: 300px; height: 200px"class="map"></div>
-                        <input type="submit" value="  Guardar  " class="button" id="btnModificacionUsuario"/> </form>
+                        <div id="map" class="map"></div>
+                        <input type="submit" value="Guardar" class="button" id="btnModificacionUsuario"/> </form>
                 </div>
 
             </div>   

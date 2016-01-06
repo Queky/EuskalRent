@@ -198,6 +198,8 @@ section p {
     color: #000000;
     line-height: 350px;
     text-align: center;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .imagenUsuario.dragover {
@@ -207,9 +209,4 @@ section p {
 
 .imagenUsuario.dragLeave {
     border:inactiveborder;
-}
-
-.imagenUsuario img {
-    height: 100%;
-    width: 100%;
 }
