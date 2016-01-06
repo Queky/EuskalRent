@@ -14,6 +14,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Completar datos propiedad</title>
         <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Vollkorn:700italic,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="JavaScript/mapa.js"></script>
         <link rel="stylesheet" type="text/css" href="CSS/contFotos.css">
         <script type="text/javascript" src="JavaScript/DnDEscritorio.js"></script>
@@ -47,9 +50,8 @@
                 %>
                 <div class="parrafoPropiedad">
                     <p>Arrastre la foto su propiedad al siguiente recuadro:</p>
-                    <div name="divCaja" id="divCaja">
-                        <input type="file" name="Caja"/>
-                    </div>
+                    <div class="imagenUsuario" name="Caja" id="Caja" ondragover="dragOver()"
+                         ondragleave="dragLeave()" ondrop="dragDrop(this)"><img src=""></div>
                     <div id="2" class="grande">
                         <p class="parrafoPropiedad">Elige un barrio</p><br>
                         <select name="barrio" class="cajasDatos" id="barrio" >

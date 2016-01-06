@@ -1,3 +1,5 @@
+/* global ImageTools */
+
 window.onload = revisar;
 
 function revisionGeneral () {
@@ -8,7 +10,7 @@ function revisionGeneral () {
         correcto=false;
     }
     if(!revisarFoto()){
-        var foto = document.getElementById("caja");
+        var foto = document.getElementById("Caja");
         foto.className='error';
         correcto=false;
     }
@@ -26,11 +28,32 @@ function revisarPrecio() {
 }
 
 function revisarFoto() {
-    var foto = document.getElementById("caja");
+    var foto = document.getElementById("Caja");
     if(foto.value==="")
         return false;
     else
         return true;
+}
+    
+function dragOver() {
+    var img = document.getElementById("Caja");
+    img.className='imagenUsuario dragover';
+    
+    return false;
+}
+
+function dragLeave(e) {
+    var img = document.getElementById("Caja");
+    img.
+    img.className='imagenUsuario dragLeave';
+    e.preventExtensions();
+    return false;
+}
+
+function dragDrop(e) {
+    var img = document.getElementById("Caja");
+    img.className='imagenUsuario dragLeave';
+    return false;
 }
 
 function revisar() {
@@ -43,13 +66,14 @@ function revisar() {
         } else {
             precio.className='cajasDatos';
         }
-    }
-    var foto = document.getElementById("caja");
+    };
+    var foto = document.getElementById("Caja");
     foto.oninput = function() {
         if(!revisarFoto()){
             foto.className='error';
         } else {
             foto.className='cajasDatos';
         }
-    }
+    };
+
 }

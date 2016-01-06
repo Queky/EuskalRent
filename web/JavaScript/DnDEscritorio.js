@@ -1,8 +1,8 @@
 window.addEventListener('load', inicio, false);
 
     function inicio() {
-        document.getElementById('caja').addEventListener('dragover', permitirDrop, false);    
-        document.getElementById('caja').addEventListener('drop', drop, false);
+        document.getElementById('Caja').addEventListener('dragover', permitirDrop, false);    
+        document.getElementById('Caja').addEventListener('drop', drop, false);
     }
     
     function drop(ev)
@@ -19,7 +19,7 @@ window.addEventListener('load', inicio, false);
     }    
     
     function leer(ev) {
-        document.getElementById('caja').style.backgroundImage="url('" + ev.target.result + "')";
+        document.getElementById('Caja').style.backgroundImage="url('" + ev.target.result + "')";
     }
     
     

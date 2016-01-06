@@ -190,3 +190,26 @@ section p {
     line-height: 1.35;
     padding-top: 20px;
 }
+
+.imagenUsuario {
+    width: 350px;
+    height: 350px;
+    border: 2px dashed #000000;
+    color: #000000;
+    line-height: 350px;
+    text-align: center;
+}
+
+.imagenUsuario.dragover {
+    border: 3px dashed #3ee515;
+    color: #3ee515;
+}
+
+.imagenUsuario.dragLeave {
+    border:inactiveborder;
+}
+
+.imagenUsuario img {
+    height: 100%;
+    width: 100%;
+}
