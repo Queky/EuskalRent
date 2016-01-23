@@ -27,10 +27,13 @@
                 <em><img src="Img/logoEuskalRent.gif"/></em>
                 <em>Euskal</em><strong>Rent</strong>
             </a>
-            <nav><% Usuario usuario= new Usuario();%>
+            <nav><% Usuario usuario=(Usuario)session.getAttribute("Usuario") ;%>
                 <ul>
-                     <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                    <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
                      <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                      <% if(usuario.tieneReserva()){%>
+                        <li><a href="PaginaRU">Mis Reservas</a></li>
+                        <%}%>
                      <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul>      
             </nav>

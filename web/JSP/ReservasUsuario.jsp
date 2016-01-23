@@ -1,9 +1,11 @@
 <%-- 
-    Document   : PaginaInicio
-    Created on : 18-nov-2015, 23:10:31
-    Author     : Iñaki
+    Document   : ReservasUsuario
+    Created on : 23-ene-2016, 14:31:43
+    Author     : BEEP
 --%>
-
+<%@page import="packEuskalRent.Reserva"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="packEuskalRent.ConexionBD"%>
 <%@page import="packEuskalRent.Usuario"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -34,12 +36,7 @@
             <nav>
                 <ul>
                      <%  
-                        
-                        if(session.getAttribute("Usuario")!=null){
                         Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
-                        session.setAttribute("Usuario", usuario);
-                        
-                    if(usuario.estaLogueado()){
                         %>
                         <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
                         <% if(!usuario.tienePropiedad()){%>
@@ -47,58 +44,38 @@
                         <%}else{%>
                         <li><a href="PaginaLA">Mis Propiedades</a></li>
                         <%}%>
+                        <li><a href="PaginaRU">Mis Reservas</a></li>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
-                    <%}}else{%>
-                        <li><a href="Acceso">Acceder</a></li>
-                        <li><a href="Registro">Registrarse</a></li>
-                        <%
-                    }
-                    %>
+             
                 </ul>      
             </nav>
         </header>
         <div class="centrado">
             <% 
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/euskalrent03","root","root");
-            HttpSession s=request.getSession();
-            Statement statement = connection.createStatement();
-            //"+s.getAttribute("fechaInicio").toString()+"
-            ResultSet resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"';");
+            ConexionBD conexionBD = ConexionBD.getConexionConBBDD();
+            ArrayList<Reserva> resevas = conexionBD.recibirDatosReservas(usuario.getCorreo());
             %>
             <form action="PaginaSB" id="formApart" method="POST">
                 <table id="idA">
                 <tr>
                     <th></th>
-                    <th>Localizador de apartamento</th>
-                    <th>Tipo de propiedad</th>
-                    <th>Numero maximo de huespedes</p></th>
-                    <th>Barrio</th>
-                    <th>Tarifa/Noche</th>
+                    <th>Identificador de reserva</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                  
                 </tr>
                     <%
-                    int cont=1;
-                    while(resultset.next()){
-                        cont++;
-                    }
-                    resultset.beforeFirst();
-                    if(cont>1){
-                        while(resultset.next()){
+
+                   for(Reserva r: resevas){
                     %>
                     <tr class="subrayados" id="fila">
-                        <td class="marcable"> <input type="radio" id="idApartamento" name="idApartamento" value="<%= resultset.getObject("idapartamento")%>" /></td>
-                            <td> <%= resultset.getObject("idapartamento")%></td>
-                            <td> <%= resultset.getObject("tipopropiedad") %></td>
-                            <td> <%= resultset.getObject("numerohuespedes") %></td>
-                            <td> <%= resultset.getObject("barrio") %></td>
-                            <td> <%= resultset.getObject("tarifa") %> €</td>
+                        <td class="marcable"> <input type="radio" id="idApartamento" name="idApartamento" value="<%=r.getIdReserva()%>" /></td>
+                            <td> <%=r.getIdReserva()%></td>
+                            <td> <%=r.getFechaInicio() %></td>
+                            <td> <%=r.getFechaFin() %></td>
+                       
                         </tr>
-                        <% }
-                    }else{
-                        response.sendRedirect("SinApartamentos");
-                    }
-                    %>
+                        <% }%>
             </table>
             <br>
             <input type="button" name="btnApart" id="btnApart" value="Elegir" class="botonBuscar"/>

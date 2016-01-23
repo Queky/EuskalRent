@@ -35,7 +35,7 @@
                      <% if(!usuario.tienePropiedad()){%>
                         <li><a href="PaginaRP">Registrar Propiedad</a></li>
                         <%}else{%>
-                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                        <li><a href="PaginaLA">Mis Propiedades</a></li>
                         <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul> <%}%>     

@@ -17,21 +17,21 @@ public class Propiedad {
     private String tipoPropiedad;
     private Integer numHuespedes;
     private String direccion;
-    private float precioNoche = 0;
+    private float precioNoche = 1;
     private String politicaCancelacion;
     private String correoUsuario;
     private String fechaDisponible;
-    private int isApartamento;
+    private int idApartamento;
 
     public Propiedad() {
     }
 
     public int getIdApartamento() {
-        return this.isApartamento;
+        return this.idApartamento;
     }
 
     public void setIdApartamento(int idApartamento) {
-        this.isApartamento = idApartamento;
+        this.idApartamento = idApartamento;
     }
 
     public String getFechaDisponible() {
