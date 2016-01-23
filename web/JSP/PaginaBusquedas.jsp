@@ -68,9 +68,9 @@
             ResultSet resultset;
             if(logueado){
                 Usuario u = (Usuario) s.getAttribute("Usuario");
-                resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"' and a.idemail!='"+u.getCorreo()+"' ;");
+                resultset = statement.executeQuery("select a.* from euskalrent03.apartamento a left join reserva r on a.idapartamento=r.idapartamento where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"' and a.idemail!='"+u.getCorreo()+"' and (('"+s.getAttribute("fechaInicio")+"' < r.fechainicio and '"+s.getAttribute("fechaFin")+"' <= r.fechainicio or fechainicio is null) or ('"+s.getAttribute("fechaInicio")+"' >= r.fechafinal and '"+s.getAttribute("fechaFin")+"' > r.fechafinal or fechafinal is null)) ;");
             }else
-                resultset = statement.executeQuery("select * from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"';");  
+                resultset = statement.executeQuery("select a.* from euskalrent03.apartamento a where a.fechadisponibilidad <= '"+s.getAttribute("fechaInicio")+"' and a.numerohuespedes>="+s.getAttribute("numHuespedes")+" and a.barrio='"+s.getAttribute("barrioElegido")+"';");  
             %>
             <form action="PaginaSB" id="formApart" method="POST">
                 <table id="idA">
