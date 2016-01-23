@@ -38,11 +38,14 @@
                         
                     if(usuario.estaLogueado()){
                         %>
-                        <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                        <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
                         <% if(!usuario.tienePropiedad()){%>
                         <li><a href="PaginaRP">Registrar Propiedad</a></li>
                         <%}else{%>
-                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                        <li><a href="PaginaLA">Mis Propiedades</a></li>
+                        <%}%>
+                         <% if(usuario.tieneReserva()){%>
+                        <li><a href="PaginaRU">Mis Reservas</a></li>
                         <%}%>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
                     <%}}else{%>

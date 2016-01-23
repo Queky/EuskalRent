@@ -39,9 +39,7 @@ public class datosGenProp extends HttpServlet {
         propiedad.setBarrio(barrio);
         propiedad.setTipoPropieedad(tipoPropiedad);
         propiedad.setNumHuespedes(numHuespedes);
-        Usuario usuario = (Usuario)s.getAttribute("Usuario");
-        usuario.asignarPropiedad(propiedad);
-        s.setAttribute("Usuario", usuario);
+        s.setAttribute("Propiedad1", propiedad);
        
         response.sendRedirect("PaginaMP");
     }

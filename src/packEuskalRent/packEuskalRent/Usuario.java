@@ -1,9 +1,10 @@
 package packEuskalRent;
 
+import java.util.ArrayList;
+
 public class Usuario {
 
-
-    private Propiedad propiedad;
+    private ArrayList<Propiedad> propiedad = new ArrayList<>();
     private String nombre;
     private String apellido;
     private String contraseña;
@@ -13,22 +14,41 @@ public class Usuario {
     private boolean estaLogueado;
     private String numSesion;
     private float saldo;
+    private ArrayList<Reserva> reserva = new ArrayList<>();
+
     public Usuario() {
-        
-    }
-    public void setSaldo(float Saldo){
-    this.saldo=saldo;
-    }
-    public float getSaldo(){
-    return this.saldo;
+
     }
 
-    public void asignarPropiedad(Propiedad propiedad){
-        this.propiedad = propiedad;
+    public void setSaldo(float Saldo) {
+        this.saldo = saldo;
     }
-    
-    public Propiedad getPropiedad(){
-    return this.propiedad;
+
+    public float getSaldo() {
+        return this.saldo;
+    }
+
+    public void addPropiedades(Propiedad propiedad) {
+        this.propiedad.add(propiedad);
+    }
+
+    public void eliminarActualizado(String direccion) {
+        for (Propiedad p : propiedad) {
+            if (p.getDireccion().equals(direccion)) {
+                propiedad.remove(p);
+            }
+        }
+
+    }
+
+    public void setPropiedades(ArrayList<Propiedad> propiedad) {
+        for (Propiedad p : propiedad) {
+            this.propiedad.add(p);
+        }
+    }
+
+    public ArrayList<Propiedad> getPropiedad() {
+        return this.propiedad;
     }
 
     public String getNombre() {
@@ -78,31 +98,51 @@ public class Usuario {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public void setNumSesion(String numSesion){
+
+    public void setNumSesion(String numSesion) {
         this.numSesion = numSesion;
     }
-    
-    public String getNumSesion(){
+
+    public String getNumSesion() {
         return this.numSesion;
     }
-    
-    public void loguearse(){
-        this.estaLogueado =true;
+
+    public void loguearse() {
+        this.estaLogueado = true;
     }
-    public void cerrarSesion(){
-        this.estaLogueado =false;
+
+    public void cerrarSesion() {
+        this.estaLogueado = false;
     }
-    
-    public boolean estaLogueado(){
+
+    public boolean estaLogueado() {
         return this.estaLogueado;
     }
-   
-    public boolean tienePropiedad(){
-    boolean tienePropiedad = false;
-    ConexionBD CB = ConexionBD.getConexionConBBDD();
-    if(CB.tienePropiedad(correo)){
-        tienePropiedad =true;
-                }
-    return tienePropiedad;
+
+    public boolean tienePropiedad() {
+        boolean tienePropiedad = false;
+        ConexionBD CB = ConexionBD.getConexionConBBDD();
+        if (CB.tienePropiedad(correo)) {
+            tienePropiedad = true;
+        }
+        return tienePropiedad;
+    }
+
+    public boolean tieneReserva() {
+        boolean tieneReserva = false;
+        if (!reserva.isEmpty()) {
+            tieneReserva = true;
+        }
+        return tieneReserva;
+    }
+
+    public void setReservas(ArrayList<Reserva> reservas) {
+        for (Reserva r : reservas) {
+            reserva.add(r);
+        }
+    }
+
+    public ArrayList getReservas() {
+        return this.reserva;
     }
 }
