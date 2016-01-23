@@ -57,7 +57,7 @@
                 ArrayList<Propiedad> propiedades = conexionBD.recibirDartosPropiedad(usuario.getCorreo());
             %>
             <h2>Seleccione el apartamento que desea modificar:</h2>
-            <form action="PaginaSB" id="formApart" method="POST">
+            <form action="PaginaGLA" id="formApart" method="POST">
                 <table id="idA">
                     <tr>
                         <th></th>
@@ -87,9 +87,10 @@
                     <% }%>
                 </table>
                 <br>
-                <input type="button" name="btnApart" id="btnApart" value="Modificar" class="botonBuscar"/>
-                <input type="button" name="btnApart" id="btnApart" value="Eliminar" class="botonBuscar"/>
+                <input type="submit" name="btnApart" id="btnApart" value="Modificar" class="botonBuscar"/>
+                <input type="submit" name="btnApart" id="btnApart" value="Eliminar" class="botonBuscar"/>
             </form>
+                <li><a href="PaginaRP">Pulse aqui para añadir un nuevo apartamento.</a></li>
         </div>
     </body>
 </html>

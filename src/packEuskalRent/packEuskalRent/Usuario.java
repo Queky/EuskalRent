@@ -32,10 +32,11 @@ public class Usuario {
         this.propiedad.add(propiedad);
     }
 
-    public void eliminarActualizado(String direccion) {
-        for (Propiedad p : propiedad) {
-            if (p.getDireccion().equals(direccion)) {
-                propiedad.remove(p);
+    public void eliminarActualizado(String direccionPropiedad) {
+       // for (Propiedad p : propiedad) {
+        for(int i= 0; i<propiedad.size();i++){
+            if (propiedad.get(i).getDireccion().equals(direccionPropiedad)) {
+                propiedad.remove(i);
             }
         }
 

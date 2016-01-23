@@ -72,7 +72,7 @@ public class datosModProp extends HttpServlet {
         String tarifausuarioBD= String.valueOf(propiedadBD.getPrecioNoche());
         request.setAttribute("Usuario", propiedad);
 
-        if(usuario.tienePropiedad()){
+        if(usuario.tienePropiedad()&& BD.recibirDartosPropiedadDireccion(propiedad.getDireccion()).getDireccion()!=null){
             if(!propiedad.getTipoPropiedad().equals(propiedadBD.getTipoPropiedad()))
                 BD.actualizarTipoPropiedad(usuario.getCorreo(), propiedad.getTipoPropiedad());
             if(!propiedad.getNumHuespedes().equals(propiedadBD.getNumHuespedes()))

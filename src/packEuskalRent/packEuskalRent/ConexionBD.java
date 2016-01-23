@@ -240,6 +240,7 @@ public class ConexionBD {
                 propiedad.setPoliticaDeCancelacion(rs.getString("TipoCancelacion"));
                 propiedad.setPrecioNoche(rs.getFloat("Tarifa"));
                 propiedad.setTipoPropieedad(rs.getString("TipoPropiedad"));
+                propiedad.setFechaDisponible(rs.getString("fechaDisponibilidad"));
                 
 
             }
@@ -614,4 +615,22 @@ public class ConexionBD {
         cerrarConexion();
         return encontrado;
     }
-}
+    public void eliminarApartamento(int idApartamento){
+          crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("DELETE FROM `euskalrent03`.`apartamento` WHERE `IdApartamento`='"+idApartamento+"';");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+    
+    //;
+    }
+    
+

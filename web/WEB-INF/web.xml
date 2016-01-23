@@ -92,6 +92,10 @@
         <servlet-name>listaApartamentos</servlet-name>
         <jsp-file>/JSP/PaginaListaApartamentos.jsp</jsp-file>
     </servlet>
+    <servlet>
+        <servlet-name>GestionListaApartamento</servlet-name>
+        <servlet-class>packEuskalRent.GestionListaApartamentos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -183,6 +187,10 @@
     <servlet-mapping>
         <servlet-name>listaApartamentos</servlet-name>
         <url-pattern>/PaginaLA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionListaApartamento</servlet-name>
+        <url-pattern>/PaginaGLA</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
