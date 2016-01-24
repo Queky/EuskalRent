@@ -39,7 +39,7 @@
                     <%
                         Usuario usuario = (Usuario) session.getAttribute("Usuario");
                     %>
-                    <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                    <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
                         <% if (!usuario.tienePropiedad()) {%>
                     <li><a href="PaginaRP">Registrar Propiedad</a></li>
                         <%} else {%>
