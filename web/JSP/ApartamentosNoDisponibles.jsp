@@ -24,10 +24,7 @@
                 <em>Euskal</em><strong>Rent</strong>
             </a>
             <nav>
-                <ul>
-                    <li><a href="Acceso">Acceder</a></li>
-                    <li><a href="Registro">Registrarse</a></li>
-                </ul>      
+                    
             </nav>
         </header>
         <div class="centrado">
