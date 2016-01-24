@@ -36,7 +36,7 @@ CREATE TABLE `apartamento` (
   PRIMARY KEY (`IdApartamento`),
   KEY `FKApartament529612` (`IdEmail`),
   CONSTRAINT `FKApartament529612` FOREIGN KEY (`IdEmail`) REFERENCES `usuario` (`IdEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `apartamento` (
 
 LOCK TABLES `apartamento` WRITE;
 /*!40000 ALTER TABLE `apartamento` DISABLE KEYS */;
-INSERT INTO `apartamento` VALUES (1,'laprimaera@hotmail.com','Apartamento',8,'Zabalgana','vcb',45,NULL,'2016-01-01 20:47:23',NULL),(3,'elPrimero@hotmail.com','Chalet',6,'Zabalgana',' calle Nieves Cano',80.5,NULL,'2016-01-01 21:12:50',NULL),(4,'elSegundo@hotmail.com','Apartamento',4,'Zabalgana',' Viena Kalea Vitoria ',100,'Flexible','2016-01-01 21:12:53',NULL),(5,'laSegunda@hotmail.com','Chalet',10,'Aranbizkarra',' Zalburu Kalea Aranbizkarra',120,'Premium',NULL,NULL),(6,'aaaa@aaa.aa','Chalet',6,'Aranbizkarra','qqqq',8.2,'Premium',NULL,NULL),(7,'lapruebadef@hotmail.com','Apartamento',10,'Zabalgana','fgnfgnnull',20,'Flexible','2016-01-28 00:00:00',NULL),(8,'pruebaFinal@gmail.com','Chalet',10,'Zabalgana','ahedo del butron',2,'Flexible','2016-01-23 00:00:00',NULL);
+INSERT INTO `apartamento` VALUES (1,'laprimaera@hotmail.com','Apartamento',8,'Zabalgana','vcb',45,'Flexible','2016-01-01 00:00:00',NULL),(3,'elPrimero@hotmail.com','Chalet',6,'Zabalgana',' calle Nieves Cano',80.5,NULL,'2016-01-01 21:12:50',NULL),(4,'elSegundo@hotmail.com','Apartamento',4,'Zabalgana',' Viena Kalea Vitoria ',100,'Flexible','2016-01-01 21:12:53',NULL),(5,'laSegunda@hotmail.com','Chalet',10,'Aranbizkarra',' Zalburu Kalea Aranbizkarra',120,'Premium',NULL,NULL),(6,'aaaa@aaa.aa','Chalet',6,'Aranbizkarra','qqqq',8.2,'Premium',NULL,NULL),(7,'lapruebadef@hotmail.com','Apartamento',10,'Zabalgana','fgnfgnnull',20,'Flexible','2016-01-28 00:00:00',NULL),(12,'pruebaFinal@gmail.com','Apartamento',10,'Zabalgana','aaa',3,'Flexible','2016-01-23 00:00:00',NULL),(16,'pruebafinal2@hotmail.com','Apartamento',10,'Zabalgana','plaza espaÃ±a vitoria',30,'Flexible','2016-01-30 00:00:00',NULL);
 /*!40000 ALTER TABLE `apartamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `cuentabancaria` (
   PRIMARY KEY (`IdCuenta`,`IdEmail`),
   KEY `FKCuentaBanc914323` (`IdEmail`),
   CONSTRAINT `FKCuentaBanc914323` FOREIGN KEY (`IdEmail`) REFERENCES `usuario` (`IdEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `cuentabancaria` (
 
 LOCK TABLES `cuentabancaria` WRITE;
 /*!40000 ALTER TABLE `cuentabancaria` DISABLE KEYS */;
-INSERT INTO `cuentabancaria` VALUES (1,'lapruebadef@hotmail.com',1060),(2,'pruebaFinal@gmail.com',670);
+INSERT INTO `cuentabancaria` VALUES (1,'lapruebadef@hotmail.com',1078),(2,'pruebaFinal@gmail.com',285),(3,'pruebafinal2@hotmail.com',566);
 /*!40000 ALTER TABLE `cuentabancaria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,12 +89,15 @@ CREATE TABLE `reserva` (
   `IdApartamento` int(11) NOT NULL,
   `FechaInicio` date NOT NULL,
   `FechaFinal` date NOT NULL,
+  `EstadoReserva` varchar(45) NOT NULL DEFAULT 'Reservado',
+  `tipoCancelacion` varchar(45) NOT NULL DEFAULT 'Flexible',
+  `CosteReserva` float NOT NULL,
   PRIMARY KEY (`IdReserva`),
   KEY `FKReserva349891` (`IdApartamento`),
   KEY `FKReserva883948` (`IdEmail`),
   CONSTRAINT `FKReserva349891` FOREIGN KEY (`IdApartamento`) REFERENCES `apartamento` (`IdApartamento`),
   CONSTRAINT `FKReserva883948` FOREIGN KEY (`IdEmail`) REFERENCES `usuario` (`IdEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +106,7 @@ CREATE TABLE `reserva` (
 
 LOCK TABLES `reserva` WRITE;
 /*!40000 ALTER TABLE `reserva` DISABLE KEYS */;
-INSERT INTO `reserva` VALUES (1,'pruebaFinal@gmail.com',1,'2016-01-24','2016-01-30'),(2,'pruebaFinal@gmail.com',7,'2016-02-29','2016-03-03');
+INSERT INTO `reserva` VALUES (4,'pruebafinal2@hotmail.com',3,'2016-01-25','2016-01-27','Reservada','Flexible',0),(5,'pruebafinal2@hotmail.com',12,'2016-01-30','2016-01-31','Reservada','Flexible',0),(9,'pruebaFinal@gmail.com',7,'2016-01-30','2016-02-02','Reservada','Flexible',60);
 /*!40000 ALTER TABLE `reserva` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,7 +135,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES ('aaaa@aaa.aa','aaa','aaa','aaaa',699844487,'',NULL),('elPrimero@hotmail.com','Luis','Lopez Perez','soyelprimero',636656232,'',NULL),('elSegundo@hotmail.com','Joseba','Sedano Gallo','Platon',645478948,'',NULL),('laprimaera@hotmail.com','Pepa','Pig','1234',679632146,'calle 9',NULL),('lapruebadef@hotmail.com','pruebA','PRUEBA','prueba',669663665,'2365236',NULL),('laSegunda@hotmail.com','Edurne','Gallo Senarriaga','tato',632478952,'',NULL),('pruebaFinal@gmail.com','Saioa','Montero Cueva','1234',663658695,'Ahedo del butron ',NULL);
+INSERT INTO `usuario` VALUES ('aaaa@aaa.aa','aaa','aaa','aaaa',699844487,'',NULL),('elPrimero@hotmail.com','Luis','Lopez Perez','soyelprimero',636656232,'',NULL),('elSegundo@hotmail.com','Joseba','Sedano Gallo','Platon',645478948,'',NULL),('laprimaera@hotmail.com','Pepa','Pig','1234',679632146,'calle 9',NULL),('lapruebadef@hotmail.com','pruebA','PRUEBA','prueba',669663665,'2365236',NULL),('laSegunda@hotmail.com','Edurne','Gallo Senarriaga','tato',632478952,'',NULL),('pruebafinal2@hotmail.com','Samuel','Sedano Gallo','1234',697456341,'mi casa ',NULL),('pruebaFinal@gmail.com','Saioa','Montero Cueva','1234',663658695,'Ahedo del butron ',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -145,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-01-23 17:03:29
+-- Dump completed on 2016-01-24 20:58:43
