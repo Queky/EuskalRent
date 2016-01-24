@@ -57,7 +57,8 @@
             </nav>
         </header>
             <div>
-                
+                <h1>Modifica tu reserva</h1>
+                    
             </div>
     </body>
 </html>

@@ -77,6 +77,7 @@
                                onkeyup="revisar(this);
                                        revisarNumeroTelefono(this)" required />
                         <%}%>
+                        <input type="number" name="saldo" id="saldo" class="form-input" value="<%=usuario.getSaldo()%>" readonly required />
                         <%if (usuario.getDireccion() != null) {%>
                         <input type="text" id="buscadorDireccion" placeholder="Dirección" name="direccion"
                                class="form-input" onkeyup="buscarDireccion(this.id.value)" value="<%=usuario.getDireccion()%>"
