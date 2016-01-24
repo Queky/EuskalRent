@@ -90,7 +90,9 @@
                 <input type="submit" name="btnApart" id="btnApart" value="Modificar" class="botonBuscar"/>
                 <input type="submit" name="btnApart" id="btnApart" value="Eliminar" class="botonBuscar"/>
             </form>
-                <li><a href="PaginaRP">Pulse aqui para añadir un nuevo apartamento.</a></li>
+                <form action="PaginaRP">
+                    <br><input type="submit" name="btnAnadirApart" id="btnAnadirApart" value="Añadir otro apartamento" class="botonBuscar" />
+                </form>
         </div>
     </body>
 </html>
