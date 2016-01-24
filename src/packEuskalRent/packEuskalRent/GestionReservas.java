@@ -7,6 +7,7 @@ package packEuskalRent;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,15 +28,16 @@ public class GestionReservas extends HttpServlet {
         HttpSession s = request.getSession(true);
         Propiedad propiedad =(Propiedad) s.getAttribute("Propiedad");
         Usuario usuario=(Usuario)s.getAttribute("Usuario");
-        String fechaInicio= (String)s.getAttribute("fechaInicio");
-        String fechaFin = (String) s.getAttribute("fechaFin"); 
+   
+         String fechaInicio1=(String) s.getAttribute("fechaInicio");
+         String fechaFin2 =(String)  s.getAttribute("fechaFin"); 
         float coste = (float)s.getAttribute("Coste");
         System.out.println(coste);
         ConexionBD BD = ConexionBD.getConexionConBBDD();
         float saldoUsuario =BD.ObtenerSaldoUsuario(usuario.getCorreo());
         BD.sumarSaldoUsuario(propiedad.getCorreousuario(), coste, BD.ObtenerSaldoUsuario(BD.recibirDartosUsuario(propiedad.getCorreousuario()).getCorreo()));
         BD.restarSaldoUsuario(usuario.getCorreo(), coste,saldoUsuario);
-        BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio,fechaFin);
+        BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio1,fechaFin2);
         response.sendRedirect("Inicio");
     }
 

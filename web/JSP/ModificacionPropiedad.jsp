@@ -4,6 +4,8 @@
     Author     : Zigor
 --%>
 
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="packEuskalRent.Usuario"%>
 <%@page import="packEuskalRent.Propiedad"%>
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
@@ -35,8 +37,11 @@
             <nav>
                 <ul>  <% Usuario usuario = (Usuario) session.getAttribute("Usuario");
                     if(usuario.tienePropiedad()){%>
-                    <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
-                    <li><a href="PaginaMP">Modificar Propiedad</a></li>
+                    <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
+                    <li><a href="PaginaLA">Mis Propiedades</a></li>
+                     <% if(usuario.tieneReserva()){%>
+                        <li><a href="PaginaRU">Mis Reservas</a></li>
+                        <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                     <%}%>
                 </ul>      
@@ -46,7 +51,7 @@
         <div id="grande" align="center">
             <form action="datosModProp" id="formModProp" method="post">
                 <% 
-                    Propiedad propiedad = usuario.getPropiedad();
+                    Propiedad propiedad = (Propiedad) session.getAttribute("Propiedad1");
                 %>
                 <div class="parrafoPropiedad">
                     <p>Arrastre la foto su propiedad al siguiente recuadro:</p>
@@ -80,14 +85,22 @@
                         <input type="number" name="numHuespedes" value="<%=propiedad.getNumHuespedes()%>" id="numHuespedes" class="cajasDatos" placeholder="Huespedes"
                                min="1" max="10" required/><br><br>
                         <p>Introduzca el precio por noche</p>  
-                        <% if (propiedad.getPrecioNoche() != 0) {%>
-                        <input name="Precio"type="number" step="any" Svalue="<%=propiedad.getPrecioNoche()%>" id="precio" class="desp" placeholder="precio/noche" min="1" required/> €<br>         
+                        <%
+                        int aa = (int) propiedad.getPrecioNoche();
+                        
+                        if (aa!=1) {%>
+                        <input name="Precio"type="number" step="any" value="<%=propiedad.getPrecioNoche()%>" id="precio" class="desp" placeholder="precio/noche" min="1" required/> €<br>         
                         <%} else {%>
                         <input name="Precio"type="number" step="any" id="precio" class="desp" placeholder="precio/noche" min="1" required/> €<br>         
                         <%}%>                   
                         <p>Disponibilidad del apartamento:</p>
-                        <%if (propiedad.getFechaDisponible() != null) {%>
-                        <input type="date" id="calendario" value="<%=propiedad.getFechaDisponible()%>" name="calendario" class="cajasDatos" required><br>
+                        <%String fecha= propiedad.getFechaDisponible();
+                        
+                        
+                        System.out.println(fecha);
+                        if (fecha!=null) {
+                        fecha= fecha.substring(0, 10);%>
+                        <input type="date" id="calendario" value="<%=fecha%>" name="calendario" class="cajasDatos" required><br>
                         <%} else {%> 
                         <input type="date" id="calendario"  name="calendario" class="cajasDatos" required><br>
                         <%}%> 
@@ -106,7 +119,7 @@
                         </select>
                         <div class="parrafoPropiedad">
                             <p>Seleccione en el mapa la localización de la propiedad</p>
-                            <%if (usuario.getDireccion() != null) {%>
+                            <%if (propiedad.getDireccion() != null) {%>
                             <input type="text" id="buscadorDireccion" value="<%=propiedad.getDireccion()%>" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
                                    oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
                             <div id="map" style="width:500px; height:200px;"></div>

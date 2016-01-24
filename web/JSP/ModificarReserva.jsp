@@ -1,12 +1,11 @@
 <%-- 
-    Document   : PaginaInicio
-    Created on : 18-nov-2015, 23:10:31
-    Author     : Iñaki
+    Document   : ModificarReserva
+    Created on : 24-ene-2016, 10:18:13
+    Author     : inakisanchez
 --%>
 
 <%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 <!DOCTYPE html>
 <html>
 
@@ -57,29 +56,9 @@
                 </ul>      
             </nav>
         </header>
-        <section>
             <div>
-                <h1 class="cabeceraB1">Bienvenido a <em>EuskalRent</em></h1>
-                <p class="cabeceraB2">EuskalRent es tu pagina donde buscar un apartamento para dormir en Vitoria-Gasteiz.</p>
+                <h1>Modifica tu reserva</h1>
+                    
             </div>
-            <form action="Buscar" id="formInicio">
-                <div class="cajaBusqueda">
-                    <p>Elige un barrio</p>
-                    <select name="barrio" class="cajasDatos" id="barrio">
-                        <option value="zabalgana">Zabalgana</option>
-                        <option value="aranbizkarra">Aranbizkarra</option>
-                        <option value="salburua">Salburua</option>
-                    </select>
-                    <p>Numero de huespedes</p>
-                    <input type="number" id="numHuespedes" name="numHuespedes" class="cajasDatos" placeholder="Huespedes"
-                           min="1" max="10" required/>
-                    <p>Entrada al apartamento</p>
-                    <input type="date" id="fechaInicio" name="fechaInicio" class="cajasDatos" required/><br>
-                    <p>Salida del apartamento</p>
-                    <input type="date" id="fechaFin" name="fechaFin" class="cajasDatos" required/><br><br>
-                    <input type="button" id="btnBuscar" name="btnBuscar" value="Buscar" class="botonBuscar"/>
-                </div>
-            </form>
-        </section>
     </body>
 </html>

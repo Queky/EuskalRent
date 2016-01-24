@@ -1,9 +1,9 @@
-<%-- 
-    Document   : PaginaApartamentos
-    Created on : 29-dic-2015, 8:48:31
-    Author     : inakisanchez
---%>
 
+
+
+<%@page import="java.text.ParseException"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="packEuskalRent.ConexionBD"%>
 <%@page import="packEuskalRent.Propiedad"%>
 <%@page import="packEuskalRent.Usuario"%>
@@ -34,54 +34,62 @@
                 <ul>
                     <%
                         Usuario usuario = (Usuario) session.getAttribute("Usuario");
-                   
-                        %>
-                        <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
-                        <% if(!usuario.tienePropiedad()){%>
-                        <li><a href="PaginaRP">Registrar Propiedad</a></li>
-                        <%}else{%>
-                        <li><a href="PaginaMP">Modificar Propiedad</a></li>
+
+                    %>
+                    <li><a href="PaginaModificacionUsuario">Modificar Usuario</a></li>
+                        <% if (!usuario.tienePropiedad()) {%>
+                    <li><a href="PaginaRP">Registrar Propiedad</a></li>
+                        <%} else {%>
+                    <li><a href="PaginaLA">Mis Propiedades</a></li>
                         <%}%>
-                        <li><a href="PaginaCS">Cerrar Sesion</a></li>
-           
+                    <li><a href="PaginaCS">Cerrar Sesion</a></li>
+
                 </ul>      
             </nav>
         </header>
         <section>
-            <div>
-            <%
-                ConexionBD CB =ConexionBD.getConexionConBBDD();
-                Propiedad propiedad =(Propiedad) session.getAttribute("Propiedad");
-                Usuario usuarioPropiedad = CB.recibirDartosUsuario(propiedad.getCorreousuario());
-                String fechaInicio= (String)session.getAttribute("fechaInicio");
-                String fechaFin = (String) session.getAttribute("fechaFin"); 
-               float coste = propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)* propiedad.getPrecioNoche();
-                session.setAttribute("Coste", coste);
-            %>
-            <strong><h3>Datos de la propiedad:</h3></strong>
-            <p><u>Identificador de la propiedad:</u> <%=propiedad.getIdApartamento()%></p>
-            <p><u>Direccion:</u> <%=propiedad.getDireccion()%></p>
-            <p><u>Barrio:</u> <%=propiedad.getBarrio()%></p>
-            <p><u>Tipo de propiedad:</u> <%=propiedad.getTipoPropiedad()%></p>
-            <p><u>Numero de Huespedes:</u> <%=propiedad.getNumHuespedes()%></p>
-            <strong><h3>Datos del arrendador:</h3></strong>
-            <p><u>Nombre:</u> <%=usuarioPropiedad.getNombre()%></p>
-            <p><u>Apellidos:</u> <%=usuarioPropiedad.getApellido()%></p>
-            <% if(usuario.getDireccion()!=null){%>
-            <p><u>Direccion:</u> <%=usuarioPropiedad.getDireccion()%></p>
-            <%}%>
-            <strong><h3> Contacto:</h3></strong>
-            <p><u>Correo:</u> <%=usuarioPropiedad.getCorreo()%></p>
-            <p><u>Numero de teléfono:</u> <%=usuarioPropiedad.getNumTelefono()%></p>
-            <strong><h3> Datos de la reserva:</h3></strong>
-            <p><u>Fecha de inicio:</u> <%=fechaInicio %></p>
-            <p><u>Fecha fin:</u> <%=fechaFin%></p>
-            <p><u>Numero de días:</u> <%=propiedad.calcularNumeroDeDias(fechaInicio,fechaFin)%></p>
-            <p><u>Precio:</u> <%=coste%></p>
-            <p><u>Tipo de cancelación:</u> <%=propiedad.getPoliticaDeCancelacion()%></p>
-            <h2><a href="PaginaGR">Reservar Propiedad</a></h2>
-            
-        </div>
+            <div class="cajaBusqueda2">
+                <%
+                    ConexionBD CB = ConexionBD.getConexionConBBDD();
+                    Propiedad propiedad = (Propiedad) session.getAttribute("Propiedad");
+                    Usuario usuarioPropiedad = CB.recibirDartosUsuario(propiedad.getCorreousuario());
+                    String fechaInicio1 = (String) session.getAttribute("fechaInicio");
+                    String fechaFin1 = (String) session.getAttribute("fechaFin");
+                    SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
+                    Date fechaInicio, fechaFin;
+                    fechaInicio = formatoDelTexto.parse(fechaInicio1);
+                    fechaFin = formatoDelTexto.parse(fechaFin1);
+                    float coste = propiedad.calcularNumeroDeDias(fechaInicio,fechaFin) * propiedad.getPrecioNoche();
+                    session.setAttribute("Coste", coste);
+                %>
+                <strong><h3>Datos de la propiedad</h3></strong>
+                <p><u>Identificador de la propiedad:</u> <%=propiedad.getIdApartamento()%></p>
+                <p><u>Direccion:</u> <%=propiedad.getDireccion()%></p>
+                <p><u>Barrio:</u> <%=propiedad.getBarrio()%></p>
+                <p><u>Tipo de propiedad:</u> <%=propiedad.getTipoPropiedad()%></p>
+                <p><u>Numero de Huespedes:</u> <%=propiedad.getNumHuespedes()%></p>
+            </div><div class="cajaBusqueda2">
+                <strong><h3>Datos del arrendador</h3></strong>
+                <p><u>Nombre:</u> <%=usuarioPropiedad.getNombre()%></p>
+                <p><u>Apellidos:</u> <%=usuarioPropiedad.getApellido()%></p>
+                    <% if (usuario.getDireccion() != null) {%>
+                <p><u>Direccion:</u> <%=usuarioPropiedad.getDireccion()%></p>
+                    <%}%>
+            </div><div class="cajaBusqueda2">
+                <strong><h3> Contacto</h3></strong>
+                <p><u>Correo:</u> <%=usuarioPropiedad.getCorreo()%></p>
+                <p><u>Numero de teléfono:</u> <%=usuarioPropiedad.getNumTelefono()%></p>
+            </div><div class="cajaBusqueda2">
+                <strong><h3> Datos de la reserva</h3></strong>
+                <p><u>Fecha de inicio:</u> <%=fechaInicio1%></p>
+                <p><u>Fecha fin:</u> <%=fechaFin1%></p>
+                <p><u>Numero de días:</u> <%=propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)%></p>
+                <p><u>Precio:</u> <%=coste%></p>
+                <p><u>Tipo de cancelación:</u> <%=propiedad.getPoliticaDeCancelacion()%></p>
+            </div>
+            <form action="PaginaGR">
+                <input type="submit" name="btnRegistroAp" id="btnRegistroAp" value="Reservar propiedad" class="botonBuscar" />
+            </form>
         </section>
     </body>
 </html>
