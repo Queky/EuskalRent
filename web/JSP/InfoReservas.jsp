@@ -1,6 +1,10 @@
+<%-- 
+    Document   : InfoReservas
+    Created on : 24-ene-2016, 17:33:51
+    Author     : BEEP
+--%>
 
-
-
+<%@page import="packEuskalRent.Reserva"%>
 <%@page import="java.text.ParseException"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -36,7 +40,7 @@
                         Usuario usuario = (Usuario) session.getAttribute("Usuario");
 
                     %>
-                  <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
+                        <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
                         <% if(!usuario.tienePropiedad()){%>
                         <li><a href="PaginaRP">Registrar Propiedad</a></li>
                         <%}else{%>
@@ -46,7 +50,6 @@
                         <li><a href="PaginaAR">Mis Reservas</a></li>
                         <%}%>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
-
                 </ul>      
             </nav>
         </header>
@@ -55,13 +58,11 @@
                 <%
                     ConexionBD CB = ConexionBD.getConexionConBBDD();
                     Propiedad propiedad = (Propiedad) session.getAttribute("Propiedad");
+                    Reserva reserva = (Reserva) session.getAttribute("Reserva");
                     Usuario usuarioPropiedad = CB.recibirDartosUsuario(propiedad.getCorreousuario());
-                    String fechaInicio1 = (String) session.getAttribute("fechaInicio");
-                    String fechaFin1 = (String) session.getAttribute("fechaFin");
-                    SimpleDateFormat formatoDelTexto = new SimpleDateFormat("yyyy-MM-dd");
-                    Date fechaInicio, fechaFin;
-                    fechaInicio = formatoDelTexto.parse(fechaInicio1);
-                    fechaFin = formatoDelTexto.parse(fechaFin1);
+                    Date fechaInicio = reserva.getFechaInicio();
+                    Date fechaFin = reserva.getFechaFin();
+                 
                     float coste = propiedad.calcularNumeroDeDias(fechaInicio,fechaFin) * propiedad.getPrecioNoche();
                     session.setAttribute("Coste", coste);
                 %>
@@ -84,15 +85,17 @@
                 <p><u>Numero de teléfono:</u> <%=usuarioPropiedad.getNumTelefono()%></p>
             </div><div class="cajaBusqueda2">
                 <strong><h3> Datos de la reserva</h3></strong>
-                <p><u>Fecha de inicio:</u> <%=fechaInicio1%></p>
-                <p><u>Fecha fin:</u> <%=fechaFin1%></p>
+                <p><u>Fecha de inicio:</u> <%=fechaInicio%></p>
+                <p><u>Fecha fin:</u> <%=fechaFin%></p>
                 <p><u>Numero de días:</u> <%=propiedad.calcularNumeroDeDias(fechaInicio, fechaFin)%></p>
                 <p><u>Precio:</u> <%=coste%></p>
                 <p><u>Tipo de cancelación:</u> <%=propiedad.getPoliticaDeCancelacion()%></p>
+                <p><u>Estado de la reserva:</u> <%=reserva.getEstado()%></p>
             </div>
-            <form action="PaginaGR">
-                <input type="submit" name="btnRegistroAp" id="btnRegistroAp" value="Reservar propiedad" class="botonBuscar" />
-            </form>
+                <%if(reserva.getEstado().equals("Reservada")){%>
+            <form action="PaginaCR">
+                <input type="submit" name="btnRegistroAp" id="btnRegistroAp" value="Cancelar Reserva" class="botonBuscar" />
+            </form><%}%>
         </section>
     </body>
 </html>

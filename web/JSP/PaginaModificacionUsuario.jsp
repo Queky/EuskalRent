@@ -3,6 +3,7 @@
     Created on : 21-nov-2015, 13:47:41
     Author     : BEEP
 --%>
+<%@page import="packEuskalRent.ConexionBD"%>
 <%@page import="packEuskalRent.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,7 +40,7 @@
                         <%}%>
                           
                      <% if(usuario.tieneReserva()){%>
-                        <li><a href="PaginaRU">Mis Reservas</a></li>
+                        <li><a href="PaginaAR">Mis Reservas</a></li>
                         <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                 </ul> <%}%>     
@@ -76,9 +77,14 @@
                         <input type="number" name="telefono" id="numtelefono"  placeholder="Numero de movil" class="form-input"
                                onkeyup="revisar(this);
                                        revisarNumeroTelefono(this)" required />
-                        <%}%>
-                        <input type="number" name="saldo" id="saldo" class="form-input" value="<%=usuario.getSaldo()%>" readonly required />
-                        <%if (usuario.getDireccion() != null) {%>
+                        <%}ConexionBD BD= ConexionBD.getConexionConBBDD();
+                        int saldo=(int) BD.ObtenerSaldoUsuario(usuario.getCorreo());
+                        System.out.println(saldo);
+                        if(saldo==1000){%>
+                        <input type="number" name="saldo" id="saldo" class="form-input" value="1000" readonly required />
+                        <%}else{%>
+                        <input type="number" name="saldo" id="saldo" class="form-input" value="<%=saldo%>" readonly required />
+                        <%}if (usuario.getDireccion() != null) {%>
                         <input type="text" id="buscadorDireccion" placeholder="Dirección" name="direccion"
                                class="form-input" onkeyup="buscarDireccion(this.id.value)" value="<%=usuario.getDireccion()%>"
                                title="Dirección a Geocode" value="" id="busDir"

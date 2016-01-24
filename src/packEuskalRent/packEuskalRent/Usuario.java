@@ -142,7 +142,14 @@ public class Usuario {
             reserva.add(r);
         }
     }
-
+    public void eliminarReserva(int idReserva){
+    for(int i=0; i<reserva.size();i++){
+    if(reserva.get(i).getIdReserva() == idReserva){
+    reserva.remove(i);
+    }
+    }
+    
+    }
     public ArrayList getReservas() {
         return this.reserva;
     }

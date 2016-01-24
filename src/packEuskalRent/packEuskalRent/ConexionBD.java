@@ -167,7 +167,7 @@ public class ConexionBD {
                 usuario.setDireccion(rs.getString("Direccion"));
                 usuario.setPropiedades(recibirDartosPropiedad(correo));
                 usuario.setReservas(recibirDatosReservas(correo));
-
+                usuario.setSaldo(ObtenerSaldoUsuario(correo));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -538,14 +538,14 @@ public class ConexionBD {
         return saldo;
     }
 
-    public void anyadirReserva(String correo, int idApartamento, String fechaInicio, String fechaFin) {
-
+    public void anyadirReserva(String correo, int idApartamento, String fechaInicio, String fechaFin,String tipoCancelacion,Float coste) {
+        
         crearConexion();
         Statement st;
         try {
             st = con.createStatement();
-            st.executeUpdate("INSERT INTO `euskalrent03`.`reserva` (`idEmail`,`idApartamento`,`FechaInicio`,`FechaFinal`)"
-                    + " VALUES ('" + correo + "','" + idApartamento + "','" + fechaInicio + "','" + fechaFin + "');");
+            st.executeUpdate("INSERT INTO `euskalrent03`.`reserva` (`idEmail`,`idApartamento`,`FechaInicio`,`FechaFinal`,`tipoCancelacion`,`CosteReserva`)"
+                    + " VALUES ('" + correo + "','" + idApartamento + "','" + fechaInicio + "','" + fechaFin + "','" + tipoCancelacion + "','" + coste + "');");
         } catch (SQLException e) {
 
             e.printStackTrace();
@@ -583,6 +583,9 @@ public class ConexionBD {
                 reserva.setFechaInicio(rs.getDate("FechaInicio"));
                 reserva.setFechaFin(rs.getDate("FechaFinal"));
                 reserva.setIdApartamento(rs.getInt("idApartamento"));
+                reserva.setEstado(rs.getString("EstadoReserva"));
+                reserva.setCosteReserva(rs.getFloat("CosteReserva"));
+                reserva.setTipoCancelacion(rs.getString("tipoCancelacion"));
                 reservas.add(reserva);
             }
         } catch (SQLException e) {
@@ -630,7 +633,65 @@ public class ConexionBD {
         cerrarConexion();
     }
     
-    //;
+     public void cancelarReserva(int idReserva){
+          crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("DELETE FROM `euskalrent03`.`reserva` WHERE `IdReserva`='"+idReserva+"';");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
+   public Reserva recibirDatosReserba(int idReserva) {
+        Reserva reserva=new Reserva();
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from reserva where idReserva='" + idReserva + "';");
+            while (rs.next()) {
+                
+                reserva.setCorreoUsuario(rs.getString("idEmail"));
+                reserva.setEstado(rs.getString("EstadoReserva"));
+                reserva.setIdReserva(idReserva);
+                reserva.setFechaInicio(rs.getDate("FechaInicio"));
+                reserva.setFechaFin(rs.getDate("FechaFinal"));
+                reserva.setIdApartamento(rs.getInt("idApartamento"));
+                 reserva.setCosteReserva(rs.getFloat("CosteReserva"));
+                reserva.setTipoCancelacion(rs.getString("tipoCancelacion"));
+                
+                
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+        return reserva;
+
+    }
+   
+    public void actualizarEstadoReserva(int idReserva,String estado) {
+        crearConexion();
+        Statement st;
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate("UPDATE `euskalrent03`.`reserva` SET `EstadoReserva`='" + estado + "' WHERE idReserva='" + idReserva + "';");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        cerrarConexion();
+    }
     }
     
 
