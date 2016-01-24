@@ -8,6 +8,7 @@ package packEuskalRent;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +39,8 @@ public class GestionReservas extends HttpServlet {
         BD.sumarSaldoUsuario(propiedad.getCorreousuario(), coste, BD.ObtenerSaldoUsuario(BD.recibirDartosUsuario(propiedad.getCorreousuario()).getCorreo()));
         BD.restarSaldoUsuario(usuario.getCorreo(), coste,saldoUsuario);
         BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio1,fechaFin2);
+        ArrayList<Reserva> reservas = BD.recibirDatosReservas(usuario.getCorreo());
+        usuario.setReservas(reservas);
         response.sendRedirect("Inicio");
     }
 
