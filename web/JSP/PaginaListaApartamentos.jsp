@@ -45,7 +45,9 @@
                         <%} else {%>
                    <li><a href="PaginaLA">Mis Propiedades</a></li>
                         <%}%>
+                        <% if(usuario.tieneReserva()){%>
                     <li><a href="PaginaAR">Mis Reservas</a></li>
+                        <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
 
                 </ul>      
