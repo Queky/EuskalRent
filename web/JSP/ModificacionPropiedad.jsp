@@ -40,7 +40,7 @@
                     <li><a href="PaginaModificacionUsuario"><%=usuario.getCorreo()%></a></li>
                     <li><a href="PaginaLA">Mis Propiedades</a></li>
                      <% if(usuario.tieneReserva()){%>
-                        <li><a href="PaginaRU">Mis Reservas</a></li>
+                    <li><a href="PaginaAR">Mis Reservas</a></li>
                         <%}%>
                     <li><a href="PaginaCS">Cerrar Sesion</a></li>
                     <%}%>
@@ -121,7 +121,7 @@
                             <p>Seleccione en el mapa la localización de la propiedad</p>
                             <%if (propiedad.getDireccion() != null) {%>
                             <input type="text" id="buscadorDireccion" value="<%=propiedad.getDireccion()%>" name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 
-                                   oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required/>
+                                   oninput="buscarDireccion(document.getElementById('buscadorDireccion').value)" required readonly/>
                             <div id="map" style="width:500px; height:200px;"></div>
                             <%} else {%>
                             <input type="text" id="buscadorDireccion"  name="Direccion" class="desp" placeholder="Busca una dirección" value="" onkeyup="buscarDireccion(this.id.value)" 

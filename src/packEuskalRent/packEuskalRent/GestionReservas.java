@@ -36,11 +36,13 @@ public class GestionReservas extends HttpServlet {
         System.out.println(coste);
         ConexionBD BD = ConexionBD.getConexionConBBDD();
         float saldoUsuario =BD.ObtenerSaldoUsuario(usuario.getCorreo());
-        BD.sumarSaldoUsuario(propiedad.getCorreousuario(), coste, BD.ObtenerSaldoUsuario(BD.recibirDartosUsuario(propiedad.getCorreousuario()).getCorreo()));
-        BD.restarSaldoUsuario(usuario.getCorreo(), coste,saldoUsuario);
-        BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio1,fechaFin2);
+        float importe = (coste*30)/100;
+        BD.sumarSaldoUsuario(propiedad.getCorreousuario(), importe, BD.ObtenerSaldoUsuario(BD.recibirDartosUsuario(propiedad.getCorreousuario()).getCorreo()));
+        BD.restarSaldoUsuario(usuario.getCorreo(), importe,saldoUsuario);
+        BD.anyadirReserva(usuario.getCorreo(), propiedad.getIdApartamento(), fechaInicio1,fechaFin2,propiedad.getPoliticaDeCancelacion(),coste);
         ArrayList<Reserva> reservas = BD.recibirDatosReservas(usuario.getCorreo());
         usuario.setReservas(reservas);
+        usuario.setSaldo(BD.ObtenerSaldoUsuario(usuario.getCorreo()));
         response.sendRedirect("Inicio");
     }
 

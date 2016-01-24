@@ -18,7 +18,41 @@ public class Reserva {
     private String correoUsuario;
     private Date fechaInicio;
     private Date fechaFin;
+    private String estadoReserva;
+    private String tipoCancelacion;
+    private float costeReserva;
+    
+    public void setTipoCancelacion(String tipoCancelacion){
+        this.tipoCancelacion=tipoCancelacion;
 
+    }
+    public String getTipoCancelacion(){
+    return this.tipoCancelacion;
+    }
+     public void setCosteReserva(Float coste){
+     this.costeReserva= coste;
+     }
+     public float getCosteReserva(){
+     return this.costeReserva;
+     }
+    
+     public void setEstado(String estado){
+         this.estadoReserva =estado;
+        }
+    public void setEstado(int num){
+    if(num == 0)
+        estadoReserva="Reservada";
+    if(num ==1 )
+        estadoReserva="En curso";
+    if(num ==2)
+        estadoReserva= "Completada";
+    
+    }
+    
+    public String getEstado(){
+    return this.estadoReserva;
+    }
+    
     public void setIdReserva(int idReserva) {
         this.idReserva = idReserva;
     }

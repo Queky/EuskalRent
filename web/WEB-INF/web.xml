@@ -96,6 +96,22 @@
         <servlet-name>GestionListaApartamento</servlet-name>
         <servlet-class>packEuskalRent.GestionListaApartamentos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionLR</servlet-name>
+        <servlet-class>packEuskalRent.GestionListaReservas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InfoReservas</servlet-name>
+        <jsp-file>/JSP/InfoReservas.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>CancelarReservas</servlet-name>
+        <servlet-class>packEuskalRent.CanelarReserva</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ActualizarReservas</servlet-name>
+        <servlet-class>packEuskalRent.ActualizarReservas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PaginaAcceder</servlet-name>
         <url-pattern>/Acceso</url-pattern>
@@ -191,6 +207,22 @@
     <servlet-mapping>
         <servlet-name>GestionListaApartamento</servlet-name>
         <url-pattern>/PaginaGLA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionLR</servlet-name>
+        <url-pattern>/PaginaGLR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InfoReservas</servlet-name>
+        <url-pattern>/PaginaIR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CancelarReservas</servlet-name>
+        <url-pattern>/PaginaCR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActualizarReservas</servlet-name>
+        <url-pattern>/PaginaAR</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

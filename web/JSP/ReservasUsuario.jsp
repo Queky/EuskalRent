@@ -44,24 +44,26 @@
                         <%}else{%>
                         <li><a href="PaginaLA">Mis Propiedades</a></li>
                         <%}%>
-                        <li><a href="PaginaRU">Mis Reservas</a></li>
+                        <li><a href="PaginaAR">Mis Reservas</a></li>
                         <li><a href="PaginaCS">Cerrar Sesion</a></li>
              
                 </ul>      
             </nav>
         </header>
         <div class="centrado">
+            <h2>Seleccione la reserva que desea consultar:</h2>
             <% 
             ConexionBD conexionBD = ConexionBD.getConexionConBBDD();
             ArrayList<Reserva> resevas = conexionBD.recibirDatosReservas(usuario.getCorreo());
             %>
-            <form action="PaginaSB" id="formApart" method="POST">
+            <form action="PaginaGLR" id="formApart" method="POST">
                 <table id="idA">
                 <tr>
                     <th></th>
                     <th>Identificador de reserva</th>
                     <th>Fecha Inicio</th>
                     <th>Fecha Fin</th>
+                    <th>Estado de la reserva</th>
                   
                 </tr>
                     <%
@@ -69,16 +71,17 @@
                    for(Reserva r: resevas){
                     %>
                     <tr class="subrayados" id="fila">
-                        <td class="marcable"> <input type="radio" id="idApartamento" name="idApartamento" value="<%=r.getIdReserva()%>" /></td>
+                        <td class="marcable"> <input type="radio" id="idApartamento" name="idReserva" value="<%=r.getIdReserva()%>" /></td>
                             <td> <%=r.getIdReserva()%></td>
                             <td> <%=r.getFechaInicio() %></td>
                             <td> <%=r.getFechaFin() %></td>
-                       
+                            <td> <%=r.getEstado()%></td>
                         </tr>
                         <% }%>
             </table>
             <br>
-            <input type="button" name="btnApart" id="btnApart" value="Elegir" class="botonBuscar"/>
+            <input type="submit" name="btnApart" id="btnApart" value="Consultar" class="botonBuscar"/>
+            
             </form>
         </div>
     </body>
