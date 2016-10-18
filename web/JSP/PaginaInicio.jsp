@@ -33,8 +33,8 @@
                     <%  
                         
                         if(session.getAttribute("Usuario")!=null){
-                        Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
-                        session.setAttribute("Usuario", usuario);
+                            Usuario usuario = (Usuario) session.getAttribute("Usuario"); 
+                            session.setAttribute("Usuario", usuario);
                         
                     if(usuario.estaLogueado()){
                         %>

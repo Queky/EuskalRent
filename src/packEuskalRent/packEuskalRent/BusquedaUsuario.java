@@ -59,7 +59,7 @@ public class BusquedaUsuario extends HttpServlet {
 
         
         //request.getRequestDispatcher("Busqueda").forward(request, response);
-        response.sendRedirect("Busqueda");
+        response.sendRedirect("Busquedas");
     }
 
     /**
